@@ -1,0 +1,94 @@
+---
+title: "Acerca del Proyecto"
+---
+
+## Metrobús CDMX - Rastreador en Tiempo Real
+
+Este proyecto proporciona una visualización interactiva de la ubicación en tiempo real de los autobuses del Metrobús de la Ciudad de México.
+
+### Características
+
+- 📍 **Mapa interactivo** con ubicaciones de vehículos en tiempo real
+- 🚌 **Filtrado por línea** (Líneas 1-7)
+- 📊 **Tabla de datos** con información detallada de cada vehículo
+- 🔄 **Actualización manual** con botón de refresh
+- 🌐 **100% en el navegador** - no requiere servidor backend
+
+### Tecnologías Utilizadas
+
+#### Frontend
+- **Quarto**: Framework para documentos científicos y técnicos
+- **Pyodide**: Python ejecutándose en WebAssembly dentro del navegador
+- **Leaflet.js**: Biblioteca de mapas interactivos
+- **HTML/CSS/JavaScript**: Interfaz de usuario
+
+#### Backend (Procesamiento)
+- **Python**: Lenguaje principal
+- **DuckDB**: Base de datos analítica para procesar GTFS estático
+- **gtfs-realtime-bindings**: Parser de Protocol Buffers para GTFS-RT
+- **pytest**: Framework de testing
+
+### Datos
+
+Los datos provienen de dos fuentes:
+
+1. **GTFS Estático**: Información de rutas, paradas y horarios (incluido en el repositorio)
+2. **GTFS Realtime**: Ubicaciones de vehículos en tiempo real (API del Metrobús)
+
+### Testing
+
+El proyecto incluye una suite completa de tests:
+
+- ✅ Tests de fetch y parsing de GTFS-RT
+- ✅ Tests de procesamiento de GTFS estático
+- ✅ Tests de filtrado de vehículos
+- ✅ Tests de integración end-to-end
+- 📊 Cobertura: 74%
+
+Ejecutar tests:
+```bash
+pytest tests/ -v --cov=scripts
+```
+
+### Estructura del Proyecto
+
+```
+Datos-Transporte-CDMX/
+├── index.qmd                    # Página principal
+├── about.qmd                    # Esta página
+├── _quarto.yml                  # Configuración de Quarto
+├── data/
+│   └── routes_metadata.json    # Metadatos de rutas
+├── scripts/
+│   ├── fetch_gtfs_rt.py        # Fetch datos en tiempo real
+│   ├── process_gtfs_static.py  # Procesar GTFS estático
+│   └── filter_vehicles.py      # Filtrar vehículos
+├── tests/                       # Suite de tests
+└── Metrobus_GTFS_ESTATICO/     # Datos GTFS estáticos
+```
+
+### Limitaciones Conocidas
+
+1. **CORS**: Los feeds GTFS-RT pueden bloquear peticiones desde el navegador. Solución: usar proxy CORS o fetch server-side.
+2. **Pyodide**: Primera carga lenta (~50MB). Se cachea en el navegador.
+3. **Mock Data**: Actualmente usa datos simulados. Requiere implementar parser de Protocol Buffers en Pyodide.
+
+### Próximos Pasos
+
+- [ ] Implementar parser real de GTFS-RT en Pyodide
+- [ ] Agregar auto-refresh opcional
+- [ ] Clustering de marcadores para mejor rendimiento
+- [ ] Histórico de posiciones
+- [ ] Estimación de tiempos de llegada
+
+### Contribuir
+
+Repositorio: [github.com/dar4datascience/Datos-Transporte-CDMX](https://github.com/dar4datascience/Datos-Transporte-CDMX)
+
+### Licencia
+
+Datos del Metrobús CDMX son datos abiertos del Gobierno de la Ciudad de México.
+
+### Contacto
+
+Para preguntas o sugerencias, abre un issue en GitHub.

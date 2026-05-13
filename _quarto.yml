@@ -1,0 +1,20 @@
+project:
+  type: website
+  output-dir: _site
+
+website:
+  title: "Metrobús CDMX - Tiempo Real"
+  navbar:
+    left:
+      - text: "Inicio"
+        href: index.html
+      - text: "Acerca de"
+        href: about.html
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: false
+    code-fold: false
+    code-tools: false
