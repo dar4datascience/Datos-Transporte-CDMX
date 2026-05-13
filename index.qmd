@@ -11,6 +11,7 @@ format:
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="https://cdn.jsdelivr.net/pyodide/v0.25.0/full/pyodide.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/protobufjs@7.2.5/dist/protobuf.min.js"></script>
 
 <style>
   .controls {
@@ -171,6 +172,17 @@ format:
   </table>
 </div>
 
+<details style="margin: 20px 0;">
+  <summary style="cursor: pointer; padding: 10px; background: #f8f9fa; border-radius: 4px; font-weight: 600;">
+    🔍 Datos en Tiempo Real (Debug)
+  </summary>
+  <div style="margin-top: 10px; padding: 15px; background: #f8f9fa; border-radius: 4px; max-height: 400px; overflow-y: auto;">
+    <pre id="debug-data" style="margin: 0; font-size: 12px; white-space: pre-wrap; word-wrap: break-word;">
+Presione "Actualizar Datos" para ver la respuesta del API...
+    </pre>
+  </div>
+</details>
+
 <script>
 let pyodide;
 let map;
@@ -286,6 +298,51 @@ async def fetch_gtfs_rt_vehicles():
   }
 }
 
+async function fetchRealGTFSRT() {
+  try {
+    // Use CORS proxy for browser access
+    const proxyUrl = 'https://corsproxy.io/?';
+    const gtfsUrl = 'https://datosabiertos.metropolitanos.mx/gtfsrt/vehicle_position.bin';
+    const url = proxyUrl + encodeURIComponent(gtfsUrl);
+    
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+    }
+    
+    const arrayBuffer = await response.arrayBuffer();
+    const bytes = new Uint8Array(arrayBuffer);
+    
+    // Parse GTFS-RT protobuf
+    const root = await protobuf.load('https://raw.githubusercontent.com/google/transit/master/gtfs-realtime/proto/gtfs-realtime.proto');
+    const FeedMessage = root.lookupType('transit_realtime.FeedMessage');
+    const message = FeedMessage.decode(bytes);
+    
+    // Extract vehicle positions
+    const vehicles = [];
+    for (const entity of message.entity) {
+      if (entity.vehicle) {
+        const v = entity.vehicle;
+        vehicles.push({
+          vehicle_id: v.vehicle?.id || null,
+          trip_id: v.trip?.tripId || null,
+          route_id: v.trip?.routeId || null,
+          latitude: v.position?.latitude || null,
+          longitude: v.position?.longitude || null,
+          timestamp: v.timestamp?.toNumber() || Math.floor(Date.now() / 1000),
+          speed: v.position?.speed || null,
+          bearing: v.position?.bearing || null
+        });
+      }
+    }
+    
+    return vehicles;
+  } catch (error) {
+    console.error('GTFS-RT fetch error:', error);
+    throw error;
+  }
+}
+
 async function refreshData() {
   const lineSelect = document.getElementById('line-select');
   const selectedLine = lineSelect.value;
@@ -299,12 +356,33 @@ async function refreshData() {
     setStatus('Obteniendo datos en tiempo real...', 'loading');
     document.getElementById('refresh-btn').disabled = true;
     
-    // Mock vehicle data (replace with actual GTFS-RT fetch)
-    const mockVehicles = generateMockVehicles(selectedLine);
+    // Fetch real GTFS-RT data
+    let allVehicles;
+    let dataSource = 'real';
+    try {
+      allVehicles = await fetchRealGTFSRT();
+      console.log(`Fetched ${allVehicles.length} vehicles from GTFS-RT`);
+    } catch (fetchError) {
+      console.warn('Failed to fetch real data, using mock:', fetchError);
+      setStatus('⚠️ Usando datos simulados (error de red)', 'loading');
+      allVehicles = generateMockVehicles(selectedLine);
+      dataSource = 'mock';
+    }
     
-    // Filter vehicles
+    // Display debug data
+    const debugEl = document.getElementById('debug-data');
+    debugEl.textContent = JSON.stringify({
+      timestamp: new Date().toISOString(),
+      source: dataSource,
+      total_vehicles: allVehicles.length,
+      selected_line: selectedLine,
+      sample_vehicles: allVehicles.slice(0, 5),
+      all_vehicles: allVehicles
+    }, null, 2);
+    
+    // Filter vehicles by line using Python
     const result = await pyodide.runPythonAsync(`
-vehicles = ${JSON.stringify(mockVehicles)}
+vehicles = ${JSON.stringify(allVehicles)}
 filtered = filter_vehicles_by_line(vehicles, "${selectedLine}")
 json.dumps(filtered)
 `);
@@ -315,7 +393,13 @@ json.dumps(filtered)
     updateMap(filteredVehicles);
     updateTable(filteredVehicles);
     
-    setStatus(`${filteredVehicles.length} vehículos encontrados en Línea ${selectedLine}`, 'success');
+    const statusMsg = dataSource === 'real' 
+      ? `✅ ${filteredVehicles.length} vehículos en Línea ${selectedLine} (datos reales)`
+      : `⚠️ ${filteredVehicles.length} vehículos en Línea ${selectedLine} (datos simulados)`;
+    setStatus(statusMsg, 'success');
+    
+    // Log data for debugging
+    console.log('Filtered vehicles for Line', selectedLine, ':', filteredVehicles);
     
   } catch (error) {
     console.error('Refresh error:', error);
