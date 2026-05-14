@@ -570,7 +570,11 @@ json.dumps(filtered)
     filteredVehicles.forEach(vehicle => {
       const lineData = metadata?.lines?.[vehicle.line_number];
       if (lineData && lineData.routes) {
-        const routeInfo = lineData.routes.find(r => r.route_id === vehicle.route_id);
+        // Handle type mismatch: metadata has string route_id, vehicle data has number
+        const routeInfo = lineData.routes.find(r => 
+          parseInt(r.route_id) === vehicle.route_id || 
+          r.route_id === String(vehicle.route_id)
+        );
         vehicle.route_name = routeInfo ? routeInfo.name : `Ruta ${vehicle.route_id}`;
         if (!routeInfo) {
           debugLog(`No route info for route_id ${vehicle.route_id}`);
