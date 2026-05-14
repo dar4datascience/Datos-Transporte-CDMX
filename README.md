@@ -42,8 +42,14 @@ source venv/bin/activate  # En Windows: venv\Scripts\activate
 # Instalar dependencias
 pip install -r requirements-dev.txt
 
+# Instalar Playwright browsers
+playwright install chromium
+
 # Procesar datos GTFS estáticos
 python scripts/process_gtfs_static.py Metrobus_GTFS_ESTATICO data/routes_metadata.json
+
+# Fetch live vehicle data
+python scripts/fetch_organillero.py data/live_vehicles.json
 
 # Ejecutar tests
 pytest tests/ -v --cov=scripts
@@ -94,8 +100,11 @@ Datos-Transporte-CDMX/
 ├── about.qmd                    # Acerca de
 ├── _quarto.yml                  # Config Quarto
 ├── data/
-│   └── routes_metadata.json    # Metadatos procesados
+│   ├── routes_metadata.json    # Metadatos procesados
+│   ├── live_vehicles.json      # Datos en vivo (actualizado cada 5min)
+│   └── sample_vehicles.json    # Datos de respaldo
 ├── scripts/
+│   ├── fetch_organillero.py    # Fetch live data (Playwright)
 │   ├── fetch_gtfs_rt.py        # Fetch GTFS-RT
 │   ├── process_gtfs_static.py  # Procesar GTFS estático
 │   └── filter_vehicles.py      # Filtrar vehículos
@@ -106,22 +115,30 @@ Datos-Transporte-CDMX/
 │   ├── test_filtering.py
 │   └── test_integration.py
 └── .github/workflows/
-    └── quarto-publish.yml      # CI/CD
+    ├── quarto-publish.yml      # CI/CD
+    └── update-live-data.yml    # Auto-update data (every 5min)
 ```
 
 ## 🚀 Despliegue
 
-El sitio se despliega automáticamente a GitHub Pages cuando se hace push a `main`:
+El sitio se despliega automáticamente a GitHub Pages:
 
+**Sitio web** (push a `main`):
 1. Tests se ejecutan primero
 2. Si pasan, se procesa GTFS estático
 3. Se renderiza sitio Quarto
 4. Se despliega a GitHub Pages
 
+**Datos en vivo** (cada 5 minutos):
+1. GitHub Action ejecuta `fetch_organillero.py`
+2. Playwright fetch de Organillero API
+3. Actualiza `data/live_vehicles.json`
+4. Commit automático → trigger re-deploy
+
 ## 📝 Roadmap
 
-- [ ] Parser real de GTFS-RT en Pyodide
-- [ ] Auto-refresh opcional
+- [x] Auto-refresh cada 30s
+- [x] Datos en vivo vía GitHub Actions
 - [ ] Clustering de marcadores
 - [ ] Histórico de posiciones
 - [ ] Estimación de tiempos de llegada
