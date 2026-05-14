@@ -306,22 +306,16 @@ window.initializePage = async function() {
         console.log('Auto-refresh stopped (line changed)');
       }
       
-      // Populate route dropdown for selected line
+      // Populate route dropdown for selected line (will be updated with active routes after data loads)
       const routeSelect = document.getElementById('route-select');
       const selectedLine = lineSelect.value;
       
       routeSelect.innerHTML = '<option value="">-- Todas las rutas --</option>';
       
       if (selectedLine && metadata.lines[selectedLine]) {
-        const lineData = metadata.lines[selectedLine];
-        lineData.routes.forEach(route => {
-          const option = document.createElement('option');
-          option.value = route.route_id;
-          option.textContent = route.name;
-          option.style.fontSize = '13px';
-          routeSelect.appendChild(option);
-        });
+        // Initially show all routes, will be filtered to active ones after refreshData()
         routeSelect.disabled = false;
+        routeSelect.innerHTML += '<option disabled>Cargando rutas activas...</option>';
       } else {
         routeSelect.disabled = true;
       }
@@ -544,9 +538,43 @@ json.dumps(filtered)
     });
     debugLog(`Enrichment complete`);
     
-    // Apply route filter if selected
+    // Update route dropdown to show only routes with active vehicles
     const routeSelect = document.getElementById('route-select');
     const selectedRoute = routeSelect.value;
+    
+    // Get unique route IDs from filtered vehicles
+    const activeRouteIds = new Set(filteredVehicles.map(v => v.route_id));
+    debugLog(`Found ${activeRouteIds.size} active routes`);
+    
+    // Rebuild route dropdown with only active routes
+    routeSelect.innerHTML = '<option value="">-- Todas las rutas --</option>';
+    
+    if (activeRouteIds.size > 0) {
+      const lineData = window.metadata.lines[selectedLine];
+      if (lineData && lineData.routes) {
+        // Filter routes to only those with active vehicles
+        const activeRoutes = lineData.routes.filter(route => activeRouteIds.has(route.route_id));
+        
+        // Sort by route name
+        activeRoutes.sort((a, b) => a.name.localeCompare(b.name));
+        
+        activeRoutes.forEach(route => {
+          const vehicleCount = filteredVehicles.filter(v => v.route_id === route.route_id).length;
+          const option = document.createElement('option');
+          option.value = route.route_id;
+          option.textContent = `${route.name} (${vehicleCount})`;
+          option.style.fontSize = '13px';
+          routeSelect.appendChild(option);
+        });
+        
+        // Re-select previously selected route if it still exists
+        if (selectedRoute && activeRouteIds.has(parseInt(selectedRoute))) {
+          routeSelect.value = selectedRoute;
+        }
+      }
+    }
+    
+    // Apply route filter if selected
     
     let finalVehicles = filteredVehicles;
     if (selectedRoute) {
