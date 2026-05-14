@@ -55,6 +55,146 @@
 
 ## Next Steps
 
+### Priority 0: Dashboard Creation & Hosting
+
+**Goal**: Create a dedicated dashboard interface and deploy to a stable hosting platform
+
+#### Dashboard Design
+
+**Current State**: Single-page Quarto document (`index.qmd`) with map + table
+**Desired State**: Full-featured dashboard with multiple views and analytics
+
+**Proposed Features**:
+1. **Multi-line view**: Show all lines simultaneously with toggle controls
+2. **Analytics panel**: 
+   - Vehicles per line (bar chart)
+   - Average speed by line
+   - Historical trends (if data available)
+3. **Time controls**: Play/pause historical playback (if storing history)
+4. **Alert system**: Show service disruptions from GTFS-RT alerts feed
+5. **Mobile optimization**: Responsive layout for mobile users
+6. **Search**: Find specific routes/stops
+
+**Technology Options**:
+
+**Option A: Quarto Dashboard (Recommended)**
+- Use Quarto's dashboard framework
+- Keep current OJS + Pyodide + Leaflet stack
+- Add `bslib` components for layout
+- Pros: Familiar stack, good documentation
+- Cons: Limited to Quarto ecosystem
+
+**Option B: Streamlit**
+- Pure Python dashboard framework
+- Use `streamlit-folium` for maps
+- Pros: Easy to build, Python-native
+- Cons: Requires Python backend, not static
+
+**Option C: Shiny (R)**
+- R-based dashboard framework
+- Use `leaflet` + `bslib` for UI
+- Pros: Excellent for data viz, mature ecosystem
+- Cons: Requires R backend, not static
+
+**Option D: Custom React/Vue App**
+- Modern SPA with React + Leaflet
+- Deploy to Vercel/Netlify
+- Pros: Full control, modern UX
+- Cons: Requires rewrite of current code
+
+#### Hosting Options
+
+**Option 1: Quarto Pub / GitHub Pages (Current)**
+- **How it works**: Quarto renders to static HTML, deploy via GitHub Actions
+- **Pros**: Free, simple, static (no backend needed)
+- **Cons**: Limited to static content, no server-side processing
+- **Cost**: Free
+- **Setup**: Already configured (`.github/workflows/quarto-publish.yml`)
+
+**Option 2: Vercel / Netlify**
+- **How it works**: Deploy static site with CDN
+- **Pros**: Fast global CDN, easy deployment, preview deployments
+- **Cons**: Still static, no backend
+- **Cost**: Free tier generous
+- **Setup**: Connect GitHub repo, auto-deploy on push
+
+**Option 3: Streamlit Cloud / Shinyapps.io**
+- **How it works**: Host Python/R backend with dashboard
+- **Pros**: Can run server-side code, true real-time updates
+- **Cons**: Requires backend, not free at scale
+- **Cost**: Free tier limited, paid tiers for production
+- **Setup**: Deploy app to cloud platform
+
+**Option 4: Custom Backend (VPS/Cloud)**
+- **How it works**: Deploy Flask/FastAPI + frontend separately
+- **Pros**: Full control, can run any backend logic
+- **Cons**: Maintenance overhead, security concerns
+- **Cost**: $5-20/month for basic VPS
+- **Setup**: Configure server, SSL, monitoring
+
+**Recommendation**: Start with **Quarto Pub / GitHub Pages** (current) for MVP. If dashboard needs server-side features, migrate to **Vercel + serverless function** for CORS proxy.
+
+#### Simplifying Live Data Fetching
+
+**Current Complexity**:
+- GitHub Action runs Playwright every 5 minutes
+- Playwright fetches Organillero data (bypasses CORS)
+- Commits JSON to repo
+- Browser loads pre-fetched static file
+- Data latency: 5 minutes (not true real-time)
+
+**Simplification Options**:
+
+**Option A: Serverless CORS Proxy (Recommended)**
+- Deploy Cloudflare Worker / Vercel Function
+- Function: `fetch(organillero) → add CORS headers → return`
+- Browser calls our proxy directly
+- **Pros**: True real-time (30s updates), simple architecture
+- **Cons**: Need to deploy function
+- **Cost**: Free tier sufficient
+- **Implementation**: ~50 lines of code
+
+```javascript
+// Cloudflare Worker example
+export default {
+  async fetch(request) {
+    const response = await fetch('https://organillero.heliouz.com/api/realtime');
+    const corsHeaders = {
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'GET',
+    };
+    return new Response(response.body, {
+      headers: { ...response.headers, ...corsHeaders }
+    });
+  }
+};
+```
+
+**Option B: Contact Organillero for CORS**
+- Reach out to Heliouz (Organillero maintainer)
+- Request CORS headers be added to API
+- **Pros**: No infrastructure needed, cleanest solution
+- **Cons**: Depends on third-party cooperation
+- **Cost**: Free
+- **Action**: Email contact@heliouz.com
+
+**Option C: Use Metrobús Official API (If CORS-enabled)**
+- Investigate if official API has CORS
+- May need to request developer credentials
+- **Pros**: Official source, more reliable
+- **Cons**: Unclear if CORS-enabled, unclear access process
+- **Cost**: Free (if access granted)
+
+**Option D: Accept 5-minute latency**
+- Keep current GitHub Action approach
+- Optimize Action to run faster
+- **Pros**: Works now, no changes needed
+- **Cons**: Not true real-time, data stale
+- **Cost**: Free
+- **Status**: Current solution
+
+**Recommendation**: Try **Option B** (contact Organillero) first. If unsuccessful, implement **Option A** (serverless proxy). Both enable true real-time data without complex Playwright setup.
+
 ### Priority 1: Understand Metrobús Official API
 
 **Actions**:

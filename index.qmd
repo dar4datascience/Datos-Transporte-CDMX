@@ -357,13 +357,25 @@ def load_metadata():
 def filter_vehicles_by_line(vehicles, line_number):
     """Filter vehicles by line number."""
     if not vehicles or not metadata:
+        print(f"DEBUG: No vehicles ({len(vehicles) if vehicles else 0}) or no metadata")
         return []
     
-    # Build route to line mapping
+    # Build route to line mapping (handle both int and string route_ids)
     route_to_line = {}
     for line_num, line_data in metadata['lines'].items():
         for route in line_data['routes']:
-            route_to_line[route['route_id']] = line_num
+            route_id = route['route_id']
+            # Store both int and string versions for compatibility
+            route_to_line[route_id] = line_num
+            route_to_line[str(route_id)] = line_num
+    
+    print(f"DEBUG: Built mapping for {len(route_to_line)} route IDs")
+    print(f"DEBUG: Looking for line {line_number} (type: {type(line_number)})")
+    
+    # Show sample route_ids from vehicles
+    if vehicles:
+        sample_route_ids = [v.get('route_id') for v in vehicles[:5]]
+        print(f"DEBUG: Sample vehicle route_ids: {sample_route_ids}")
     
     trip_to_route = metadata.get('trip_to_route', {})
     
@@ -376,12 +388,14 @@ def filter_vehicles_by_line(vehicles, line_number):
             route_id = trip_to_route.get(trip_id)
         
         if route_id:
-            line = route_to_line.get(route_id)
-            if line == line_number:
+            # Try both int and string versions
+            line = route_to_line.get(route_id) or route_to_line.get(str(route_id))
+            if line == line_number or line == str(line_number):
                 vehicle['line_number'] = line
                 vehicle['line_color'] = metadata['lines'][line]['color']
                 filtered.append(vehicle)
     
+    print(f"DEBUG: Filtered {len(filtered)} vehicles for line {line_number}")
     return filtered
 
 async def fetch_gtfs_rt_vehicles():
@@ -508,6 +522,14 @@ async function refreshData() {
     
     // Filter vehicles by line using Python
     debugLog(`Filtering ${allVehicles.length} vehicles for Line ${selectedLine}...`);
+    debugLog(`Data source: ${dataSource}`);
+    
+    // Show sample vehicle structure
+    if (allVehicles.length > 0) {
+      debugLog(`Sample vehicle keys: ${Object.keys(allVehicles[0]).join(', ')}`);
+      debugLog(`Sample route_id: ${allVehicles[0].route_id} (type: ${typeof allVehicles[0].route_id})`);
+    }
+    
     // Pass vehicles via js module to avoid null/None conversion issues
     self.allVehicles = allVehicles;
     const result = await pyodide.runPythonAsync(`
