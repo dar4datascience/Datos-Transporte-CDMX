@@ -1,2 +1,144 @@
 # Datos-Transporte-CDMX
-Metrobus, luego metro
+
+Rastreador en tiempo real del Metrobús de la Ciudad de México usando datos GTFS-RT.
+
+[![Tests](https://github.com/dar4datascience/Datos-Transporte-CDMX/actions/workflows/quarto-publish.yml/badge.svg)](https://github.com/dar4datascience/Datos-Transporte-CDMX/actions/workflows/quarto-publish.yml)
+
+## 🚌 Demo
+
+Visita la aplicación: [https://dar4datascience.github.io/Datos-Transporte-CDMX/](https://dar4datascience.github.io/Datos-Transporte-CDMX/)
+
+## ✨ Características
+
+- 📍 Mapa interactivo con ubicaciones de vehículos en tiempo real
+- 🚌 Filtrado por línea (1-7)
+- 📊 Tabla de datos con información detallada
+- 🔄 Actualización manual con botón de refresh
+- 🌐 100% en el navegador - no requiere servidor backend
+- ✅ Suite completa de tests (74% coverage)
+
+## 🛠️ Tecnologías
+
+- **Quarto** + **Pyodide** (Python WASM)
+- **Leaflet.js** para mapas
+- **DuckDB** para procesamiento de datos
+- **pytest** para testing
+- **GitHub Pages** para hosting
+
+## 📦 Instalación Local
+
+```bash
+# Clonar repositorio
+git clone https://github.com/dar4datascience/Datos-Transporte-CDMX.git
+cd Datos-Transporte-CDMX
+
+# Crear entorno virtual
+python -m venv venv
+source venv/bin/activate  # En Windows: venv\Scripts\activate
+
+# Instalar dependencias
+pip install -r requirements-dev.txt
+
+# Procesar datos GTFS estáticos
+python scripts/process_gtfs_static.py Metrobus_GTFS_ESTATICO data/routes_metadata.json
+
+# Ejecutar tests
+pytest tests/ -v --cov=scripts
+
+# Renderizar sitio Quarto
+quarto render
+
+# Servir localmente
+quarto preview
+```
+
+## 📊 Datos
+
+### GTFS Estático
+Incluido en `Metrobus_GTFS_ESTATICO/`:
+- `routes.txt` - Información de rutas
+- `trips.txt` - Viajes programados
+- `stops.txt` - Paradas
+- `shapes.txt` - Geometrías de rutas
+
+### GTFS Realtime
+Feeds en tiempo real del Metrobús:
+- **Ubicación de vehículos**: `https://datosabiertos.metropolitanos.mx/gtfsrt/vehicle_position.bin`
+- **Actualización de viajes**: `https://datosabiertos.metropolitanos.mx/gtfsrt/trip_update.bin`
+- **Alertas**: `https://datosabiertos.metropolitanos.mx/gtfsrt/alert.bin`
+
+**Nota**: Requiere registro en [metrobus.cdmx.gob.mx](https://metrobus.cdmx.gob.mx/portal-ciudadano/datos-abiertos)
+
+## 🧪 Testing
+
+```bash
+# Ejecutar todos los tests
+pytest tests/ -v
+
+# Con cobertura
+pytest tests/ --cov=scripts --cov-report=html
+
+# Tests específicos
+pytest tests/test_gtfs_rt_fetch.py -v
+pytest tests/test_filtering.py -v
+```
+
+## 📁 Estructura
+
+```
+Datos-Transporte-CDMX/
+├── index.qmd                    # Página principal
+├── about.qmd                    # Acerca de
+├── _quarto.yml                  # Config Quarto
+├── data/
+│   └── routes_metadata.json    # Metadatos procesados
+├── scripts/
+│   ├── fetch_gtfs_rt.py        # Fetch GTFS-RT
+│   ├── process_gtfs_static.py  # Procesar GTFS estático
+│   └── filter_vehicles.py      # Filtrar vehículos
+├── tests/                       # Suite de tests
+│   ├── conftest.py             # Fixtures
+│   ├── test_gtfs_rt_fetch.py
+│   ├── test_static_processing.py
+│   ├── test_filtering.py
+│   └── test_integration.py
+└── .github/workflows/
+    └── quarto-publish.yml      # CI/CD
+```
+
+## 🚀 Despliegue
+
+El sitio se despliega automáticamente a GitHub Pages cuando se hace push a `main`:
+
+1. Tests se ejecutan primero
+2. Si pasan, se procesa GTFS estático
+3. Se renderiza sitio Quarto
+4. Se despliega a GitHub Pages
+
+## 📝 Roadmap
+
+- [ ] Parser real de GTFS-RT en Pyodide
+- [ ] Auto-refresh opcional
+- [ ] Clustering de marcadores
+- [ ] Histórico de posiciones
+- [ ] Estimación de tiempos de llegada
+- [ ] Soporte para Metro CDMX
+
+## 🤝 Contribuir
+
+1. Fork el proyecto
+2. Crea una rama (`git checkout -b feature/amazing-feature`)
+3. Commit cambios (`git commit -m 'Add amazing feature'`)
+4. Push a la rama (`git push origin feature/amazing-feature`)
+5. Abre un Pull Request
+
+## 📄 Licencia
+
+Datos del Metrobús CDMX son datos abiertos del Gobierno de la Ciudad de México.
+
+## 📚 Referencias
+
+- [GTFS Realtime Reference](https://gtfs.org/realtime/)
+- [Metrobús Datos Abiertos](https://metrobus.cdmx.gob.mx/portal-ciudadano/datos-abiertos)
+- [Quarto Documentation](https://quarto.org/)
+- [Pyodide Documentation](https://pyodide.org/)

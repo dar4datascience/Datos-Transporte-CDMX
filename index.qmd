@@ -5,7 +5,16 @@ format:
     page-layout: full
     resources:
       - data/routes_metadata.json
+      - data/sample_vehicles.json
 ---
+
+::: {.callout-note}
+## Datos de Muestra
+
+Esta aplicación utiliza datos de muestra del feed GTFS-RT de Metrobús CDMX. Los datos muestran posiciones reales de vehículos capturadas el **13 de mayo de 2026 a las 18:53:53**.
+
+Para acceder a datos en tiempo real, es necesario registrarse en el [portal de datos abiertos de Metrobús](https://metrobus.cdmx.gob.mx/portal-ciudadano/datos-abiertos).
+:::
 
 ```{ojs}
 //| echo: false
@@ -268,6 +277,7 @@ def load_metadata():
 def filter_vehicles_by_line(vehicles, line_number):
     """Filter vehicles by line number."""
     if not vehicles or not metadata:
+        print(f"DEBUG: vehicles={len(vehicles) if vehicles else 0}, metadata={metadata is not None}")
         return []
     
     # Build route to line mapping
@@ -276,23 +286,38 @@ def filter_vehicles_by_line(vehicles, line_number):
         for route in line_data['routes']:
             route_to_line[route['route_id']] = line_num
     
-    trip_to_route = metadata['trip_to_route']
+    print(f"DEBUG: Built route_to_line with {len(route_to_line)} routes")
+    print(f"DEBUG: Looking for line_number={line_number} (type: {type(line_number)})")
+    
+    trip_to_route = metadata.get('trip_to_route', {})
     
     filtered = []
+    checked = 0
     for vehicle in vehicles:
+        checked += 1
         trip_id = vehicle.get('trip_id')
         route_id = vehicle.get('route_id')
+        
+        # Convert route_id to int if it's a string
+        if route_id and isinstance(route_id, str):
+            try:
+                route_id = int(route_id)
+            except (ValueError, TypeError):
+                pass
         
         if not route_id and trip_id:
             route_id = trip_to_route.get(trip_id)
         
         if route_id:
             line = route_to_line.get(route_id)
+            if checked < 5:  # Debug first few
+                print(f"DEBUG: vehicle route_id={route_id} (type: {type(route_id)}) -> line={line}")
             if line == line_number:
                 vehicle['line_number'] = line
                 vehicle['line_color'] = metadata['lines'][line]['color']
                 filtered.append(vehicle)
     
+    print(f"DEBUG: Checked {checked} vehicles, found {len(filtered)} for line {line_number}")
     return filtered
 
 async def fetch_gtfs_rt_vehicles():
@@ -329,51 +354,6 @@ async def fetch_gtfs_rt_vehicles():
   }
 }
 
-async function fetchRealGTFSRT() {
-  try {
-    // Use CORS proxy for browser access
-    const proxyUrl = 'https://corsproxy.io/?';
-    const gtfsUrl = 'https://datosabiertos.metropolitanos.mx/gtfsrt/vehicle_position.bin';
-    const url = proxyUrl + encodeURIComponent(gtfsUrl);
-    
-    const response = await fetch(url);
-    if (!response.ok) {
-      throw new Error(`HTTP ${response.status}: ${response.statusText}`);
-    }
-    
-    const arrayBuffer = await response.arrayBuffer();
-    const bytes = new Uint8Array(arrayBuffer);
-    
-    // Parse GTFS-RT protobuf
-    const root = await protobuf.load('https://raw.githubusercontent.com/google/transit/master/gtfs-realtime/proto/gtfs-realtime.proto');
-    const FeedMessage = root.lookupType('transit_realtime.FeedMessage');
-    const message = FeedMessage.decode(bytes);
-    
-    // Extract vehicle positions
-    const vehicles = [];
-    for (const entity of message.entity) {
-      if (entity.vehicle) {
-        const v = entity.vehicle;
-        vehicles.push({
-          vehicle_id: v.vehicle?.id || null,
-          trip_id: v.trip?.tripId || null,
-          route_id: v.trip?.routeId || null,
-          latitude: v.position?.latitude || null,
-          longitude: v.position?.longitude || null,
-          timestamp: v.timestamp?.toNumber() || Math.floor(Date.now() / 1000),
-          speed: v.position?.speed || null,
-          bearing: v.position?.bearing || null
-        });
-      }
-    }
-    
-    return vehicles;
-  } catch (error) {
-    console.error('GTFS-RT fetch error:', error);
-    throw error;
-  }
-}
-
 async function refreshData() {
   const lineSelect = document.getElementById('line-select');
   const selectedLine = lineSelect.value;
@@ -384,49 +364,47 @@ async function refreshData() {
   }
   
   try {
-    setStatus('Obteniendo datos en tiempo real...', 'loading');
+    setStatus('Cargando datos de muestra...', 'loading');
     document.getElementById('refresh-btn').disabled = true;
     
-    // Fetch real GTFS-RT data
-    let allVehicles;
-    let dataSource = 'real';
-    try {
-      allVehicles = await fetchRealGTFSRT();
-      console.log(`Fetched ${allVehicles.length} vehicles from GTFS-RT`);
-    } catch (fetchError) {
-      console.warn('Failed to fetch real data, using mock:', fetchError);
-      setStatus('⚠️ Usando datos simulados (error de red)', 'loading');
-      allVehicles = generateMockVehicles(selectedLine);
-      dataSource = 'mock';
-    }
+    // Load sample GTFS-RT data
+    const response = await fetch('data/sample_vehicles.json');
+    const sampleData = await response.json();
+    const allVehicles = sampleData.vehicles;
+    const dataSource = 'sample';
     
-    // Display debug data
-    const debugEl = document.getElementById('debug-data');
-    debugEl.textContent = JSON.stringify({
-      timestamp: new Date().toISOString(),
-      source: dataSource,
-      total_vehicles: allVehicles.length,
-      selected_line: selectedLine,
-      sample_vehicles: allVehicles.slice(0, 5),
-      all_vehicles: allVehicles
-    }, null, 2);
+    console.log(`Loaded ${allVehicles.length} vehicles from sample data`);
+    console.log(`Sample timestamp: ${sampleData.feed_timestamp_iso}`);
     
     // Filter vehicles by line using Python
+    // Pass vehicles via js module to avoid null/None conversion issues
+    self.allVehicles = allVehicles;
     const result = await pyodide.runPythonAsync(`
-vehicles = ${JSON.stringify(allVehicles)}
+import js
+import json
+vehicles = js.allVehicles.to_py()
 filtered = filter_vehicles_by_line(vehicles, "${selectedLine}")
 json.dumps(filtered)
 `);
     
     const filteredVehicles = JSON.parse(result);
     
+    // Display debug data
+    const debugEl = document.getElementById('debug-data');
+    debugEl.textContent = JSON.stringify({
+      feed_timestamp: sampleData.feed_timestamp_iso,
+      source: dataSource,
+      total_vehicles: allVehicles.length,
+      selected_line: selectedLine,
+      filtered_count: filteredVehicles.length,
+      sample_vehicles: filteredVehicles.slice(0, 5)
+    }, null, 2);
+    
     // Update map and table
     updateMap(filteredVehicles);
     updateTable(filteredVehicles);
     
-    const statusMsg = dataSource === 'real' 
-      ? `✅ ${filteredVehicles.length} vehículos en Línea ${selectedLine} (datos reales)`
-      : `⚠️ ${filteredVehicles.length} vehículos en Línea ${selectedLine} (datos simulados)`;
+    const statusMsg = `📊 ${filteredVehicles.length} vehículos en Línea ${selectedLine} (datos de muestra: ${sampleData.feed_timestamp_iso})`;
     setStatus(statusMsg, 'success');
     
     // Log data for debugging
@@ -438,30 +416,6 @@ json.dumps(filtered)
   } finally {
     document.getElementById('refresh-btn').disabled = false;
   }
-}
-
-function generateMockVehicles(lineNumber) {
-  // Generate mock vehicle data for testing
-  // In production, this would be replaced with actual GTFS-RT fetch
-  const lineData = window.metadata.lines[lineNumber];
-  const routes = lineData.routes;
-  
-  const vehicles = [];
-  const numVehicles = Math.floor(Math.random() * 5) + 3;
-  
-  for (let i = 0; i < numVehicles; i++) {
-    const route = routes[i % routes.length];
-    vehicles.push({
-      vehicle_id: `V${lineNumber}${String(i + 1).padStart(3, '0')}`,
-      trip_id: `${route.route_id}_${i}`,
-      route_id: route.route_id,
-      latitude: 19.4326 + (Math.random() - 0.5) * 0.1,
-      longitude: -99.1332 + (Math.random() - 0.5) * 0.1,
-      timestamp: Math.floor(Date.now() / 1000)
-    });
-  }
-  
-  return vehicles;
 }
 
 function updateMap(vehicles) {
@@ -573,31 +527,43 @@ if (window.metadataReady) {
 
 ## Acerca de este Proyecto
 
-Este rastreador muestra la ubicación en tiempo real de los autobuses del Metrobús de la Ciudad de México usando datos GTFS-RT.
+Este rastreador muestra posiciones de vehículos del Metrobús de la Ciudad de México usando datos GTFS-RT reales.
 
 ### ¿Qué es GTFS-RT?
 
 **GTFS Realtime** (General Transit Feed Specification - Realtime) es un estándar abierto para compartir información en tiempo real sobre sistemas de transporte público. Los datos están en formato **Protocol Buffer** (binario), no JSON.
 
+### Datos de Muestra
+
+Esta aplicación utiliza un snapshot real del feed GTFS-RT de Metrobús capturado el **13 de mayo de 2026**. El archivo contiene:
+
+- **810 vehículos** en operación
+- Posiciones GPS (latitud/longitud)
+- IDs de vehículo y ruta
+- Velocidad y dirección
+
 ### Fuentes de Datos
 
-Los datos provienen de tres feeds GTFS-RT del Metrobús CDMX:
+Los datos GTFS-RT del Metrobús CDMX incluyen:
 
-- **Ubicación de vehículos**: `https://datosabiertos.metropolitanos.mx/gtfsrt/vehicle_position.bin`
-- **Actualización de viajes**: `https://datosabiertos.metropolitanos.mx/gtfsrt/trip_update.bin`
-- **Alertas del sistema**: `https://datosabiertos.metropolitanos.mx/gtfsrt/alert.bin`
+- **Ubicación de vehículos**: Posiciones GPS actualizadas cada 30 segundos
+- **Actualización de viajes**: Tiempos estimados de llegada
+- **Alertas del sistema**: Avisos y disrupciones del servicio
 
-### Registro
+### Registro para Datos en Tiempo Real
 
-Para acceder a estos datos, regístrate en:  
+Para acceder a los feeds en vivo, regístrate en:  
 [https://metrobus.cdmx.gob.mx/portal-ciudadano/datos-abiertos](https://metrobus.cdmx.gob.mx/portal-ciudadano/datos-abiertos)
 
-Recibirás un correo con los enlaces de acceso.
+Recibirás un correo con:
+- Archivo `.proto` (definición de Protocol Buffer)
+- Datos estáticos GTFS (rutas, paradas, horarios)
+- Instrucciones de acceso
 
-### Recomendaciones
+### Referencias
 
-- **Frecuencia de actualización**: Se recomienda actualizar los datos cada 30 segundos para evitar sobrecarga del servidor.
 - **Documentación oficial**: [GTFS Realtime Reference](https://gtfs.org/realtime/)
+- **Inspiración**: [El Organillero](https://organillero.heliouz.com/) por Heliouz
 
 ### Tecnología
 

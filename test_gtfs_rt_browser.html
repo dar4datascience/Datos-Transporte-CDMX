@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Test GTFS-RT Fetch</title>
+  <script src="https://cdn.jsdelivr.net/npm/protobufjs@7.2.5/dist/protobuf.min.js"></script>
+</head>
+<body>
+  <h1>Test GTFS-RT Data Fetch</h1>
+  <button onclick="testFetch()">Fetch Line 1 Data</button>
+  <div id="status"></div>
+  <pre id="output" style="background: #f0f0f0; padding: 10px; max-height: 500px; overflow-y: auto;"></pre>
+
+  <script>
+    async function testFetch() {
+      const statusEl = document.getElementById('status');
+      const outputEl = document.getElementById('output');
+      
+      try {
+        statusEl.textContent = 'Fetching...';
+        
+        // Use CORS proxy
+        const proxyUrl = 'https://corsproxy.io/?';
+        const gtfsUrl = 'https://datosabiertos.metropolitanos.mx/gtfsrt/vehicle_position.bin';
+        const url = proxyUrl + encodeURIComponent(gtfsUrl);
+        
+        const response = await fetch(url);
+        if (!response.ok) {
+          throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+        }
+        
+        const arrayBuffer = await response.arrayBuffer();
+        const bytes = new Uint8Array(arrayBuffer);
+        
+        statusEl.textContent = `Fetched ${bytes.length} bytes, parsing...`;
+        
+        // Parse GTFS-RT protobuf
+        const root = await protobuf.load('https://raw.githubusercontent.com/google/transit/master/gtfs-realtime/proto/gtfs-realtime.proto');
+        const FeedMessage = root.lookupType('transit_realtime.FeedMessage');
+        const message = FeedMessage.decode(bytes);
+        
+        // Extract vehicle positions
+        const vehicles = [];
+        for (const entity of message.entity) {
+          if (entity.vehicle) {
+            const v = entity.vehicle;
+            vehicles.push({
+              vehicle_id: v.vehicle?.id || null,
+              trip_id: v.trip?.tripId || null,
+              route_id: v.trip?.routeId || null,
+              latitude: v.position?.latitude || null,
+              longitude: v.position?.longitude || null,
+              timestamp: v.timestamp?.toNumber() || Math.floor(Date.now() / 1000),
+              speed: v.position?.speed || null,
+              bearing: v.position?.bearing || null
+            });
+          }
+        }
+        
+        statusEl.textContent = `✅ Success! Fetched ${vehicles.length} vehicles`;
+        
+        // Filter for Line 1 routes (route_ids starting with 194)
+        const line1Vehicles = vehicles.filter(v => 
+          v.route_id && v.route_id.toString().startsWith('194')
+        );
+        
+        outputEl.textContent = JSON.stringify({
+          timestamp: new Date().toISOString(),
+          total_vehicles: vehicles.length,
+          line_1_vehicles: line1Vehicles.length,
+          sample_line_1: line1Vehicles.slice(0, 5),
+          all_line_1: line1Vehicles
+        }, null, 2);
+        
+      } catch (error) {
+        statusEl.textContent = `❌ Error: ${error.message}`;
+        outputEl.textContent = error.stack;
+      }
+    }
+  </script>
+</body>
+</html>
