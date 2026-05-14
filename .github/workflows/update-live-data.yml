@@ -2,8 +2,8 @@ name: Update Live Vehicle Data
 
 on:
   schedule:
-    # Run every 10 minutes (avoid rate limits)
-    - cron: '*/10 * * * *'
+    # Run daily at 11 AM Mexico City time (17:00 UTC, UTC-6)
+    - cron: '0 17 * * *'
   workflow_dispatch: # Allow manual trigger
   push:
     branches: [main]
