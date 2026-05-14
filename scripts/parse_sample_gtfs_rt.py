@@ -21,10 +21,18 @@ def parse_gtfs_rt_binary(input_file, output_file):
         if entity.HasField('vehicle'):
             v = entity.vehicle
             
+            # Extract route_id and convert to int if possible
+            route_id = v.trip.route_id if v.trip.HasField('route_id') else None
+            if route_id:
+                try:
+                    route_id = int(route_id)
+                except (ValueError, TypeError):
+                    pass  # Keep as string if conversion fails
+            
             vehicle_data = {
                 'vehicle_id': v.vehicle.id if v.vehicle.HasField('id') else None,
                 'trip_id': v.trip.trip_id if v.trip.HasField('trip_id') else None,
-                'route_id': v.trip.route_id if v.trip.HasField('route_id') else None,
+                'route_id': route_id,
                 'latitude': v.position.latitude if v.position.HasField('latitude') else None,
                 'longitude': v.position.longitude if v.position.HasField('longitude') else None,
                 'timestamp': v.timestamp if v.HasField('timestamp') else None,

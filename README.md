@@ -3,6 +3,7 @@
 Rastreador en tiempo real del Metrobús de la Ciudad de México usando datos GTFS-RT.
 
 [![Tests](https://github.com/dar4datascience/Datos-Transporte-CDMX/actions/workflows/quarto-publish.yml/badge.svg)](https://github.com/dar4datascience/Datos-Transporte-CDMX/actions/workflows/quarto-publish.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## 🚌 Demo
 
@@ -134,7 +135,14 @@ El sitio se despliega automáticamente a GitHub Pages cuando se hace push a `mai
 
 ## 📄 Licencia
 
-Datos del Metrobús CDMX son datos abiertos del Gobierno de la Ciudad de México.
+Este proyecto está bajo la Licencia MIT - ver el archivo [LICENSE](LICENSE) para más detalles.
+
+Los datos del Metrobús CDMX son datos abiertos del Gobierno de la Ciudad de México.
+
+## 🙏 Agradecimientos
+
+- [El Organillero](https://organillero.heliouz.com) por Heliouz - Proveedor de la API en tiempo real
+- Gobierno de la Ciudad de México - Datos abiertos GTFS del Metrobús
 
 ## 📚 Referencias
 

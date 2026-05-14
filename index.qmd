@@ -8,12 +8,12 @@ format:
       - data/sample_vehicles.json
 ---
 
-::: {.callout-note}
-## Datos de Muestra
+::: {.callout-tip}
+## Datos en Tiempo Real
 
-Esta aplicación utiliza datos de muestra del feed GTFS-RT de Metrobús CDMX. Los datos muestran posiciones reales de vehículos capturadas el **13 de mayo de 2026 a las 18:53:53**.
+Esta aplicación muestra posiciones de vehículos del Metrobús CDMX **en tiempo real** utilizando la API de [El Organillero](https://organillero.heliouz.com) por Heliouz.
 
-Para acceder a datos en tiempo real, es necesario registrarse en el [portal de datos abiertos de Metrobús](https://metrobus.cdmx.gob.mx/portal-ciudadano/datos-abiertos).
+Los datos se actualizan cada 30 segundos y muestran la ubicación actual de los autobuses en operación.
 :::
 
 ```{ojs}
@@ -158,7 +158,30 @@ metadata = FileAttachment("data/routes_metadata.json").json()
     font-weight: 600;
     font-size: 12px;
   }
+  
+  #fallback-banner {
+    display: none;
+    background: #fff3cd;
+    border: 1px solid #ffc107;
+    color: #856404;
+    padding: 12px 20px;
+    margin: 15px 0;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+  
+  #fallback-banner.show {
+    display: block;
+  }
+  
+  #fallback-banner strong {
+    color: #856404;
+  }
 </style>
+
+<div id="fallback-banner">
+  <strong>⚠️ Usando datos de respaldo:</strong> No se pudo conectar a la API en tiempo real. Mostrando datos de muestra del 13 de mayo de 2026.
+</div>
 
 <div class="controls">
   <div class="control-group">
@@ -277,7 +300,6 @@ def load_metadata():
 def filter_vehicles_by_line(vehicles, line_number):
     """Filter vehicles by line number."""
     if not vehicles or not metadata:
-        print(f"DEBUG: vehicles={len(vehicles) if vehicles else 0}, metadata={metadata is not None}")
         return []
     
     # Build route to line mapping
@@ -286,38 +308,23 @@ def filter_vehicles_by_line(vehicles, line_number):
         for route in line_data['routes']:
             route_to_line[route['route_id']] = line_num
     
-    print(f"DEBUG: Built route_to_line with {len(route_to_line)} routes")
-    print(f"DEBUG: Looking for line_number={line_number} (type: {type(line_number)})")
-    
     trip_to_route = metadata.get('trip_to_route', {})
     
     filtered = []
-    checked = 0
     for vehicle in vehicles:
-        checked += 1
         trip_id = vehicle.get('trip_id')
         route_id = vehicle.get('route_id')
-        
-        # Convert route_id to int if it's a string
-        if route_id and isinstance(route_id, str):
-            try:
-                route_id = int(route_id)
-            except (ValueError, TypeError):
-                pass
         
         if not route_id and trip_id:
             route_id = trip_to_route.get(trip_id)
         
         if route_id:
             line = route_to_line.get(route_id)
-            if checked < 5:  # Debug first few
-                print(f"DEBUG: vehicle route_id={route_id} (type: {type(route_id)}) -> line={line}")
             if line == line_number:
                 vehicle['line_number'] = line
                 vehicle['line_color'] = metadata['lines'][line]['color']
                 filtered.append(vehicle)
     
-    print(f"DEBUG: Checked {checked} vehicles, found {len(filtered)} for line {line_number}")
     return filtered
 
 async def fetch_gtfs_rt_vehicles():
@@ -364,17 +371,66 @@ async function refreshData() {
   }
   
   try {
-    setStatus('Cargando datos de muestra...', 'loading');
+    setStatus('Obteniendo datos en tiempo real...', 'loading');
     document.getElementById('refresh-btn').disabled = true;
     
-    // Load sample GTFS-RT data
-    const response = await fetch('data/sample_vehicles.json');
-    const sampleData = await response.json();
-    const allVehicles = sampleData.vehicles;
-    const dataSource = 'sample';
+    let allVehicles = [];
+    let dataSource = 'organillero';
+    let sampleData = null;
     
-    console.log(`Loaded ${allVehicles.length} vehicles from sample data`);
-    console.log(`Sample timestamp: ${sampleData.feed_timestamp_iso}`);
+    // Try Organillero API first for live data
+    try {
+      // Use CORS proxy to access Organillero API
+      const corsProxy = 'https://api.allorigins.win/raw?url=';
+      const apiUrl = 'https://organillero.heliouz.com/api/realtime';
+      const apiResponse = await fetch(corsProxy + encodeURIComponent(apiUrl));
+      if (!apiResponse.ok) throw new Error(`Organillero API returned ${apiResponse.status}`);
+      const apiData = await apiResponse.json();
+      
+      // Transform organillero format to our format
+      // Organillero uses: {ts, buses: [{id, lbl, lat, lon, brg, spd, route}]}
+      // We need: vehicles: [{vehicle_id, route_id, latitude, longitude, ...}]
+      const rawBuses = apiData.buses || apiData.vehicles || apiData;
+      allVehicles = rawBuses.map(bus => ({
+        vehicle_id: bus.id || bus.vehicle_id,
+        route_id: parseInt(bus.route || bus.route_id),
+        latitude: bus.lat || bus.latitude,
+        longitude: bus.lon || bus.longitude,
+        bearing: bus.brg || bus.bearing,
+        speed: bus.spd || bus.speed,
+        timestamp: apiData.ts || Math.floor(Date.now() / 1000)
+      }));
+      
+      dataSource = 'organillero';
+      sampleData = {
+        feed_timestamp_iso: new Date(apiData.ts * 1000).toISOString(),
+        total_vehicles: allVehicles.length
+      };
+      document.getElementById('fallback-banner').classList.remove('show');
+      console.log(`✅ Loaded ${allVehicles.length} vehicles from Organillero API (live data)`);
+    } catch (apiError) {
+      console.error('Organillero API error details:', apiError);
+      // Fallback to local sample data
+      console.warn('Organillero API failed, using local sample data:', apiError);
+      setStatus('Cargando datos de respaldo...', 'loading');
+      
+      try {
+        const response = await fetch('data/sample_vehicles.json');
+        if (!response.ok) throw new Error('Sample data not available');
+        sampleData = await response.json();
+        allVehicles = sampleData.vehicles;
+        dataSource = 'sample';
+        document.getElementById('fallback-banner').classList.add('show');
+        console.log(`⚠️ Loaded ${allVehicles.length} vehicles from sample data (fallback)`);
+      } catch (sampleError) {
+        console.error('Both API and sample data failed:', sampleError);
+        throw new Error('No se pudieron cargar los datos de ninguna fuente');
+      }
+    }
+    
+    if (sampleData && sampleData.feed_timestamp_iso) {
+      console.log(`Timestamp: ${sampleData.feed_timestamp_iso}`);
+    }
     
     // Filter vehicles by line using Python
     // Pass vehicles via js module to avoid null/None conversion issues
@@ -404,7 +460,9 @@ json.dumps(filtered)
     updateMap(filteredVehicles);
     updateTable(filteredVehicles);
     
-    const statusMsg = `📊 ${filteredVehicles.length} vehículos en Línea ${selectedLine} (datos de muestra: ${sampleData.feed_timestamp_iso})`;
+    const statusMsg = dataSource === 'organillero'
+      ? `✅ ${filteredVehicles.length} vehículos en Línea ${selectedLine} (datos en tiempo real)`
+      : `⚠️ ${filteredVehicles.length} vehículos en Línea ${selectedLine} (datos de respaldo: ${sampleData.feed_timestamp_iso})`;
     setStatus(statusMsg, 'success');
     
     // Log data for debugging
