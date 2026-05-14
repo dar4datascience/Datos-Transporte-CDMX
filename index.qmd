@@ -600,14 +600,20 @@ json.dumps(filtered)
     if (activeRouteIds.size > 0) {
       const lineData = window.metadata.lines[selectedLine];
       if (lineData && lineData.routes) {
-        // Filter routes to only those with active vehicles
-        const activeRoutes = lineData.routes.filter(route => activeRouteIds.has(route.route_id));
+        // Filter routes to only those with active vehicles (handle type mismatch)
+        const activeRoutes = lineData.routes.filter(route => 
+          activeRouteIds.has(parseInt(route.route_id)) || activeRouteIds.has(route.route_id)
+        );
         
         // Sort by route name
         activeRoutes.sort((a, b) => a.name.localeCompare(b.name));
         
         activeRoutes.forEach(route => {
-          const vehicleCount = filteredVehicles.filter(v => v.route_id === route.route_id).length;
+          // Count vehicles for this route (handle type mismatch)
+          const routeIdNum = parseInt(route.route_id);
+          const vehicleCount = filteredVehicles.filter(v => 
+            v.route_id === routeIdNum || v.route_id === route.route_id
+          ).length;
           const option = document.createElement('option');
           option.value = route.route_id;
           option.textContent = `${route.name} (${vehicleCount})`;
