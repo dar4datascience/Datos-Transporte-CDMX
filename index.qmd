@@ -6,7 +6,6 @@ format:
     resources:
       - data/routes_metadata.json
       - data/sample_vehicles.json
-      - data/live_vehicles.json
 ---
 
 ::: {.callout-tip}
@@ -393,9 +392,10 @@ async function refreshData() {
     let dataSource = 'organillero';
     let sampleData = null;
     
-    // Try live data first (fetched by backend script)
+    // Try live data first (fetched from GitHub, updated every 5min)
     try {
-      const liveResponse = await fetch('data/live_vehicles.json');
+      const liveUrl = 'https://raw.githubusercontent.com/dar4datascience/Datos-Transporte-CDMX/main/data/live_vehicles.json';
+      const liveResponse = await fetch(liveUrl);
       if (!liveResponse.ok) throw new Error('Live data not available');
       const liveData = await liveResponse.json();
       
