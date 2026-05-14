@@ -190,6 +190,11 @@ metadata = FileAttachment("data/routes_metadata.json").json()
       <option value="">-- Seleccione una línea --</option>
     </select>
     
+    <label for="route-select" style="margin-left: 15px;">Filtrar por Ruta:</label>
+    <select id="route-select" disabled>
+      <option value="">-- Todas las rutas --</option>
+    </select>
+    
     <button id="refresh-btn" onclick="refreshData()" disabled>
       🔄 Actualizar Datos
     </button>
@@ -206,6 +211,7 @@ metadata = FileAttachment("data/routes_metadata.json").json()
     <thead>
       <tr>
         <th>Línea</th>
+        <th>Ruta</th>
         <th>Vehículo ID</th>
         <th>Latitud</th>
         <th>Longitud</th>
@@ -214,7 +220,7 @@ metadata = FileAttachment("data/routes_metadata.json").json()
     </thead>
     <tbody id="vehicle-tbody">
       <tr>
-        <td colspan="5" style="text-align: center; padding: 20px; color: #6c757d;">
+        <td colspan="6" style="text-align: center; padding: 20px; color: #6c757d;">
           Seleccione una línea y presione "Actualizar Datos"
         </td>
       </tr>
@@ -239,11 +245,29 @@ let map;
 let markers = [];
 let autoRefreshInterval = null;
 
+// Debug panel for production debugging
+const debugPanel = document.createElement('div');
+debugPanel.id = 'debug-panel';
+debugPanel.style.cssText = 'position:fixed;bottom:0;right:0;background:#1a1a1a;color:#00ff00;padding:10px;font-family:monospace;font-size:11px;max-width:500px;max-height:300px;overflow:auto;z-index:9999;border:2px solid #00ff00;border-radius:4px 0 0 0;';
+debugPanel.innerHTML = '<div style="font-weight:bold;margin-bottom:5px;">🐛 Debug Log</div>';
+document.body.appendChild(debugPanel);
+
+function debugLog(msg) {
+  console.log(msg);
+  const line = document.createElement('div');
+  line.textContent = new Date().toISOString().substr(11,12) + ' ' + msg;
+  debugPanel.appendChild(line);
+  debugPanel.scrollTop = debugPanel.scrollHeight;
+}
+
+debugLog('Debug panel initialized');
+
 // Initialize map
 map = L.map('map').setView([19.4326, -99.1332], 11);
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   attribution: '© OpenStreetMap contributors'
 }).addTo(map);
+debugLog('Map initialized');
 
 // Load metadata and initialize
 window.initializePage = async function() {
@@ -273,12 +297,41 @@ window.initializePage = async function() {
       lineSelect.appendChild(option);
     });
     
-    // Stop auto-refresh when line changes
+    // Handle line selection changes
     lineSelect.addEventListener('change', () => {
+      // Stop auto-refresh when line changes
       if (autoRefreshInterval) {
         clearInterval(autoRefreshInterval);
         autoRefreshInterval = null;
         console.log('Auto-refresh stopped (line changed)');
+      }
+      
+      // Populate route dropdown for selected line
+      const routeSelect = document.getElementById('route-select');
+      const selectedLine = lineSelect.value;
+      
+      routeSelect.innerHTML = '<option value="">-- Todas las rutas --</option>';
+      
+      if (selectedLine && metadata.lines[selectedLine]) {
+        const lineData = metadata.lines[selectedLine];
+        lineData.routes.forEach(route => {
+          const option = document.createElement('option');
+          option.value = route.route_id;
+          option.textContent = route.name;
+          option.style.fontSize = '13px';
+          routeSelect.appendChild(option);
+        });
+        routeSelect.disabled = false;
+      } else {
+        routeSelect.disabled = true;
+      }
+    });
+    
+    // Handle route selection changes - trigger refresh to apply filter
+    const routeSelect = document.getElementById('route-select');
+    routeSelect.addEventListener('change', () => {
+      if (lineSelect.value) {
+        refreshData();
       }
     });
     
@@ -366,6 +419,11 @@ async def fetch_gtfs_rt_vehicles():
     
     // Auto-select Line 1 and fetch data
     lineSelect.value = '1';
+    
+    // Manually trigger line change event to populate route dropdown
+    const event = new Event('change');
+    lineSelect.dispatchEvent(event);
+    
     setStatus('Cargando Línea 1...', 'loading');
     await refreshData();
     
@@ -392,43 +450,62 @@ async function refreshData() {
     let dataSource = 'organillero';
     let sampleData = null;
     
-    // Try live data first (fetched from GitHub, updated every 5min)
-    try {
-      // Use GitHub raw URL with cache busting
-      const cacheBuster = Math.floor(Date.now() / 60000); // Changes every minute
-      const liveUrl = `https://raw.githubusercontent.com/dar4datascience/Datos-Transporte-CDMX/refs/heads/main/data/live_vehicles.json?t=${cacheBuster}`;
-      console.log('Fetching live data from GitHub:', liveUrl);
-      const liveResponse = await fetch(liveUrl);
-      console.log('Live data response status:', liveResponse.status);
-      if (!liveResponse.ok) throw new Error(`GitHub returned ${liveResponse.status}`);
-      const liveData = await liveResponse.json();
-      
-      allVehicles = liveData.vehicles;
-      dataSource = 'organillero';
-      sampleData = {
-        feed_timestamp_iso: new Date(liveData.feed_timestamp * 1000).toISOString(),
-        total_vehicles: allVehicles.length
-      };
-      document.getElementById('fallback-banner').classList.remove('show');
-      console.log(`✅ Loaded ${allVehicles.length} vehicles from live data`);
-    } catch (apiError) {
-      console.error('Organillero API error details:', apiError);
+    // Try live data first (fetched from GitHub, updated every 10min)
+    debugLog('Starting data fetch...');
+    
+    // Try multiple URLs in order
+    const urlsToTry = [
+      'https://raw.githubusercontent.com/dar4datascience/Datos-Transporte-CDMX/refs/heads/main/data/live_vehicles.json',
+      'https://raw.githubusercontent.com/dar4datascience/Datos-Transporte-CDMX/main/data/live_vehicles.json',
+      'https://cdn.jsdelivr.net/gh/dar4datascience/Datos-Transporte-CDMX@main/data/live_vehicles.json',
+      'data/live_vehicles.json'
+    ];
+    
+    let fetchSuccess = false;
+    for (const url of urlsToTry) {
+      try {
+        debugLog(`Trying: ${url.substring(0, 60)}...`);
+        const liveResponse = await fetch(url);
+        debugLog(`Response status: ${liveResponse.status}`);
+        
+        if (!liveResponse.ok) {
+          debugLog(`Failed: HTTP ${liveResponse.status}`);
+          continue;
+        }
+        
+        const text = await liveResponse.text();
+        debugLog(`Response length: ${text.length} bytes`);
+        
+        const liveData = JSON.parse(text);
+        debugLog(`Parsed JSON, vehicles: ${liveData.vehicles?.length || 0}`);
+        
+        allVehicles = liveData.vehicles || [];
+        dataSource = 'organillero';
+        sampleData = {
+          feed_timestamp_iso: new Date(liveData.feed_timestamp * 1000).toISOString(),
+          total_vehicles: allVehicles.length
+        };
+        document.getElementById('fallback-banner').classList.remove('show');
+        debugLog(`✅ SUCCESS: ${allVehicles.length} vehicles from ${url.includes('github') ? 'GitHub' : url.includes('jsdelivr') ? 'CDN' : 'local'}`);
+        fetchSuccess = true;
+        break;
+      } catch (error) {
+        debugLog(`ERROR: ${error.message}`);
+      }
+    }
+    
+    if (!fetchSuccess) {
+      debugLog('All live sources failed, trying fallback...');
       // Fallback to local sample data
-      console.warn('Organillero API failed, using local sample data:', apiError);
       setStatus('Cargando datos de respaldo...', 'loading');
       
-      try {
-        const response = await fetch('data/sample_vehicles.json');
-        if (!response.ok) throw new Error('Sample data not available');
-        sampleData = await response.json();
-        allVehicles = sampleData.vehicles;
-        dataSource = 'sample';
-        document.getElementById('fallback-banner').classList.add('show');
-        console.log(`⚠️ Loaded ${allVehicles.length} vehicles from sample data (fallback)`);
-      } catch (sampleError) {
-        console.error('Both API and sample data failed:', sampleError);
-        throw new Error('No se pudieron cargar los datos de ninguna fuente');
-      }
+      const response = await fetch('data/sample_vehicles.json');
+      if (!response.ok) throw new Error('Sample data not available');
+      sampleData = await response.json();
+      allVehicles = sampleData.vehicles;
+      dataSource = 'sample';
+      document.getElementById('fallback-banner').classList.add('show');
+      debugLog(`⚠️ Using fallback: ${allVehicles.length} vehicles from sample data`);
     }
     
     if (sampleData && sampleData.feed_timestamp_iso) {
@@ -436,6 +513,7 @@ async function refreshData() {
     }
     
     // Filter vehicles by line using Python
+    debugLog(`Filtering ${allVehicles.length} vehicles for Line ${selectedLine}...`);
     // Pass vehicles via js module to avoid null/None conversion issues
     self.allVehicles = allVehicles;
     const result = await pyodide.runPythonAsync(`
@@ -447,6 +525,36 @@ json.dumps(filtered)
 `);
     
     const filteredVehicles = JSON.parse(result);
+    debugLog(`After Python filter: ${filteredVehicles.length} vehicles`);
+    
+    if (filteredVehicles.length > 0) {
+      debugLog(`Sample vehicle: ID=${filteredVehicles[0].vehicle_id}, route_id=${filteredVehicles[0].route_id}`);
+    }
+    
+    // Enrich vehicles with route names from metadata
+    debugLog('Enriching with route names...');
+    filteredVehicles.forEach(vehicle => {
+      const lineData = window.metadata.lines[vehicle.line_number];
+      if (lineData && lineData.routes) {
+        const routeInfo = lineData.routes.find(r => r.route_id === vehicle.route_id);
+        vehicle.route_name = routeInfo ? routeInfo.name : `Ruta ${vehicle.route_id}`;
+      } else {
+        vehicle.route_name = `Ruta ${vehicle.route_id}`;
+      }
+    });
+    debugLog(`Enrichment complete`);
+    
+    // Apply route filter if selected
+    const routeSelect = document.getElementById('route-select');
+    const selectedRoute = routeSelect.value;
+    
+    let finalVehicles = filteredVehicles;
+    if (selectedRoute) {
+      finalVehicles = filteredVehicles.filter(v => v.route_id == selectedRoute);
+      debugLog(`Route filter applied: ${finalVehicles.length} vehicles for route ${selectedRoute}`);
+    }
+    
+    debugLog(`Updating UI with ${finalVehicles.length} vehicles...`);
     
     // Display debug data
     const debugEl = document.getElementById('debug-data');
@@ -460,16 +568,17 @@ json.dumps(filtered)
     }, null, 2);
     
     // Update map and table
-    updateMap(filteredVehicles);
-    updateTable(filteredVehicles);
+    updateMap(finalVehicles);
+    updateTable(finalVehicles);
     
+    const routeMsg = selectedRoute ? ` (ruta filtrada)` : '';
     const statusMsg = dataSource === 'organillero'
-      ? `✅ ${filteredVehicles.length} vehículos en Línea ${selectedLine} (datos en tiempo real)`
-      : `⚠️ ${filteredVehicles.length} vehículos en Línea ${selectedLine} (datos de respaldo: ${sampleData.feed_timestamp_iso})`;
+      ? `✅ ${finalVehicles.length} vehículos en Línea ${selectedLine}${routeMsg} (datos en tiempo real)`
+      : `⚠️ ${finalVehicles.length} vehículos en Línea ${selectedLine}${routeMsg} (datos de respaldo: ${sampleData.feed_timestamp_iso})`;
     setStatus(statusMsg, 'success');
     
     // Log data for debugging
-    console.log('Filtered vehicles for Line', selectedLine, ':', filteredVehicles);
+    console.log('Final vehicles for Line', selectedLine, ':', finalVehicles);
     
     // Start auto-refresh if not already running
     if (!autoRefreshInterval && dataSource === 'organillero') {
@@ -531,6 +640,7 @@ function updateMap(vehicles) {
     
     marker.bindPopup(`
       <strong>Vehículo ${vehicle.vehicle_id}</strong><br>
+      <strong>Ruta:</strong> ${vehicle.route_name}<br>
       Línea ${vehicle.line_number}<br>
       Lat: ${vehicle.latitude.toFixed(4)}<br>
       Lon: ${vehicle.longitude.toFixed(4)}
@@ -553,7 +663,7 @@ function updateTable(vehicles) {
   if (vehicles.length === 0) {
     tbody.innerHTML = `
       <tr>
-        <td colspan="5" style="text-align: center; padding: 20px; color: #6c757d;">
+        <td colspan="6" style="text-align: center; padding: 20px; color: #6c757d;">
           No se encontraron vehículos para esta línea
         </td>
       </tr>
@@ -573,6 +683,7 @@ function updateTable(vehicles) {
           Línea ${vehicle.line_number}
         </span>
       </td>
+      <td style="font-size: 13px;">${vehicle.route_name}</td>
       <td>${vehicle.vehicle_id}</td>
       <td>${vehicle.latitude.toFixed(6)}</td>
       <td>${vehicle.longitude.toFixed(6)}</td>
