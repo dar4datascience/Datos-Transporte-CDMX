@@ -392,11 +392,14 @@ async function refreshData() {
     let dataSource = 'organillero';
     let sampleData = null;
     
-    // Try live data first (fetched from GitHub, updated every 5min)
+    // Try live data first (fetched from GitHub via jsdelivr CDN, updated every 5min)
     try {
-      const liveUrl = 'https://raw.githubusercontent.com/dar4datascience/Datos-Transporte-CDMX/main/data/live_vehicles.json';
+      // Use jsdelivr CDN for better caching and reliability
+      const liveUrl = 'https://cdn.jsdelivr.net/gh/dar4datascience/Datos-Transporte-CDMX@main/data/live_vehicles.json';
+      console.log('Fetching live data from jsdelivr CDN:', liveUrl);
       const liveResponse = await fetch(liveUrl);
-      if (!liveResponse.ok) throw new Error('Live data not available');
+      console.log('Live data response status:', liveResponse.status);
+      if (!liveResponse.ok) throw new Error(`CDN returned ${liveResponse.status}`);
       const liveData = await liveResponse.json();
       
       allVehicles = liveData.vehicles;
