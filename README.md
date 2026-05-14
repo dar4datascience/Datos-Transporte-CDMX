@@ -14,7 +14,8 @@ Visita la aplicación: [https://dar4datascience.github.io/Datos-Transporte-CDMX/
 - 📍 Mapa interactivo con ubicaciones de vehículos en tiempo real
 - 🚌 Filtrado por línea (1-7)
 - 📊 Tabla de datos con información detallada
-- 🔄 Actualización manual con botón de refresh
+- 🔄 Auto-actualización cada 30 segundos
+- 🤖 Datos actualizados cada 5 minutos vía GitHub Actions
 - 🌐 100% en el navegador - no requiere servidor backend
 - ✅ Suite completa de tests (74% coverage)
 
@@ -23,6 +24,7 @@ Visita la aplicación: [https://dar4datascience.github.io/Datos-Transporte-CDMX/
 - **Quarto** + **Pyodide** (Python WASM)
 - **Leaflet.js** para mapas
 - **DuckDB** para procesamiento de datos
+- **Playwright** para fetch de datos (bypass CORS)
 - **pytest** para testing
 - **GitHub Pages** para hosting
 

@@ -6,6 +6,7 @@ format:
     resources:
       - data/routes_metadata.json
       - data/sample_vehicles.json
+      - data/live_vehicles.json
 ---
 
 ::: {.callout-tip}
@@ -392,34 +393,20 @@ async function refreshData() {
     let dataSource = 'organillero';
     let sampleData = null;
     
-    // Try Organillero API first for live data
+    // Try live data first (fetched by backend script)
     try {
-      const apiUrl = 'https://organillero.heliouz.com/api/realtime';
-      const apiResponse = await fetch(apiUrl);
-      if (!apiResponse.ok) throw new Error(`Organillero API returned ${apiResponse.status}`);
-      const apiData = await apiResponse.json();
+      const liveResponse = await fetch('data/live_vehicles.json');
+      if (!liveResponse.ok) throw new Error('Live data not available');
+      const liveData = await liveResponse.json();
       
-      // Transform organillero format to our format
-      // Organillero uses: {ts, buses: [{id, lbl, lat, lon, brg, spd, route}]}
-      // We need: vehicles: [{vehicle_id, route_id, latitude, longitude, ...}]
-      const rawBuses = apiData.buses || apiData.vehicles || apiData;
-      allVehicles = rawBuses.map(bus => ({
-        vehicle_id: bus.id || bus.vehicle_id,
-        route_id: parseInt(bus.route || bus.route_id),
-        latitude: bus.lat || bus.latitude,
-        longitude: bus.lon || bus.longitude,
-        bearing: bus.brg || bus.bearing,
-        speed: bus.spd || bus.speed,
-        timestamp: apiData.ts || Math.floor(Date.now() / 1000)
-      }));
-      
+      allVehicles = liveData.vehicles;
       dataSource = 'organillero';
       sampleData = {
-        feed_timestamp_iso: new Date(apiData.ts * 1000).toISOString(),
+        feed_timestamp_iso: new Date(liveData.feed_timestamp * 1000).toISOString(),
         total_vehicles: allVehicles.length
       };
       document.getElementById('fallback-banner').classList.remove('show');
-      console.log(`✅ Loaded ${allVehicles.length} vehicles from Organillero API (live data)`);
+      console.log(`✅ Loaded ${allVehicles.length} vehicles from live data`);
     } catch (apiError) {
       console.error('Organillero API error details:', apiError);
       // Fallback to local sample data
