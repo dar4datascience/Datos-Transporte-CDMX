@@ -13,6 +13,18 @@ format:
 metadata = FileAttachment("data/routes_metadata.json").json()
 ```
 
+```{ojs}
+//| echo: false
+// Expose to window and trigger initialization
+{
+  window.metadataReady = metadata;
+  if (window.initializePage) {
+    window.initializePage();
+  }
+  return metadata;
+}
+```
+
 ```{=html}
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
@@ -201,17 +213,18 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 }).addTo(map);
 
 // Load metadata and initialize
-async function initializePage() {
+window.initializePage = async function() {
   try {
     setStatus('Cargando...', 'loading');
     
-    // Wait for OJS metadata to be available
-    while (typeof metadata === 'undefined') {
-      await new Promise(resolve => setTimeout(resolve, 100));
+    // Check if metadata is ready
+    if (!window.metadataReady) {
+      console.log('Waiting for metadata...');
+      return;
     }
     
-    // Store OJS metadata as window global for easy access
-    window.metadata = metadata;
+    // Use metadata from window
+    window.metadata = window.metadataReady;
     
     // Populate line selector
     const lineSelect = document.getElementById('line-select');
@@ -462,13 +475,32 @@ function updateMap(vehicles) {
   
   // Add new markers
   vehicles.forEach(vehicle => {
-    const marker = L.circleMarker([vehicle.latitude, vehicle.longitude], {
-      radius: 8,
-      fillColor: vehicle.line_color,
-      color: '#fff',
-      weight: 2,
-      opacity: 1,
-      fillOpacity: 0.8
+    // Create custom bus icon with line color
+    const busIcon = L.divIcon({
+      className: 'bus-marker',
+      html: `<div style="
+        font-size: 24px;
+        text-align: center;
+        filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+      ">
+        <div style="
+          background: ${vehicle.line_color};
+          border-radius: 50%;
+          width: 32px;
+          height: 32px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border: 2px solid white;
+        ">🚌</div>
+      </div>`,
+      iconSize: [32, 32],
+      iconAnchor: [16, 16],
+      popupAnchor: [0, -16]
+    });
+    
+    const marker = L.marker([vehicle.latitude, vehicle.longitude], {
+      icon: busIcon
     }).addTo(map);
     
     marker.bindPopup(`
@@ -531,8 +563,11 @@ function setStatus(message, type) {
   statusEl.className = `status status-${type}`;
 }
 
-// Initialize on page load
-initializePage();
+// Initialize will be called from OJS once metadata loads
+// If metadata already loaded, init now
+if (window.metadataReady) {
+  initializePage();
+}
 </script>
 ```
 
