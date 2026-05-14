@@ -237,6 +237,7 @@ Presione "Actualizar Datos" para ver la respuesta del API...
 let pyodide;
 let map;
 let markers = [];
+let autoRefreshInterval = null;
 
 // Initialize map
 map = L.map('map').setView([19.4326, -99.1332], 11);
@@ -270,6 +271,15 @@ window.initializePage = async function() {
       option.style.color = lineData.color;
       option.style.fontWeight = '600';
       lineSelect.appendChild(option);
+    });
+    
+    // Stop auto-refresh when line changes
+    lineSelect.addEventListener('change', () => {
+      if (autoRefreshInterval) {
+        clearInterval(autoRefreshInterval);
+        autoRefreshInterval = null;
+        console.log('Auto-refresh stopped (line changed)');
+      }
     });
     
     // Initialize Pyodide
@@ -353,7 +363,11 @@ async def fetch_gtfs_rt_vehicles():
     }
     
     document.getElementById('refresh-btn').disabled = false;
-    setStatus('Listo. Seleccione una línea.', 'success');
+    
+    // Auto-select Line 1 and fetch data
+    lineSelect.value = '1';
+    setStatus('Cargando Línea 1...', 'loading');
+    await refreshData();
     
   } catch (error) {
     console.error('Initialization error:', error);
@@ -380,10 +394,8 @@ async function refreshData() {
     
     // Try Organillero API first for live data
     try {
-      // Use CORS proxy to access Organillero API
-      const corsProxy = 'https://api.allorigins.win/raw?url=';
       const apiUrl = 'https://organillero.heliouz.com/api/realtime';
-      const apiResponse = await fetch(corsProxy + encodeURIComponent(apiUrl));
+      const apiResponse = await fetch(apiUrl);
       if (!apiResponse.ok) throw new Error(`Organillero API returned ${apiResponse.status}`);
       const apiData = await apiResponse.json();
       
@@ -467,6 +479,17 @@ json.dumps(filtered)
     
     // Log data for debugging
     console.log('Filtered vehicles for Line', selectedLine, ':', filteredVehicles);
+    
+    // Start auto-refresh if not already running
+    if (!autoRefreshInterval && dataSource === 'organillero') {
+      autoRefreshInterval = setInterval(() => {
+        const currentLine = document.getElementById('line-select').value;
+        if (currentLine) {
+          refreshData();
+        }
+      }, 30000); // 30 seconds
+      console.log('Auto-refresh started (30s interval)');
+    }
     
   } catch (error) {
     console.error('Refresh error:', error);
