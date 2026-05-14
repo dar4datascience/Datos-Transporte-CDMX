@@ -549,13 +549,35 @@ json.dumps(filtered)
     
     // Enrich vehicles with route names from metadata
     debugLog('Enriching with route names...');
+    
+    // Ensure metadata is available (fallback to metadataReady if needed)
+    const metadata = window.metadata || window.metadataReady;
+    debugLog(`Metadata available: ${!!metadata}`);
+    
+    if (metadata && filteredVehicles.length > 0) {
+      const firstVehicle = filteredVehicles[0];
+      debugLog(`First vehicle line_number: ${firstVehicle.line_number}`);
+      const lineData = metadata.lines?.[firstVehicle.line_number];
+      debugLog(`Line data found: ${!!lineData}`);
+      if (lineData) {
+        debugLog(`Routes in line data: ${lineData.routes?.length || 0}`);
+        if (lineData.routes && lineData.routes.length > 0) {
+          debugLog(`Sample route: ${lineData.routes[0].route_id} = ${lineData.routes[0].name}`);
+        }
+      }
+    }
+    
     filteredVehicles.forEach(vehicle => {
-      const lineData = window.metadata.lines[vehicle.line_number];
+      const lineData = metadata?.lines?.[vehicle.line_number];
       if (lineData && lineData.routes) {
         const routeInfo = lineData.routes.find(r => r.route_id === vehicle.route_id);
         vehicle.route_name = routeInfo ? routeInfo.name : `Ruta ${vehicle.route_id}`;
+        if (!routeInfo) {
+          debugLog(`No route info for route_id ${vehicle.route_id}`);
+        }
       } else {
         vehicle.route_name = `Ruta ${vehicle.route_id}`;
+        debugLog(`No line data for line ${vehicle.line_number}`);
       }
     });
     debugLog(`Enrichment complete`);
