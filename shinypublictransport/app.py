@@ -9,15 +9,20 @@ from google.transit import gtfs_realtime_pb2
 from shiny import App, ui, render, reactive, session
 from shinywidgets import output_widget, render_widget
 import ipyleaflet as L
+from ipywidgets import HTML
 from dotenv import load_dotenv
 
 # Load environment variables if .env exists (for local testing)
 load_dotenv()
 
-# --- Configuration & Data Loading ---
+# --- Configuration & Theme ---
 BASE_DIR = Path(__file__).parent.parent
 METADATA_PATH = BASE_DIR / "data" / "routes_metadata.json"
 AUTH_URL = "https://metrobus-gtfs.sinopticoplus.com/gtfs-api/partnerValidation"
+
+# Load theme from brand.yml
+theme = ui.Theme.from_brand(__file__)
+theme.add_rules((Path(__file__).parent / "_colors.scss").read_text())
 
 # Load metadata once
 with open(METADATA_PATH, "r", encoding="utf-8") as f:
@@ -26,48 +31,70 @@ with open(METADATA_PATH, "r", encoding="utf-8") as f:
 LINES = sorted(metadata["lines"].keys(), key=lambda x: int(x))
 LINE_CHOICES = {line: f"Línea {line}" for line in LINES}
 
-# Build route mapping for filtering
+# Build mappings for filtering and names
 ROUTE_TO_LINE = {}
+ROUTE_ID_TO_NAME = {}
 for line_num, line_data in metadata["lines"].items():
     for route in line_data["routes"]:
-        ROUTE_TO_LINE[str(route["route_id"])] = line_num
+        rid_str = str(route["route_id"])
+        ROUTE_TO_LINE[rid_str] = line_num
+        ROUTE_ID_TO_NAME[rid_str] = route["name"]
 
 # --- UI Definition ---
-app_ui = ui.page_sidebar(
-    ui.sidebar(
-        ui.input_select("line", "Seleccionar Línea", choices=LINE_CHOICES, selected="1"),
-        ui.input_select("route", "Filtrar por Ruta", choices={"all": "-- Todas las rutas --"}),
-        ui.input_action_button("refresh", "🔄 Actualizar Datos", class_="btn-primary w-100"),
-        ui.hr(),
-        ui.markdown("""
-        ### Acerca de
-        Esta aplicación usa datos **en tiempo real** del Metrobús CDMX.
-        
-        Requiere credenciales configuradas en el servidor (`USUARIO` y `PASSWORD`).
-        """),
-    ),
-    ui.output_ui("error_banner"),
-    ui.layout_column_wrap(
-        ui.card(
-            ui.card_header(
-                ui.toolbar(
-                    ui.markdown("**Mapa de Vehículos**"),
-                    ui.toolbar_spacer(),
-                    ui.output_text("last_update_status"),
-                )
+app_ui = ui.page_navbar(
+    ui.nav_panel(
+        "Rastreador en Vivo",
+        ui.layout_sidebar(
+            ui.sidebar(
+                ui.input_select("line", "Seleccionar Línea", choices=LINE_CHOICES, selected="1"),
+                ui.input_select("route", "Filtrar por Ruta", choices={"all": "-- Todas las rutas --"}),
+                ui.input_action_button("refresh", "🔄 Actualizar Datos", class_="btn-primary w-100"),
+                ui.hr(),
+                ui.markdown("""
+                ### Estado del Sistema
+                """),
+                ui.output_ui("stats_sidebar"),
+                ui.hr(),
+                ui.input_dark_mode(id="color_mode"),
             ),
-            output_widget("map"),
-            full_screen=True,
-        ),
+            ui.output_ui("error_banner"),
+            ui.layout_column_wrap(
+                ui.card(
+                    ui.card_header(
+                        ui.toolbar(
+                            ui.markdown("**Mapa de Vehículos**"),
+                            ui.toolbar_spacer(),
+                            ui.output_text("last_update_status"),
+                        )
+                    ),
+                    output_widget("map"),
+                    full_screen=True,
+                ),
+                ui.card(
+                    ui.card_header("Lista de Vehículos"),
+                    ui.output_data_frame("vehicle_table"),
+                    full_screen=True,
+                ),
+                width=1,
+            ),
+        )
+    ),
+    ui.nav_panel(
+        "Documentación",
         ui.card(
-            ui.card_header("Lista de Vehículos"),
-            ui.output_data_frame("vehicle_table"),
-            full_screen=True,
-        ),
-        width=1,
+            ui.markdown("""
+            ### Metrobús CDMX GTFS-RT
+            Esta aplicación consume datos en tiempo real de la API oficial de Sonda/Metrobús.
+            
+            - **Frecuencia**: Los datos se actualizan cada 30-60 segundos.
+            - **Fuente**: GTFS-RT Protobuf feeds.
+            - **Privacidad**: Las credenciales se manejan como variables de entorno seguras.
+            """)
+        )
     ),
     title="Metrobús CDMX - Live Tracker",
     fillable=True,
+    theme=theme,
 )
 
 # --- Server Logic ---
@@ -127,6 +154,7 @@ def server(input, output, session):
                     parsed_vehicles.append({
                         "vehicle_id": vehicle_id,
                         "route_id": str(route_id),
+                        "route_name": ROUTE_ID_TO_NAME.get(str(route_id), f"Ruta {route_id}"),
                         "latitude": v.position.latitude,
                         "longitude": v.position.longitude,
                         "timestamp": v.timestamp if v.HasField('timestamp') else int(time.time()),
@@ -166,6 +194,18 @@ def server(input, output, session):
         return df
 
     @render.ui
+    def stats_sidebar():
+        df = filtered_data()
+        count = len(df)
+        return ui.div(
+            ui.value_box(
+                "Vehículos",
+                count,
+                theme="primary",
+            ),
+        )
+
+    @render.ui
     def error_banner():
         err = fetch_error()
         if err:
@@ -196,12 +236,12 @@ def server(input, output, session):
             for _, row in df.iterrows():
                 marker = L.CircleMarker(
                     location=(row["latitude"], row["longitude"]),
-                    radius=5,
+                    radius=6,
                     color="white",
                     fill_color=line_color,
-                    fill_opacity=0.8,
+                    fill_opacity=0.9,
                     weight=2,
-                    popup=L.HTML(value=f"<b>Vehículo:</b> {row['vehicle_id']}<br><b>Ruta:</b> {row['route_id']}")
+                    popup=HTML(value=f"<b>Vehículo:</b> {row['vehicle_id']}<br><b>Ruta:</b> {row['route_name']}")
                 )
                 markers.append(marker)
             
@@ -223,7 +263,7 @@ def server(input, output, session):
             return render.DataTable(pd.DataFrame(columns=["ID", "Ruta", "Lat", "Lon", "Hora"]))
         
         # Format for display
-        display_df = df[["vehicle_id", "route_id", "latitude", "longitude", "timestamp"]].copy()
+        display_df = df[["vehicle_id", "route_name", "latitude", "longitude", "timestamp"]].copy()
         display_df["timestamp"] = pd.to_datetime(display_df["timestamp"], unit='s').dt.tz_localize('UTC').dt.tz_convert('America/Mexico_City').dt.strftime('%H:%M:%S')
         display_df.columns = ["Vehículo", "Ruta", "Latitud", "Longitud", "Hora"]
         
