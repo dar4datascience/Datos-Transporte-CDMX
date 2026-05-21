@@ -78,23 +78,34 @@ app_ui = ui.page_navbar(
 )
 
 def server(input, output, session):
+    print("DEBUG: Server function starting...")
     data_state = data_server(
         "data",
         config.ROUTE_TO_LINE,
         config.ROUTE_ID_TO_NAME,
         config.AUTH_URL
     )
+    print("DEBUG: data_server initialized")
     
     @reactive.Calc
     def filtered_data():
-        df = pd.DataFrame(data_state.vehicles_data())
+        raw_data = data_state.vehicles_data()
+        print(f"DEBUG: filtered_data() - raw data has {len(raw_data)} vehicles")
+        df = pd.DataFrame(raw_data)
         if df.empty:
+            print("DEBUG: filtered_data() - DataFrame is empty")
             return df
         
-        df = df[df["line"] == input.sidebar_line()]
+        selected_line = input.sidebar_line()
+        print(f"DEBUG: filtered_data() - filtering by line={selected_line}")
+        df = df[df["line"] == selected_line]
+        print(f"DEBUG: filtered_data() - after line filter: {len(df)} vehicles")
         
-        if input.sidebar_route() != "all":
-            df = df[df["route_id"] == input.sidebar_route()]
+        selected_route = input.sidebar_route()
+        if selected_route != "all":
+            print(f"DEBUG: filtered_data() - filtering by route={selected_route}")
+            df = df[df["route_id"] == selected_route]
+            print(f"DEBUG: filtered_data() - after route filter: {len(df)} vehicles")
         
         return df
     
