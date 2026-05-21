@@ -1,7 +1,6 @@
 import pandas as pd
 from pathlib import Path
 from shiny import App, ui, reactive, render
-from shiny.express import output
 from dotenv import load_dotenv
 
 from modules.config import AppConfig
@@ -131,7 +130,6 @@ def server(input, output, session):
     status_server("status", data_state.fetch_error, data_state.last_fetch_time)
     
     # Render last update status for navbar (must be in main server, not module)
-    @output
     @render.text
     def status_last_update_status():
         t = data_state.last_fetch_time()
