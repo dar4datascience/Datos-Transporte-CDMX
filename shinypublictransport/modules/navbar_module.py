@@ -41,7 +41,8 @@ def geolocation_script():
                 getLocation();
             });
 
-            $(document).on("click", "#find_me", function() {
+            $(document).on("click", "#sidebar-find_me", function() {
+                console.log("DEBUG: Find Me button clicked");
                 getLocation();
             });
         """)

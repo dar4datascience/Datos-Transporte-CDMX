@@ -25,7 +25,9 @@ def map_server(input, output, session, filtered_df_calc, line_input, metadata, i
 
     @render.ui
     def map_loader():
-        if is_loading_val():
+        loading = is_loading_val()
+        print(f"DEBUG: map_module - map_loader() called, is_loading={loading}")
+        if loading:
             return ui.div(
                 ui.div(class_="spinner-retro"),
                 ui.div("Cargando datos...", style="margin-top: 10px; font-family: 'Quantico', sans-serif;"),
@@ -83,6 +85,7 @@ def map_server(input, output, session, filtered_df_calc, line_input, metadata, i
         
         df = filtered_df_calc()
         print(f"DEBUG: map_module - received {len(df)} vehicles")
+        print(f"DEBUG: map_module - _update_map_markers() about to check user_location")
         if not df.empty:
             # Get line color from metadata
             current_line = line_input()
@@ -109,10 +112,15 @@ def map_server(input, output, session, filtered_df_calc, line_input, metadata, i
                 marker_group.layers = tuple(new_markers)
                 
                 # Fit bounds only if markers exist and no user location is set
-                if not input.user_location():
+                user_loc = input.user_location()
+                print(f"DEBUG: map_module - user_location={user_loc}")
+                if not user_loc:
+                    print("DEBUG: map_module - fitting bounds (no user location)")
                     lats = df["latitude"].tolist()
                     lons = df["longitude"].tolist()
                     m.fit_bounds([(min(lats), min(lons)), (max(lats), max(lons))])
+                else:
+                    print("DEBUG: map_module - skipping fit_bounds (user location set)")
             else:
                 print("DEBUG: map_module - no markers to add")
         else:
