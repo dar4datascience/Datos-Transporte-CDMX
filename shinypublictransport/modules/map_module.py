@@ -9,13 +9,15 @@ def map_ui():
     return ui.div(
         ui.output_ui("map_loader"),
         output_widget("map"),
-        class_="map-container"
+        class_="map-container",
+        style="height: 600px; width: 100%; position: relative;"
     )
 
 @module.server
 def map_server(input, output, session, filtered_df_calc, line_input, metadata, is_loading_val):
     # Persistent Map and Layer Groups
     m = L.Map(center=(19.4326, -99.1332), zoom=11, scroll_wheel_zoom=True)
+    m.layout.height = '600px'
     marker_group = L.LayerGroup()
     user_layer = L.LayerGroup()
     m.add_layer(marker_group)
