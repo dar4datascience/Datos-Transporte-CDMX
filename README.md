@@ -7,7 +7,8 @@ Rastreador en tiempo real del Metrobús de la Ciudad de México usando datos GTF
 
 ## 🚌 Demo
 
-Visita la aplicación: [https://dar4datascience.github.io/Datos-Transporte-CDMX/](https://dar4datascience.github.io/Datos-Transporte-CDMX/)
+- **GitHub Pages (WASM)**: [https://dar4datascience.github.io/Datos-Transporte-CDMX/](https://dar4datascience.github.io/Datos-Transporte-CDMX/) - Aplicación con Pyodide/WASM, 100% en el navegador
+- **Posit Connect**: [https://dar4datascience-datos-transporte-cdmx.share.connect.posit.cloud/](https://dar4datascience-datos-transporte-cdmx.share.connect.posit.cloud/) - Aplicación Shiny Python full fledge con backend
 
 ## ✨ Características
 
