@@ -142,6 +142,21 @@ app_ui = ui.page_navbar(
     ui.nav_spacer(),
     ui.nav_control(
         ui.div(
+            ui.div("En Bici ya hubieras llegado", class_="fading-phrase"),
+            class_="fading-phrase-container"
+        )
+    ),
+    ui.nav_control(
+        ui.div(
+            ui.div(
+                ui.span("🚲", class_="retro-bike"),
+                class_="bike-mover"
+            ),
+            class_="navbar-bike-container"
+        )
+    ),
+    ui.nav_control(
+        ui.div(
             ui.div(
                 ui.span("🚌", class_="retro-bus"),
                 class_="bus-mover"
