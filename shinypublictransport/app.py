@@ -42,6 +42,35 @@ for line_num, line_data in metadata["lines"].items():
 
 # --- UI Definition ---
 app_ui = ui.page_navbar(
+    ui.head_content(
+        ui.tags.script("""
+            function getLocation() {
+                if (navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(
+                        (position) => {
+                            console.log("Geolocation: Found coordinates", position.coords.latitude, position.coords.longitude);
+                            const pos = {
+                                lat: position.coords.latitude,
+                                lng: position.coords.longitude
+                            };
+                            Shiny.setInputValue("user_location", pos, {priority: "event"});
+                        },
+                        (error) => {
+                            console.error("Geolocation error:", error);
+                        }
+                    );
+                }
+            }
+            
+            $(document).on("shiny:connected", function(event) {
+                getLocation();
+            });
+
+            $(document).on("click", "#find_me", function() {
+                getLocation();
+            });
+        """)
+    ),
     ui.nav_panel(
         "Rastreador en Vivo",
         ui.layout_sidebar(
@@ -49,6 +78,7 @@ app_ui = ui.page_navbar(
                 ui.input_select("line", "Seleccionar Línea", choices=LINE_CHOICES, selected="1"),
                 ui.input_select("route", "Filtrar por Ruta", choices={"all": "-- Todas las rutas --"}),
                 ui.input_action_button("refresh", "🔄 Actualizar Datos", class_="btn-primary w-100"),
+                ui.input_action_button("find_me", "📍 Mi Ubicación", class_="btn-secondary w-100 mt-2"),
                 ui.hr(),
                 ui.markdown("""
                 ### Estado del Sistema
@@ -144,7 +174,9 @@ def server(input, output, session):
     # Persistent Map and Layer Group
     m = L.Map(center=(19.4326, -99.1332), zoom=11, scroll_wheel_zoom=True)
     marker_group = L.LayerGroup()
+    user_layer = L.LayerGroup()
     m.add_layer(marker_group)
+    m.add_layer(user_layer)
 
     @reactive.Effect
     @reactive.event(input.line)
@@ -156,6 +188,40 @@ def server(input, output, session):
             for r in sorted(routes, key=lambda x: x["name"]):
                 choices[str(r["route_id"])] = r["name"]
             ui.update_select("route", choices=choices, selected="all")
+
+    @reactive.Effect
+    @reactive.event(input.user_location)
+    def _handle_user_location():
+        loc = input.user_location()
+        if not loc:
+            return
+            
+        lat = loc["lat"]
+        lng = loc["lng"]
+        print(f"DEBUG: Handling user location -> Lat: {lat}, Lng: {lng}")
+        
+        # Clear old user marker
+        user_layer.clear_layers()
+        
+        # Purple circle marker for user
+        user_icon = L.DivIcon(
+            html='<div style="background-color: #9b59b6; border-radius: 50%; width: 20px; height: 20px; border: 3px solid white; box-shadow: 0 0 8px rgba(0,0,0,0.6);"></div>',
+            icon_size=(20, 20),
+            icon_anchor=(10, 10)
+        )
+        
+        user_marker = L.Marker(
+            location=(lat, lng),
+            icon=user_icon,
+            draggable=False,
+            popup=HTML(value="<b>Tu ubicación</b>")
+        )
+        
+        user_layer.layers = (user_marker,)
+        
+        # Center map on user
+        m.center = (lat, lng)
+        m.zoom = 15
 
     async def fetch_live_data():
         usuario = os.environ.get("USUARIO")
@@ -308,10 +374,11 @@ def server(input, output, session):
             if new_markers:
                 marker_group.layers = tuple(new_markers)
                 
-                # Fit bounds only if markers exist
-                lats = df["latitude"].tolist()
-                lons = df["longitude"].tolist()
-                m.fit_bounds([(min(lats), min(lons)), (max(lats), max(lons))])
+                # Fit bounds only if markers exist and no user location is set
+                if not input.user_location():
+                    lats = df["latitude"].tolist()
+                    lons = df["longitude"].tolist()
+                    m.fit_bounds([(min(lats), min(lons)), (max(lats), max(lons))])
 
     @render_widget
     def map():
