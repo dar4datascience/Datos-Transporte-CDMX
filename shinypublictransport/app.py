@@ -57,31 +57,28 @@ app_ui = ui.page_navbar(
                 ui.hr(),
             ),
             ui.output_ui("error_banner"),
-            ui.layout_column_wrap(
-                ui.card(
-                    ui.card_header(
-                        ui.toolbar(
-                            ui.markdown("**Mapa de Vehículos**"),
-                            ui.toolbar_spacer(),
-                            ui.output_text("last_update_status"),
-                        )
-                    ),
-                    ui.div(
-                        ui.output_ui("map_loader"),
-                        output_widget("map"),
-                        class_="map-container"
-                    ),
-                    full_screen=True,
+            ui.card(
+                ui.card_header(
+                    ui.toolbar(
+                        ui.markdown("**Mapa de Vehículos**"),
+                        ui.toolbar_spacer(),
+                        ui.output_text("last_update_status"),
+                    )
                 ),
-                ui.accordion(
-                    ui.accordion_panel(
-                        "Lista de Vehículos",
-                        ui.output_data_frame("vehicle_table"),
-                    ),
-                    id="acc_vehicles",
-                    open=False,
+                ui.div(
+                    ui.output_ui("map_loader"),
+                    output_widget("map"),
+                    class_="map-container"
                 ),
-                width=1,
+                full_screen=True,
+            ),
+            ui.accordion(
+                ui.accordion_panel(
+                    "Lista de Vehículos",
+                    ui.output_data_frame("vehicle_table"),
+                ),
+                id="acc_vehicles",
+                open=False,
             ),
         )
     ),
