@@ -55,7 +55,6 @@ app_ui = ui.page_navbar(
                 """),
                 ui.output_ui("stats_sidebar"),
                 ui.hr(),
-                ui.input_dark_mode(id="color_mode"),
             ),
             ui.output_ui("error_banner"),
             ui.layout_column_wrap(
@@ -118,6 +117,17 @@ app_ui = ui.page_navbar(
             width=1/2,
         )
     ),
+    ui.nav_spacer(),
+    ui.nav_control(
+        ui.div(
+            ui.div(
+                ui.span("🚌", class_="retro-bus"),
+                class_="bus-mover"
+            ),
+            class_="navbar-bus-container"
+        )
+    ),
+    ui.nav_control(ui.input_dark_mode(id="color_mode")),
     title="Metrobús CDMX - Live Tracker",
     fillable=True,
     theme=theme,
