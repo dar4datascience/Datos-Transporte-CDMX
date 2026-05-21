@@ -16,8 +16,8 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # --- Configuration & Theme ---
-BASE_DIR = Path(__file__).parent.parent
-METADATA_PATH = BASE_DIR / "data" / "routes_metadata.json"
+BASE_DIR = Path(__file__).parent
+METADATA_PATH = BASE_DIR / "routes_metadata.json"
 AUTH_URL = "https://metrobus-gtfs.sinopticoplus.com/gtfs-api/partnerValidation"
 
 # Load theme from brand.yml
@@ -73,10 +73,13 @@ app_ui = ui.page_navbar(
                     ),
                     full_screen=True,
                 ),
-                ui.card(
-                    ui.card_header("Lista de Vehículos"),
-                    ui.output_data_frame("vehicle_table"),
-                    full_screen=True,
+                ui.accordion(
+                    ui.accordion_panel(
+                        "Lista de Vehículos",
+                        ui.output_data_frame("vehicle_table"),
+                    ),
+                    id="acc_vehicles",
+                    open=False,
                 ),
                 width=1,
             ),
