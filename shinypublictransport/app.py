@@ -1,3 +1,4 @@
+import asyncio
 import os
 import json
 import time
@@ -47,6 +48,11 @@ app_ui = ui.page_navbar(
         ui.tags.script("""
             function getLocation() {
                 if (navigator.geolocation) {
+                    const options = {
+                        enableHighAccuracy: false,
+                        timeout: 10000,
+                        maximumAge: 60000
+                    };
                     navigator.geolocation.getCurrentPosition(
                         (position) => {
                             console.log("Geolocation: Found coordinates", position.coords.latitude, position.coords.longitude);
@@ -54,13 +60,13 @@ app_ui = ui.page_navbar(
                                 lat: position.coords.latitude,
                                 lng: position.coords.longitude
                             };
-                            // We need to send to the specific map module namespace
-                            // In Core modules, the ID is prefixed. We'll use "main_map-user_location"
                             Shiny.setInputValue("main_map-user_location", pos, {priority: "event"});
                         },
                         (error) => {
-                            console.error("Geolocation error:", error);
-                        }
+                            console.warn("Geolocation error:", error.message);
+                            // Still send something to potentially clear loading state if app depended on it
+                        },
+                        options
                     );
                 }
             }
@@ -198,24 +204,32 @@ def server(input, output, session):
             return []
 
         try:
-            # 1. Authenticate to get S3 URLs
-            payload = {"usuario": usuario, "senha": password}
-            resp = requests.post(AUTH_URL, json=payload, timeout=10)
-            resp.raise_for_status()
-            data = resp.json()
+            # Run blocking requests in a thread to avoid freezing the event loop
+            def do_fetch():
+                # 1. Authenticate to get S3 URLs
+                payload = {"usuario": usuario, "senha": password}
+                resp = requests.post(AUTH_URL, json=payload, timeout=15)
+                resp.raise_for_status()
+                data = resp.json()
+                
+                url_rt = data.get("urlRealTime")
+                if not url_rt:
+                    return "error_url", []
+
+                # 2. Fetch GTFS-RT Protobuf
+                rt_resp = requests.get(url_rt, timeout=15)
+                rt_resp.raise_for_status()
+                return None, rt_resp.content
+
+            error_type, content = await asyncio.to_thread(do_fetch)
             
-            url_rt = data.get("urlRealTime")
-            if not url_rt:
+            if error_type == "error_url":
                 fetch_error.set("Error: No se recibió URL de tiempo real de la API.")
                 return []
 
-            # 2. Fetch GTFS-RT Protobuf
-            rt_resp = requests.get(url_rt, timeout=10)
-            rt_resp.raise_for_status()
-
             # 3. Parse Protobuf
             feed = gtfs_realtime_pb2.FeedMessage()
-            feed.ParseFromString(rt_resp.content)
+            feed.ParseFromString(content)
 
             parsed_vehicles = []
             for entity in feed.entity:

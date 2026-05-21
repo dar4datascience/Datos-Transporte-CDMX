@@ -46,7 +46,6 @@ def map_server(input, output, session, filtered_df_calc, line_input, metadata, i
             
         lat = loc["lat"]
         lng = loc["lng"]
-        print(f"DEBUG: Handling user location -> Lat: {lat}, Lng: {lng}")
         
         # Clear old user marker
         user_layer.clear_layers()
