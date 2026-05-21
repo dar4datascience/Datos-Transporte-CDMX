@@ -7,7 +7,7 @@ def geolocation_script():
                 if (navigator.geolocation) {
                     const options = {
                         enableHighAccuracy: false,
-                        timeout: 10000,
+                        timeout: 30000,
                         maximumAge: 60000
                     };
                     navigator.geolocation.getCurrentPosition(
@@ -38,7 +38,7 @@ def geolocation_script():
             }
             
             $(document).on("shiny:connected", function(event) {
-                getLocation();
+                setTimeout(() => getLocation(), 0);
             });
 
             $(document).on("click", "#sidebar-find_me", function() {
