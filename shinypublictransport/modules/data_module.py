@@ -79,7 +79,9 @@ def data_server(input, output, session, route_to_line, route_id_to_name, auth_ur
             
             print(f"DEBUG: Parsed {len(parsed_vehicles)} vehicles")
             fetch_error.set(None)
-            last_fetch_time.set(datetime.now().strftime("%H:%M:%S"))
+            timestamp = datetime.now().strftime("%H:%M:%S")
+            print(f"DEBUG: Setting last_fetch_time to '{timestamp}'")
+            last_fetch_time.set(timestamp)
             return parsed_vehicles
 
         except Exception as e:

@@ -1,6 +1,7 @@
 import pandas as pd
 from pathlib import Path
-from shiny import App, ui, reactive
+from shiny import App, ui, reactive, render
+from shiny.express import output
 from dotenv import load_dotenv
 
 from modules.config import AppConfig
@@ -128,6 +129,19 @@ def server(input, output, session):
         return df
     
     status_server("status", data_state.fetch_error, data_state.last_fetch_time)
+    
+    # Render last update status for navbar (must be in main server, not module)
+    @output
+    @render.text
+    def status_last_update_status():
+        t = data_state.last_fetch_time()
+        print(f"DEBUG: app.py - status_last_update_status() called, last_fetch_time={t}")
+        if t:
+            result = f"Actualizado: {t}"
+            print(f"DEBUG: app.py - returning '{result}'")
+            return result
+        print("DEBUG: app.py - returning 'Pendiente de actualizar'")
+        return "Pendiente de actualizar"
     
     map_server(
         "main_map",

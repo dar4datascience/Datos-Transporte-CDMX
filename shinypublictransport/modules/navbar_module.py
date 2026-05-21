@@ -15,12 +15,22 @@ def geolocation_script():
                             console.log("Geolocation: Found coordinates", position.coords.latitude, position.coords.longitude);
                             const pos = {
                                 lat: position.coords.latitude,
-                                lng: position.coords.longitude
+                                lng: position.coords.longitude,
+                                timestamp: Date.now()
                             };
                             Shiny.setInputValue("main_map-user_location", pos, {priority: "event"});
                         },
                         (error) => {
                             console.warn("Geolocation error:", error.message);
+                            let errorMsg = "No se pudo obtener tu ubicación.";
+                            if (error.code === 1) {
+                                errorMsg = "Permiso de ubicación denegado. Habilita la ubicación en tu navegador.";
+                            } else if (error.code === 2) {
+                                errorMsg = "Ubicación no disponible.";
+                            } else if (error.code === 3) {
+                                errorMsg = "Tiempo de espera agotado al obtener ubicación.";
+                            }
+                            alert(errorMsg);
                         },
                         options
                     );
@@ -62,6 +72,12 @@ def create_navbar_decorations():
                     class_="bus-mover"
                 ),
                 class_="navbar-bus-container"
+            )
+        ),
+        ui.nav_control(
+            ui.div(
+                ui.output_text("status_last_update_status", inline=True),
+                style="display: flex; align-items: center; padding: 0 1rem; color: white; font-size: 0.875rem;"
             )
         ),
         ui.nav_control(ui.input_dark_mode(id="color_mode")),

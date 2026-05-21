@@ -38,14 +38,15 @@ def map_server(input, output, session, filtered_df_calc, line_input, metadata, i
         return m
 
     @reactive.Effect
-    @reactive.event(input.user_location)
     def _handle_user_location():
         loc = input.user_location()
+        print(f"DEBUG: map_module - _handle_user_location() called with loc={loc}")
         if not loc:
             return
             
         lat = loc["lat"]
         lng = loc["lng"]
+        print(f"DEBUG: map_module - recentering map to ({lat}, {lng})")
         
         # Clear old user marker
         user_layer.clear_layers()
@@ -70,7 +71,7 @@ def map_server(input, output, session, filtered_df_calc, line_input, metadata, i
         
         user_layer.layers = (user_marker,)
         
-        # Center map on user
+        # Always recenter map on user location (even if coords same)
         m.center = (lat, lng)
         m.zoom = 15
 
