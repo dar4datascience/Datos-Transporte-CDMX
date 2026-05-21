@@ -203,11 +203,15 @@ def server(input, output, session):
         # Clear old user marker
         user_layer.clear_layers()
         
-        # Purple circle marker for user
+        # Solid person icon marker for user with Iris color
         user_icon = L.DivIcon(
-            html='<div style="background-color: #5D3FD3; border-radius: 50%; width: 20px; height: 20px; border: 3px solid white; box-shadow: 0 0 8px rgba(0,0,0,0.6);"></div>',
-            icon_size=(20, 20),
-            icon_anchor=(10, 10)
+            html='''<div style="color: #5D3FD3; filter: drop-shadow(0 0 4px rgba(0,0,0,0.5));">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+                    <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
+                </svg>
+            </div>''',
+            icon_size=(32, 32),
+            icon_anchor=(16, 32)
         )
         
         user_marker = L.Marker(
