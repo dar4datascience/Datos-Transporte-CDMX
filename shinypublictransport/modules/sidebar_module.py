@@ -16,7 +16,7 @@ def sidebar_ui(line_choices):
     )
 
 @module.server
-def sidebar_server(input, output, session, filtered_df_calc, metadata, on_refresh_callback):
+def sidebar_server(input, output, session, metadata, on_refresh_callback, vehicle_count_calc):
     @reactive.Effect
     @reactive.event(input.line)
     def _update_routes():
@@ -35,8 +35,8 @@ def sidebar_server(input, output, session, filtered_df_calc, metadata, on_refres
 
     @render.ui
     def stats_sidebar():
-        df = filtered_df_calc()
-        count = len(df)
+        count = vehicle_count_calc()
+        print(f"DEBUG: sidebar_module - stats_sidebar showing {count} vehicles")
         return ui.div(
             ui.value_box(
                 "Vehículos",

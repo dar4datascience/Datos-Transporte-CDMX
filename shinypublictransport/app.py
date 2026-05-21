@@ -87,13 +87,18 @@ def server(input, output, session):
     )
     print("DEBUG: data_server initialized")
     
+    # Define vehicle count calculator that will be used by sidebar
+    @reactive.Calc
+    def vehicle_count():
+        df = filtered_data()
+        return len(df)
+    
     # Initialize sidebar first to get access to its inputs
-    # We'll pass a dummy filtered_data for now, then define the real one
     sidebar_state = sidebar_server(
         "sidebar",
-        lambda: pd.DataFrame(),  # Temporary placeholder
         config.metadata,
-        data_state.trigger_refresh
+        data_state.trigger_refresh,
+        vehicle_count
     )
     print("DEBUG: sidebar_server initialized")
     
