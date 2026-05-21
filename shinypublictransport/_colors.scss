@@ -6,3 +6,39 @@
 .card-header {
     background-color: rgba($primary, 0.05);
 }
+
+/* Map Loader Overlay */
+.map-container {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.map-loader-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba($white, 0.7);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(2px);
+}
+
+.spinner-retro {
+    width: 50px;
+    height: 50px;
+    border: 5px solid $purple;
+    border-top: 5px solid $yellow;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

@@ -67,7 +67,11 @@ app_ui = ui.page_navbar(
                             ui.output_text("last_update_status"),
                         )
                     ),
-                    output_widget("map"),
+                    ui.div(
+                        ui.output_ui("map_loader"),
+                        output_widget("map"),
+                        class_="map-container"
+                    ),
                     full_screen=True,
                 ),
                 ui.card(
@@ -125,6 +129,12 @@ def server(input, output, session):
     vehicles_data = reactive.Value([])
     last_fetch_time = reactive.Value(None)
     fetch_error = reactive.Value(None)
+    is_loading = reactive.Value(False)
+
+    # Persistent Map and Layer Group
+    m = L.Map(center=(19.4326, -99.1332), zoom=11, scroll_wheel_zoom=True)
+    marker_group = L.LayerGroup()
+    m.add_layer(marker_group)
 
     @reactive.Effect
     @reactive.event(input.line)
@@ -194,11 +204,15 @@ def server(input, output, session):
     @reactive.Effect
     @reactive.event(input.refresh, ignore_none=False)
     async def _handle_refresh():
-        with ui.Progress(min=1, max=10) as p:
-            p.set(message="Autenticando y descargando datos...", value=3)
-            data = await fetch_live_data()
-            vehicles_data.set(data)
-            p.set(message="Datos actualizados", value=10)
+        is_loading.set(True)
+        try:
+            with ui.Progress(min=1, max=10) as p:
+                p.set(message="Autenticando y descargando datos...", value=3)
+                data = await fetch_live_data()
+                vehicles_data.set(data)
+                p.set(message="Datos actualizados", value=10)
+        finally:
+            is_loading.set(False)
 
     @reactive.Calc
     def filtered_data():
@@ -214,6 +228,16 @@ def server(input, output, session):
             df = df[df["route_id"] == input.route()]
             
         return df
+
+    @render.ui
+    def map_loader():
+        if is_loading():
+            return ui.div(
+                ui.div(class_="spinner-retro"),
+                ui.div("Cargando datos...", style="margin-top: 10px; font-family: 'Quantico', sans-serif;"),
+                class_="map-loader-overlay"
+            )
+        return None
 
     @render.ui
     def stats_sidebar():
@@ -245,18 +269,18 @@ def server(input, output, session):
             return f"Actualizado: {t}"
         return "Pendiente de actualizar"
 
-    @render_widget
-    def map():
-        m = L.Map(center=(19.4326, -99.1332), zoom=11, scroll_wheel_zoom=True)
-        df = filtered_data()
+    @reactive.Effect
+    def _update_map_markers():
+        # Clear existing markers
+        marker_group.clear_layers()
         
+        df = filtered_data()
         if not df.empty:
             # Get line color from metadata
             line_color = metadata["lines"].get(input.line(), {}).get("color", "#ff0000")
             
-            markers = []
+            new_markers = []
             for _, row in df.iterrows():
-                # Create a custom DivIcon that looks like a bus with line color
                 icon = L.DivIcon(
                     html=f'<div style="background-color: {line_color}; border-radius: 50%; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; border: 2px solid white; box-shadow: 0 0 5px rgba(0,0,0,0.5); font-size: 16px;">🚌</div>',
                     icon_size=(30, 30),
@@ -269,17 +293,18 @@ def server(input, output, session):
                     draggable=False,
                     popup=HTML(value=f"<b>Vehículo:</b> {row['vehicle_id']}<br><b>Ruta:</b> {row['route_name']}")
                 )
-                markers.append(marker)
+                new_markers.append(marker)
             
-            if markers:
-                marker_group = L.LayerGroup(layers=markers)
-                m.add_layer(marker_group)
+            if new_markers:
+                marker_group.layers = tuple(new_markers)
                 
-                # Fit bounds to markers
+                # Fit bounds only if markers exist
                 lats = df["latitude"].tolist()
                 lons = df["longitude"].tolist()
                 m.fit_bounds([(min(lats), min(lons)), (max(lats), max(lons))])
-        
+
+    @render_widget
+    def map():
         return m
 
     @render.data_frame
