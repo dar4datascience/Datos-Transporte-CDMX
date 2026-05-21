@@ -13,6 +13,7 @@ def data_server(input, output, session, route_to_line, route_id_to_name, auth_ur
     fetch_error = reactive.Value(None)
     is_loading = reactive.Value(False)
     refresh_trigger = reactive.Value(0)
+    initial_load_done = reactive.Value(False)
 
     async def fetch_live_data():
         print("DEBUG: fetch_live_data() called")
@@ -113,10 +114,15 @@ def data_server(input, output, session, route_to_line, route_id_to_name, auth_ur
         print(f"DEBUG: trigger_refresh() called, setting to {new_val}")
         refresh_trigger.set(new_val)
 
+    # Trigger initial load only once
     @reactive.Effect
     def _auto_load_on_startup():
-        print("DEBUG: _auto_load_on_startup() effect triggered")
-        trigger_refresh()
+        if not initial_load_done():
+            print("DEBUG: _auto_load_on_startup() - triggering first load")
+            initial_load_done.set(True)
+            trigger_refresh()
+        else:
+            print("DEBUG: _auto_load_on_startup() - already loaded, skipping")
 
     class DataState:
         def __init__(self):

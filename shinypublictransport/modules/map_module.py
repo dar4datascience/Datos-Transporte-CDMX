@@ -76,10 +76,12 @@ def map_server(input, output, session, filtered_df_calc, line_input, metadata, i
 
     @reactive.Effect
     def _update_map_markers():
+        print("DEBUG: map_module - _update_map_markers() called")
         # Clear existing markers
         marker_group.clear_layers()
         
         df = filtered_df_calc()
+        print(f"DEBUG: map_module - received {len(df)} vehicles")
         if not df.empty:
             # Get line color from metadata
             current_line = line_input()
@@ -102,6 +104,7 @@ def map_server(input, output, session, filtered_df_calc, line_input, metadata, i
                 new_markers.append(marker)
             
             if new_markers:
+                print(f"DEBUG: map_module - adding {len(new_markers)} markers to map")
                 marker_group.layers = tuple(new_markers)
                 
                 # Fit bounds only if markers exist and no user location is set
@@ -109,3 +112,7 @@ def map_server(input, output, session, filtered_df_calc, line_input, metadata, i
                     lats = df["latitude"].tolist()
                     lons = df["longitude"].tolist()
                     m.fit_bounds([(min(lats), min(lons)), (max(lats), max(lons))])
+            else:
+                print("DEBUG: map_module - no markers to add")
+        else:
+            print("DEBUG: map_module - DataFrame is empty, no markers to display")

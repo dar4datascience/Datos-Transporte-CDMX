@@ -87,6 +87,16 @@ def server(input, output, session):
     )
     print("DEBUG: data_server initialized")
     
+    # Initialize sidebar first to get access to its inputs
+    # We'll pass a dummy filtered_data for now, then define the real one
+    sidebar_state = sidebar_server(
+        "sidebar",
+        lambda: pd.DataFrame(),  # Temporary placeholder
+        config.metadata,
+        data_state.trigger_refresh
+    )
+    print("DEBUG: sidebar_server initialized")
+    
     @reactive.Calc
     def filtered_data():
         raw_data = data_state.vehicles_data()
@@ -96,25 +106,21 @@ def server(input, output, session):
             print("DEBUG: filtered_data() - DataFrame is empty")
             return df
         
-        selected_line = input.sidebar_line()
+        selected_line = sidebar_state.selected_line()
         print(f"DEBUG: filtered_data() - filtering by line={selected_line}")
+        print(f"DEBUG: filtered_data() - unique lines in data: {df['line'].unique().tolist()}")
         df = df[df["line"] == selected_line]
         print(f"DEBUG: filtered_data() - after line filter: {len(df)} vehicles")
         
-        selected_route = input.sidebar_route()
+        selected_route = sidebar_state.selected_route()
         if selected_route != "all":
             print(f"DEBUG: filtered_data() - filtering by route={selected_route}")
             df = df[df["route_id"] == selected_route]
             print(f"DEBUG: filtered_data() - after route filter: {len(df)} vehicles")
+        else:
+            print(f"DEBUG: filtered_data() - route filter is 'all', keeping all routes")
         
         return df
-    
-    sidebar_state = sidebar_server(
-        "sidebar",
-        filtered_data,
-        config.metadata,
-        data_state.trigger_refresh
-    )
     
     status_server("status", data_state.fetch_error, data_state.last_fetch_time)
     
