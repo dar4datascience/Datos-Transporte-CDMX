@@ -81,15 +81,37 @@ app_ui = ui.page_navbar(
     ),
     ui.nav_panel(
         "Documentación",
-        ui.card(
-            ui.markdown("""
-            ### Metrobús CDMX GTFS-RT
-            Esta aplicación consume datos en tiempo real de la API oficial de Sonda/Metrobús.
-            
-            - **Frecuencia**: Los datos se actualizan cada 30-60 segundos.
-            - **Fuente**: GTFS-RT Protobuf feeds.
-            - **Privacidad**: Las credenciales se manejan como variables de entorno seguras.
-            """)
+        ui.layout_column_wrap(
+            ui.card(
+                ui.card_header("Información del Proyecto"),
+                ui.markdown("""
+                ### Metrobús CDMX - Live Tracker
+                Esta aplicación proporciona una visualización interactiva y en tiempo real de la flota del Metrobús de la Ciudad de México.
+                
+                #### Fuentes de Datos
+                1.  **GTFS-RT (Real-Time)**: Posiciones GPS de los autobuses obtenidas directamente de la API de Sonda/Metrobús.
+                2.  **GTFS Estático**: Información de rutas, paradas y metadatos de las líneas (L1-L7).
+                
+                #### Tecnologías
+                - **Shiny for Python**: Framework para la interfaz reactiva.
+                - **ipyleaflet**: Integración de mapas interactivos.
+                - **Protocol Buffers**: Decodificación de feeds binarios GTFS-RT.
+                - **brand.yml**: Identidad visual corporativa.
+                
+                #### Actualización
+                Los datos se actualizan a petición del usuario o mediante el botón de actualización, garantizando que siempre veas la posición más reciente reportada por el sistema.
+                """)
+            ),
+            ui.card(
+                ui.card_header("Guía de Uso"),
+                ui.markdown("""
+                1.  **Seleccionar Línea**: Filtra los vehículos por la línea correspondiente.
+                2.  **Filtrar por Ruta**: Permite aislar recorridos específicos dentro de una línea.
+                3.  **Actualizar**: Presiona el botón para obtener las posiciones más recientes.
+                4.  **Mapa**: Haz clic en los iconos de autobús para ver el ID del vehículo y el nombre de la ruta.
+                """)
+            ),
+            width=1/2,
         )
     ),
     title="Metrobús CDMX - Live Tracker",
@@ -234,13 +256,17 @@ def server(input, output, session):
             
             markers = []
             for _, row in df.iterrows():
-                marker = L.CircleMarker(
+                # Create a custom DivIcon that looks like a bus with line color
+                icon = L.DivIcon(
+                    html=f'<div style="background-color: {line_color}; border-radius: 50%; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; border: 2px solid white; box-shadow: 0 0 5px rgba(0,0,0,0.5); font-size: 16px;">🚌</div>',
+                    icon_size=(30, 30),
+                    icon_anchor=(15, 15)
+                )
+                
+                marker = L.Marker(
                     location=(row["latitude"], row["longitude"]),
-                    radius=6,
-                    color="white",
-                    fill_color=line_color,
-                    fill_opacity=0.9,
-                    weight=2,
+                    icon=icon,
+                    draggable=False,
                     popup=HTML(value=f"<b>Vehículo:</b> {row['vehicle_id']}<br><b>Ruta:</b> {row['route_name']}")
                 )
                 markers.append(marker)
