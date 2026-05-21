@@ -205,7 +205,7 @@ def server(input, output, session):
         
         # Purple circle marker for user
         user_icon = L.DivIcon(
-            html='<div style="background-color: #9b59b6; border-radius: 50%; width: 20px; height: 20px; border: 3px solid white; box-shadow: 0 0 8px rgba(0,0,0,0.6);"></div>',
+            html='<div style="background-color: #5D3FD3; border-radius: 50%; width: 20px; height: 20px; border: 3px solid white; box-shadow: 0 0 8px rgba(0,0,0,0.6);"></div>',
             icon_size=(20, 20),
             icon_anchor=(10, 10)
         )
