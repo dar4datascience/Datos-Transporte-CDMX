@@ -1,2940 +1,4695 @@
 {
-  "feed_timestamp": 1781458246,
-  "total_vehicles": 332,
+  "feed_timestamp": 1781548368,
+  "total_vehicles": 539,
   "vehicles": [
     {
+      "vehicle_id": "69379",
+      "route_id": 19471,
+      "latitude": 19.471294,
+      "longitude": -99.070854,
+      "bearing": 101,
+      "speed": 0,
+      "timestamp": 1781548368
+    },
+    {
       "vehicle_id": "69378",
+      "route_id": 19563,
+      "latitude": 19.384417,
+      "longitude": -99.07576,
+      "bearing": 193,
+      "speed": 0,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69377",
+      "route_id": 19474,
+      "latitude": 19.486233,
+      "longitude": -99.121475,
+      "bearing": 295,
+      "speed": 33,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69376",
       "route_id": 19566,
-      "latitude": 19.395203,
-      "longitude": -99.145706,
-      "bearing": 278,
-      "speed": 41,
-      "timestamp": 1781458246
+      "latitude": 19.39596,
+      "longitude": -99.155518,
+      "bearing": 275,
+      "speed": 2,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69375",
-      "route_id": 19563,
-      "latitude": 19.382931,
-      "longitude": -99.060905,
-      "bearing": 188,
+      "route_id": 19564,
+      "latitude": 19.389128,
+      "longitude": -99.057877,
+      "bearing": 0,
       "speed": 0,
-      "timestamp": 1781458246
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69382",
+      "route_id": 19470,
+      "latitude": 19.470049,
+      "longitude": -99.065125,
+      "bearing": 313,
+      "speed": 13,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69380",
-      "route_id": 19499,
-      "latitude": 19.443714,
-      "longitude": -99.154335,
-      "bearing": 201,
-      "speed": 18,
-      "timestamp": 1781458246
+      "route_id": 19473,
+      "latitude": 19.485332,
+      "longitude": -99.118614,
+      "bearing": 198,
+      "speed": 0,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69390",
-      "route_id": 19562,
-      "latitude": 19.407425,
-      "longitude": -99.184486,
-      "bearing": 275,
-      "speed": 0,
-      "timestamp": 1781458246
+      "route_id": 19563,
+      "latitude": 19.40357,
+      "longitude": -99.16993,
+      "bearing": 256,
+      "speed": 25,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69389",
       "route_id": 19472,
-      "latitude": 19.472849,
-      "longitude": -99.068451,
-      "bearing": 136,
-      "speed": 23,
-      "timestamp": 1781458246
+      "latitude": 19.482851,
+      "longitude": -99.107506,
+      "bearing": 102,
+      "speed": 24,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69388",
       "route_id": 19471,
-      "latitude": 19.473814,
-      "longitude": -99.069221,
-      "bearing": 130,
+      "latitude": 19.497725,
+      "longitude": -99.166176,
+      "bearing": 102,
       "speed": 0,
-      "timestamp": 1781458246
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69387",
-      "route_id": 19471,
-      "latitude": 19.509134,
-      "longitude": -99.199043,
-      "bearing": 172,
-      "speed": 51,
-      "timestamp": 1781458246
+      "route_id": 19470,
+      "latitude": 19.485874,
+      "longitude": -99.113518,
+      "bearing": 155,
+      "speed": 0,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69386",
-      "route_id": 19562,
-      "latitude": 19.393723,
-      "longitude": -99.0513,
-      "bearing": 122,
-      "speed": 42,
-      "timestamp": 1781458246
+      "route_id": 19564,
+      "latitude": 19.390331,
+      "longitude": -99.059074,
+      "bearing": 0,
+      "speed": 0,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69385",
-      "route_id": 19472,
-      "latitude": 19.490862,
-      "longitude": -99.133842,
-      "bearing": 283,
-      "speed": 17,
-      "timestamp": 1781458246
+      "route_id": 19474,
+      "latitude": 19.482821,
+      "longitude": -99.115227,
+      "bearing": 111,
+      "speed": 0,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69383",
-      "route_id": 19472,
-      "latitude": 19.487448,
-      "longitude": -99.124695,
-      "bearing": 111,
-      "speed": 3,
-      "timestamp": 1781458246
+      "route_id": 19474,
+      "latitude": 19.49485,
+      "longitude": -99.152626,
+      "bearing": 192,
+      "speed": 14,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69198",
       "route_id": 19471,
-      "latitude": 19.507332,
-      "longitude": -99.197449,
-      "bearing": 196,
-      "speed": 0,
-      "timestamp": 1781458246
+      "latitude": 19.476368,
+      "longitude": -99.090889,
+      "bearing": 112,
+      "speed": 42,
+      "timestamp": 1781548368
     },
     {
-      "vehicle_id": "69887",
-      "route_id": 19958,
-      "latitude": 19.468519,
-      "longitude": -99.124924,
-      "bearing": 200,
-      "speed": 0,
-      "timestamp": 1781458246
-    },
-    {
-      "vehicle_id": "69888",
-      "route_id": 19958,
-      "latitude": 19.449156,
-      "longitude": -99.134148,
-      "bearing": 217,
-      "speed": 5,
-      "timestamp": 1781458246
-    },
-    {
-      "vehicle_id": "69890",
-      "route_id": 19959,
-      "latitude": 19.435839,
-      "longitude": -99.148834,
-      "bearing": 156,
-      "speed": 29,
-      "timestamp": 1781458246
+      "vehicle_id": "69889",
+      "route_id": 19577,
+      "latitude": 19.47102,
+      "longitude": -99.123909,
+      "bearing": 184,
+      "speed": 12,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69391",
-      "route_id": 19563,
-      "latitude": 19.398403,
-      "longitude": -99.112198,
-      "bearing": 272,
-      "speed": 34,
-      "timestamp": 1781458246
+      "route_id": 19567,
+      "latitude": 19.397533,
+      "longitude": -99.05809,
+      "bearing": 209,
+      "speed": 22,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69892",
+      "route_id": 19577,
+      "latitude": 19.457569,
+      "longitude": -99.128998,
+      "bearing": 221,
+      "speed": 0,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69893",
-      "route_id": 19957,
-      "latitude": 19.487061,
-      "longitude": -99.117928,
-      "bearing": 198,
-      "speed": 0,
-      "timestamp": 1781458246
-    },
-    {
-      "vehicle_id": "69398",
-      "route_id": 19562,
-      "latitude": 19.404877,
-      "longitude": -99.18586,
-      "bearing": 265,
-      "speed": 0,
-      "timestamp": 1781458246
+      "route_id": 19576,
+      "latitude": 19.445168,
+      "longitude": -99.13829,
+      "bearing": 225,
+      "speed": 50,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69397",
-      "route_id": 19562,
-      "latitude": 19.383558,
-      "longitude": -99.066566,
-      "bearing": 176,
-      "speed": 28,
-      "timestamp": 1781458246
+      "route_id": 19563,
+      "latitude": 19.403364,
+      "longitude": -99.187469,
+      "bearing": 151,
+      "speed": 44,
+      "timestamp": 1781548368
     },
     {
-      "vehicle_id": "69895",
-      "route_id": 19958,
-      "latitude": 19.49029,
-      "longitude": -99.118759,
-      "bearing": 134,
-      "speed": 48,
-      "timestamp": 1781458246
+      "vehicle_id": "69395",
+      "route_id": 19562,
+      "latitude": 19.395229,
+      "longitude": -99.146667,
+      "bearing": 217,
+      "speed": 0,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69394",
-      "route_id": 19562,
-      "latitude": 19.397898,
-      "longitude": -99.166336,
-      "bearing": 120,
-      "speed": 47,
-      "timestamp": 1781458246
+      "route_id": 19563,
+      "latitude": 19.394724,
+      "longitude": -99.091484,
+      "bearing": 305,
+      "speed": 23,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69897",
+      "route_id": 19576,
+      "latitude": 19.462448,
+      "longitude": -99.127167,
+      "bearing": 197,
+      "speed": 10,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69898",
+      "route_id": 19576,
+      "latitude": 19.430079,
+      "longitude": -99.161423,
+      "bearing": 243,
+      "speed": 0,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69900",
-      "route_id": 19957,
-      "latitude": 19.433674,
-      "longitude": -99.154198,
-      "bearing": 245,
+      "route_id": 19577,
+      "latitude": 19.432394,
+      "longitude": -99.155891,
+      "bearing": 287,
       "speed": 0,
-      "timestamp": 1781458246
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69902",
-      "route_id": 19958,
-      "latitude": 19.456385,
-      "longitude": -99.129517,
-      "bearing": 200,
-      "speed": 43,
-      "timestamp": 1781458246
+      "route_id": 19583,
+      "latitude": 19.471949,
+      "longitude": -99.123589,
+      "bearing": 189,
+      "speed": 0,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69903",
+      "route_id": 19577,
+      "latitude": 19.42477,
+      "longitude": -99.172234,
+      "bearing": 294,
+      "speed": 0,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69904",
-      "route_id": 19959,
-      "latitude": 19.433159,
-      "longitude": -99.154282,
-      "bearing": 105,
-      "speed": 0,
-      "timestamp": 1781458246
+      "route_id": 19576,
+      "latitude": 19.483877,
+      "longitude": -99.119125,
+      "bearing": 203,
+      "speed": 27,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69957",
+      "route_id": 19500,
+      "latitude": 19.356455,
+      "longitude": -99.184509,
+      "bearing": 167,
+      "speed": 46,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "70106",
       "route_id": 19562,
-      "latitude": 19.393229,
-      "longitude": -99.089409,
-      "bearing": 124,
-      "speed": 37,
-      "timestamp": 1781458246
+      "latitude": 19.397251,
+      "longitude": -99.165184,
+      "bearing": 120,
+      "speed": 48,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "70105",
-      "route_id": 19566,
-      "latitude": 19.395239,
-      "longitude": -99.145859,
-      "bearing": 279,
-      "speed": 34,
-      "timestamp": 1781458246
+      "route_id": 19562,
+      "latitude": 19.3934,
+      "longitude": -99.134087,
+      "bearing": 276,
+      "speed": 0,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "70104",
-      "route_id": 19562,
-      "latitude": 19.395136,
-      "longitude": -99.145653,
-      "bearing": 249,
-      "speed": 40,
-      "timestamp": 1781458246
+      "route_id": 19565,
+      "latitude": 19.384012,
+      "longitude": -99.069572,
+      "bearing": 100,
+      "speed": 28,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69955",
-      "route_id": 19500,
-      "latitude": 19.294233,
-      "longitude": -99.18129,
-      "bearing": 294,
-      "speed": 15,
-      "timestamp": 1781458246
+      "route_id": 19498,
+      "latitude": 19.316946,
+      "longitude": -99.174011,
+      "bearing": 80,
+      "speed": 36,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "70103",
+      "route_id": 19564,
+      "latitude": 19.385433,
+      "longitude": -99.051727,
+      "bearing": 208,
+      "speed": 0,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69401",
-      "route_id": 19562,
-      "latitude": 19.395731,
-      "longitude": -99.153885,
-      "bearing": 221,
+      "route_id": 19567,
+      "latitude": 19.391354,
+      "longitude": -99.047173,
+      "bearing": 120,
       "speed": 0,
-      "timestamp": 1781458246
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69400",
       "route_id": 19562,
-      "latitude": 19.395239,
-      "longitude": -99.14682,
-      "bearing": 211,
-      "speed": 10,
-      "timestamp": 1781458246
+      "latitude": 19.40493,
+      "longitude": -99.185837,
+      "bearing": 305,
+      "speed": 7,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69399",
-      "route_id": 19563,
-      "latitude": 19.394867,
-      "longitude": -99.143211,
-      "bearing": 278,
-      "speed": 0,
-      "timestamp": 1781458246
+      "route_id": 19562,
+      "latitude": 19.392797,
+      "longitude": -99.049721,
+      "bearing": 120,
+      "speed": 50,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69905",
-      "route_id": 19958,
-      "latitude": 19.435375,
-      "longitude": -99.150375,
-      "bearing": 238,
-      "speed": 12,
-      "timestamp": 1781458246
+      "route_id": 19579,
+      "latitude": 19.466402,
+      "longitude": -99.125679,
+      "bearing": 198,
+      "speed": 37,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69908",
-      "route_id": 19958,
-      "latitude": 19.431599,
-      "longitude": -99.158287,
-      "bearing": 244,
+      "route_id": 19577,
+      "latitude": 19.48361,
+      "longitude": -99.11731,
+      "bearing": 113,
+      "speed": 45,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69910",
+      "route_id": 19583,
+      "latitude": 19.483643,
+      "longitude": -99.113892,
+      "bearing": 181,
       "speed": 0,
-      "timestamp": 1781458246
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69911",
-      "route_id": 19956,
-      "latitude": 19.425667,
-      "longitude": -99.169563,
-      "bearing": 271,
-      "speed": 34,
-      "timestamp": 1781458246
+      "route_id": 19582,
+      "latitude": 19.439968,
+      "longitude": -99.144035,
+      "bearing": 220,
+      "speed": 48,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69912",
-      "route_id": 19959,
-      "latitude": 19.484224,
-      "longitude": -99.113541,
-      "bearing": 128,
-      "speed": 9,
-      "timestamp": 1781458246
+      "route_id": 19576,
+      "latitude": 19.426748,
+      "longitude": -99.197617,
+      "bearing": 285,
+      "speed": 30,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69913",
-      "route_id": 19956,
-      "latitude": 19.477831,
-      "longitude": -99.121368,
+      "route_id": 19579,
+      "latitude": 19.426283,
+      "longitude": -99.169098,
+      "bearing": 275,
+      "speed": 12,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69914",
+      "route_id": 19577,
+      "latitude": 19.461138,
+      "longitude": -99.127625,
+      "bearing": 205,
+      "speed": 0,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69695",
+      "route_id": 19567,
+      "latitude": 19.393309,
+      "longitude": -99.172592,
+      "bearing": 153,
+      "speed": 13,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69463",
+      "route_id": 19492,
+      "latitude": 19.364683,
+      "longitude": -99.181969,
       "bearing": 197,
-      "speed": 41,
-      "timestamp": 1781458246
+      "speed": 5,
+      "timestamp": 1781548368
     },
     {
-      "vehicle_id": "69462",
+      "vehicle_id": "69968",
+      "route_id": 19498,
+      "latitude": 19.280046,
+      "longitude": -99.169083,
+      "bearing": 297,
+      "speed": 0,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69693",
+      "route_id": 19567,
+      "latitude": 19.395723,
+      "longitude": -99.153923,
+      "bearing": 236,
+      "speed": 0,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69461",
       "route_id": 19497,
-      "latitude": 19.361368,
-      "longitude": -99.183006,
-      "bearing": 196,
-      "speed": 4,
-      "timestamp": 1781458246
-    },
-    {
-      "vehicle_id": "69966",
-      "route_id": 19500,
-      "latitude": 19.390076,
-      "longitude": -99.17363,
-      "bearing": 173,
-      "speed": 26,
-      "timestamp": 1781458246
+      "latitude": 19.411194,
+      "longitude": -99.166878,
+      "bearing": 197,
+      "speed": 25,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "70111",
-      "route_id": 19563,
-      "latitude": 19.402435,
-      "longitude": -99.186935,
-      "bearing": 151,
-      "speed": 21,
-      "timestamp": 1781458246
+      "route_id": 19562,
+      "latitude": 19.397285,
+      "longitude": -99.104568,
+      "bearing": 248,
+      "speed": 37,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69965",
+      "route_id": 19499,
+      "latitude": 19.382113,
+      "longitude": -99.176315,
+      "bearing": 197,
+      "speed": 10,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69460",
-      "route_id": 19493,
-      "latitude": 19.460056,
-      "longitude": -99.146027,
-      "bearing": 16,
-      "speed": 24,
-      "timestamp": 1781458246
-    },
-    {
-      "vehicle_id": "70110",
-      "route_id": 19567,
-      "latitude": 19.391706,
-      "longitude": -99.173027,
-      "bearing": 187,
-      "speed": 51,
-      "timestamp": 1781458246
-    },
-    {
-      "vehicle_id": "70109",
-      "route_id": 19566,
-      "latitude": 19.395332,
-      "longitude": -99.147026,
-      "bearing": 274,
-      "speed": 0,
-      "timestamp": 1781458246
-    },
-    {
-      "vehicle_id": "70108",
-      "route_id": 19562,
-      "latitude": 19.394796,
-      "longitude": -99.053139,
-      "bearing": 121,
-      "speed": 53,
-      "timestamp": 1781458246
+      "route_id": 19494,
+      "latitude": 19.459925,
+      "longitude": -99.146286,
+      "bearing": 214,
+      "speed": 21,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "70107",
       "route_id": 19562,
-      "latitude": 19.395935,
-      "longitude": -99.05513,
-      "bearing": 121,
-      "speed": 47,
-      "timestamp": 1781458246
+      "latitude": 19.397879,
+      "longitude": -99.129196,
+      "bearing": 345,
+      "speed": 11,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69961",
       "route_id": 19500,
-      "latitude": 19.414581,
-      "longitude": -99.165657,
-      "bearing": 162,
-      "speed": 27,
-      "timestamp": 1781458246
+      "latitude": 19.389809,
+      "longitude": -99.173676,
+      "bearing": 187,
+      "speed": 12,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69915",
+      "route_id": 19576,
+      "latitude": 19.426666,
+      "longitude": -99.168823,
+      "bearing": 246,
+      "speed": 0,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "70079",
-      "route_id": 19566,
-      "latitude": 19.393122,
-      "longitude": -99.089203,
+      "route_id": 19565,
+      "latitude": 19.396879,
+      "longitude": -99.100243,
+      "bearing": 208,
+      "speed": 19,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "70078",
+      "route_id": 19564,
+      "latitude": 19.386911,
+      "longitude": -99.07988,
       "bearing": 304,
-      "speed": 47,
-      "timestamp": 1781458246
+      "speed": 17,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69959",
+      "route_id": 19500,
+      "latitude": 19.339251,
+      "longitude": -99.190414,
+      "bearing": 354,
+      "speed": 0,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69916",
-      "route_id": 19959,
-      "latitude": 19.443918,
-      "longitude": -99.138992,
-      "bearing": 44,
-      "speed": 14,
-      "timestamp": 1781458246
+      "route_id": 19583,
+      "latitude": 19.452747,
+      "longitude": -99.130997,
+      "bearing": 40,
+      "speed": 0,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "70077",
+      "route_id": 19562,
+      "latitude": 19.386665,
+      "longitude": -99.079597,
+      "bearing": 121,
+      "speed": 17,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69917",
+      "route_id": 19576,
+      "latitude": 19.465405,
+      "longitude": -99.126144,
+      "bearing": 202,
+      "speed": 58,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69958",
+      "route_id": 19500,
+      "latitude": 19.410002,
+      "longitude": -99.167175,
+      "bearing": 22,
+      "speed": 7,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69918",
-      "route_id": 19959,
-      "latitude": 19.425716,
-      "longitude": -99.169388,
-      "bearing": 286,
-      "speed": 33,
-      "timestamp": 1781458246
+      "route_id": 19583,
+      "latitude": 19.431244,
+      "longitude": -99.158424,
+      "bearing": 126,
+      "speed": 7,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69919",
+      "route_id": 19576,
+      "latitude": 19.459747,
+      "longitude": -99.12822,
+      "bearing": 199,
+      "speed": 41,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69920",
-      "route_id": 19959,
-      "latitude": 19.452599,
-      "longitude": -99.131104,
-      "bearing": 34,
-      "speed": 22,
-      "timestamp": 1781458246
+      "route_id": 19583,
+      "latitude": 19.463894,
+      "longitude": -99.126572,
+      "bearing": 199,
+      "speed": 42,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69921",
-      "route_id": 19957,
-      "latitude": 19.453285,
-      "longitude": -99.130852,
-      "bearing": 212,
-      "speed": 0,
-      "timestamp": 1781458246
+      "route_id": 19576,
+      "latitude": 19.424498,
+      "longitude": -99.172829,
+      "bearing": 288,
+      "speed": 11,
+      "timestamp": 1781548368
     },
     {
-      "vehicle_id": "69706",
-      "route_id": 19567,
-      "latitude": 19.383501,
-      "longitude": -99.066101,
-      "bearing": 165,
-      "speed": 22,
-      "timestamp": 1781458246
+      "vehicle_id": "69924",
+      "route_id": 19576,
+      "latitude": 19.47698,
+      "longitude": -99.121704,
+      "bearing": 199,
+      "speed": 24,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69474",
+      "route_id": 19492,
+      "latitude": 19.462683,
+      "longitude": -99.144089,
+      "bearing": 211,
+      "speed": 17,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69705",
+      "route_id": 19563,
+      "latitude": 19.394661,
+      "longitude": -99.141922,
+      "bearing": 278,
+      "speed": 28,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69473",
+      "route_id": 19499,
+      "latitude": 19.469202,
+      "longitude": -99.138664,
+      "bearing": 217,
+      "speed": 37,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69704",
+      "route_id": 19563,
+      "latitude": 19.387718,
+      "longitude": -99.074379,
+      "bearing": 299,
+      "speed": 7,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69472",
-      "route_id": 19499,
-      "latitude": 19.48613,
-      "longitude": -99.124832,
-      "bearing": 221,
-      "speed": 11,
-      "timestamp": 1781458246
+      "route_id": 19493,
+      "latitude": 19.436026,
+      "longitude": -99.15731,
+      "bearing": 218,
+      "speed": 0,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69703",
+      "route_id": 19567,
+      "latitude": 19.393522,
+      "longitude": -99.134888,
+      "bearing": 254,
+      "speed": 27,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69471",
+      "route_id": 19491,
+      "latitude": 19.392776,
+      "longitude": -99.172607,
+      "bearing": 252,
+      "speed": 18,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69470",
-      "route_id": 19500,
-      "latitude": 19.402246,
-      "longitude": -99.169655,
-      "bearing": 17,
-      "speed": 17,
-      "timestamp": 1781458246
+      "route_id": 19497,
+      "latitude": 19.366079,
+      "longitude": -99.181541,
+      "bearing": 194,
+      "speed": 36,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69469",
-      "route_id": 19498,
-      "latitude": 19.4069,
-      "longitude": -99.168159,
-      "bearing": 172,
-      "speed": 0,
-      "timestamp": 1781458246
+      "route_id": 19499,
+      "latitude": 19.461475,
+      "longitude": -99.144997,
+      "bearing": 217,
+      "speed": 38,
+      "timestamp": 1781548368
     },
     {
-      "vehicle_id": "69698",
-      "route_id": 19564,
-      "latitude": 19.388756,
-      "longitude": -99.059235,
-      "bearing": 140,
+      "vehicle_id": "69468",
+      "route_id": 19497,
+      "latitude": 19.29291,
+      "longitude": -99.178383,
+      "bearing": 113,
       "speed": 0,
-      "timestamp": 1781458246
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69700",
+      "route_id": 19566,
+      "latitude": 19.38909,
+      "longitude": -99.083107,
+      "bearing": 305,
+      "speed": 16,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69467",
+      "route_id": 19499,
+      "latitude": 19.362068,
+      "longitude": -99.182869,
+      "bearing": 197,
+      "speed": 34,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69925",
+      "route_id": 19577,
+      "latitude": 19.425936,
+      "longitude": -99.19371,
+      "bearing": 100,
+      "speed": 10,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69699",
+      "route_id": 19563,
+      "latitude": 19.383234,
+      "longitude": -99.064262,
+      "bearing": 281,
+      "speed": 45,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69926",
+      "route_id": 19579,
+      "latitude": 19.423826,
+      "longitude": -99.177773,
+      "bearing": 304,
+      "speed": 0,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69466",
+      "route_id": 19491,
+      "latitude": 19.445131,
+      "longitude": -99.153641,
+      "bearing": 228,
+      "speed": 31,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69971",
+      "route_id": 19499,
+      "latitude": 19.443459,
+      "longitude": -99.154472,
+      "bearing": 200,
+      "speed": 0,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69970",
+      "route_id": 19500,
+      "latitude": 19.420198,
+      "longitude": -99.163895,
+      "bearing": 169,
+      "speed": 0,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69927",
+      "route_id": 19579,
+      "latitude": 19.427477,
+      "longitude": -99.166809,
+      "bearing": 262,
+      "speed": 0,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69465",
-      "route_id": 19500,
-      "latitude": 19.462894,
-      "longitude": -99.143593,
-      "bearing": 91,
-      "speed": 27,
-      "timestamp": 1781458246
+      "route_id": 19498,
+      "latitude": 19.413752,
+      "longitude": -99.165932,
+      "bearing": 17,
+      "speed": 0,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69696",
+      "route_id": 19566,
+      "latitude": 19.386929,
+      "longitude": -99.05088,
+      "bearing": 210,
+      "speed": 5,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69544",
+      "route_id": 20296,
+      "latitude": 19.375235,
+      "longitude": -99.160065,
+      "bearing": 135,
+      "speed": 0,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69464",
-      "route_id": 19493,
-      "latitude": 19.444012,
-      "longitude": -99.154144,
-      "bearing": 216,
-      "speed": 36,
-      "timestamp": 1781458246
+      "route_id": 19492,
+      "latitude": 19.384014,
+      "longitude": -99.17572,
+      "bearing": 196,
+      "speed": 18,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69928",
+      "route_id": 19582,
+      "latitude": 19.447435,
+      "longitude": -99.135773,
+      "bearing": 226,
+      "speed": 0,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69545",
+      "route_id": 20211,
+      "latitude": 19.497292,
+      "longitude": -99.090462,
+      "bearing": 201,
+      "speed": 23,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69929",
+      "route_id": 19578,
+      "latitude": 19.437622,
+      "longitude": -99.146599,
+      "bearing": 228,
+      "speed": 27,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69930",
-      "route_id": 19959,
-      "latitude": 19.441401,
-      "longitude": -99.142075,
-      "bearing": 101,
-      "speed": 46,
-      "timestamp": 1781458246
+      "route_id": 19577,
+      "latitude": 19.484327,
+      "longitude": -99.113548,
+      "bearing": 350,
+      "speed": 0,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69546",
       "route_id": 20211,
-      "latitude": 19.487658,
-      "longitude": -99.093407,
-      "bearing": 234,
-      "speed": 2,
-      "timestamp": 1781458246
+      "latitude": 19.487455,
+      "longitude": -99.093132,
+      "bearing": 246,
+      "speed": 0,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69931",
+      "route_id": 19578,
+      "latitude": 19.464886,
+      "longitude": -99.126251,
+      "bearing": 200,
+      "speed": 0,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69548",
       "route_id": 19559,
-      "latitude": 19.487013,
-      "longitude": -99.092461,
-      "bearing": 0,
-      "speed": 0,
-      "timestamp": 1781458246
+      "latitude": 19.408178,
+      "longitude": -99.113373,
+      "bearing": 185,
+      "speed": 24,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69933",
-      "route_id": 19958,
-      "latitude": 19.440428,
-      "longitude": -99.143669,
-      "bearing": 219,
-      "speed": 30,
-      "timestamp": 1781458246
+      "route_id": 19577,
+      "latitude": 19.435183,
+      "longitude": -99.150208,
+      "bearing": 310,
+      "speed": 5,
+      "timestamp": 1781548368
     },
     {
-      "vehicle_id": "69549",
-      "route_id": 19559,
-      "latitude": 19.487089,
-      "longitude": -99.092537,
-      "bearing": 249,
-      "speed": 0,
-      "timestamp": 1781458246
+      "vehicle_id": "69552",
+      "route_id": 19558,
+      "latitude": 19.296242,
+      "longitude": -99.114433,
+      "bearing": 0,
+      "speed": 32,
+      "timestamp": 1781548368
     },
     {
-      "vehicle_id": "69717",
-      "route_id": 19563,
-      "latitude": 19.396742,
-      "longitude": -99.131027,
-      "bearing": 211,
-      "speed": 39,
-      "timestamp": 1781458246
+      "vehicle_id": "69485",
+      "route_id": 19500,
+      "latitude": 19.292734,
+      "longitude": -99.177811,
+      "bearing": 293,
+      "speed": 15,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69484",
+      "route_id": 19498,
+      "latitude": 19.398678,
+      "longitude": -99.170822,
+      "bearing": 171,
+      "speed": 33,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69483",
-      "route_id": 19500,
-      "latitude": 19.417013,
-      "longitude": -99.164879,
-      "bearing": 173,
-      "speed": 0,
-      "timestamp": 1781458246
+      "route_id": 19497,
+      "latitude": 19.432961,
+      "longitude": -99.158745,
+      "bearing": 202,
+      "speed": 21,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69715",
+      "route_id": 19562,
+      "latitude": 19.396358,
+      "longitude": -99.161522,
+      "bearing": 103,
+      "speed": 41,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69714",
-      "route_id": 19562,
-      "latitude": 19.388744,
-      "longitude": -99.059502,
-      "bearing": 0,
+      "route_id": 19565,
+      "latitude": 19.398359,
+      "longitude": -99.113091,
+      "bearing": 128,
       "speed": 0,
-      "timestamp": 1781458246
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69482",
+      "route_id": 19498,
+      "latitude": 19.281853,
+      "longitude": -99.173325,
+      "bearing": 298,
+      "speed": 11,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69713",
-      "route_id": 19564,
-      "latitude": 19.398123,
-      "longitude": -99.123024,
-      "bearing": 268,
-      "speed": 42,
-      "timestamp": 1781458246
+      "route_id": 19566,
+      "latitude": 19.381767,
+      "longitude": -99.061089,
+      "bearing": 188,
+      "speed": 0,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69481",
+      "route_id": 19491,
+      "latitude": 19.49865,
+      "longitude": -99.11869,
+      "bearing": 193,
+      "speed": 0,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69712",
-      "route_id": 19566,
-      "latitude": 19.389103,
-      "longitude": -99.059311,
-      "bearing": 0,
-      "speed": 0,
-      "timestamp": 1781458246
-    },
-    {
-      "vehicle_id": "69480",
-      "route_id": 19500,
-      "latitude": 19.279356,
-      "longitude": -99.169022,
-      "bearing": 316,
-      "speed": 0,
-      "timestamp": 1781458246
+      "route_id": 19563,
+      "latitude": 19.4049,
+      "longitude": -99.175247,
+      "bearing": 288,
+      "speed": 14,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69479",
-      "route_id": 19500,
-      "latitude": 19.413651,
-      "longitude": -99.165955,
-      "bearing": 171,
-      "speed": 23,
-      "timestamp": 1781458246
-    },
-    {
-      "vehicle_id": "69711",
-      "route_id": 19564,
-      "latitude": 19.39031,
-      "longitude": -99.048828,
-      "bearing": 208,
-      "speed": 32,
-      "timestamp": 1781458246
-    },
-    {
-      "vehicle_id": "69710",
-      "route_id": 19565,
-      "latitude": 19.389463,
-      "longitude": -99.083832,
-      "bearing": 125,
+      "route_id": 19499,
+      "latitude": 19.417561,
+      "longitude": -99.164772,
+      "bearing": 194,
       "speed": 0,
-      "timestamp": 1781458246
-    },
-    {
-      "vehicle_id": "69478",
-      "route_id": 19497,
-      "latitude": 19.422464,
-      "longitude": -99.163429,
-      "bearing": 196,
-      "speed": 0,
-      "timestamp": 1781458246
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69709",
-      "route_id": 19564,
-      "latitude": 19.389353,
-      "longitude": -99.083488,
+      "route_id": 19563,
+      "latitude": 19.388655,
+      "longitude": -99.057533,
       "bearing": 305,
-      "speed": 0,
-      "timestamp": 1781458246
+      "speed": 19,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69477",
-      "route_id": 19497,
-      "latitude": 19.377193,
-      "longitude": -99.177879,
-      "bearing": 195,
-      "speed": 13,
-      "timestamp": 1781458246
+      "route_id": 19494,
+      "latitude": 19.426636,
+      "longitude": -99.161629,
+      "bearing": 201,
+      "speed": 36,
+      "timestamp": 1781548368
     },
     {
-      "vehicle_id": "69708",
-      "route_id": 19563,
-      "latitude": 19.388842,
-      "longitude": -99.082741,
-      "bearing": 305,
-      "speed": 44,
-      "timestamp": 1781458246
+      "vehicle_id": "69476",
+      "route_id": 19497,
+      "latitude": 19.352552,
+      "longitude": -99.185921,
+      "bearing": 197,
+      "speed": 0,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69554",
+      "route_id": 19558,
+      "latitude": 19.307167,
+      "longitude": -99.111664,
+      "bearing": 119,
+      "speed": 26,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69555",
       "route_id": 19558,
-      "latitude": 19.478651,
-      "longitude": -99.097748,
-      "bearing": 228,
+      "latitude": 19.339302,
+      "longitude": -99.113037,
+      "bearing": 356,
+      "speed": 20,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69707",
+      "route_id": 19567,
+      "latitude": 19.382601,
+      "longitude": -99.061127,
+      "bearing": 274,
       "speed": 0,
-      "timestamp": 1781458246
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69475",
-      "route_id": 19500,
-      "latitude": 19.403774,
-      "longitude": -99.169281,
+      "route_id": 19492,
+      "latitude": 19.398283,
+      "longitude": -99.171059,
       "bearing": 197,
-      "speed": 0,
-      "timestamp": 1781458246
+      "speed": 44,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69557",
-      "route_id": 19558,
-      "latitude": 19.437347,
-      "longitude": -99.114334,
-      "bearing": 140,
-      "speed": 0,
-      "timestamp": 1781458246
+      "route_id": 19559,
+      "latitude": 19.499981,
+      "longitude": -99.088646,
+      "bearing": 16,
+      "speed": 16,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69559",
-      "route_id": 20212,
-      "latitude": 19.332298,
-      "longitude": -99.113235,
-      "bearing": 120,
-      "speed": 38,
-      "timestamp": 1781458246
+      "route_id": 19558,
+      "latitude": 19.399607,
+      "longitude": -99.113441,
+      "bearing": 355,
+      "speed": 17,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69562",
-      "route_id": 20212,
-      "latitude": 19.374792,
-      "longitude": -99.107849,
-      "bearing": 337,
-      "speed": 0,
-      "timestamp": 1781458246
+      "route_id": 19558,
+      "latitude": 19.348421,
+      "longitude": -99.111198,
+      "bearing": 137,
+      "speed": 19,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69608",
-      "route_id": 19984,
-      "latitude": 19.34775,
-      "longitude": -99.187454,
-      "bearing": 197,
+      "route_id": 19563,
+      "latitude": 19.407892,
+      "longitude": -99.185646,
+      "bearing": 266,
+      "speed": 26,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "70130",
+      "route_id": 19492,
+      "latitude": 19.428495,
+      "longitude": -99.160904,
+      "bearing": 202,
+      "speed": 20,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69607",
+      "route_id": 19564,
+      "latitude": 19.391293,
+      "longitude": -99.04776,
+      "bearing": 122,
       "speed": 0,
-      "timestamp": 1781458246
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69606",
-      "route_id": 19984,
-      "latitude": 19.394571,
-      "longitude": -99.141434,
-      "bearing": 278,
-      "speed": 23,
-      "timestamp": 1781458246
-    },
-    {
-      "vehicle_id": "69722",
-      "route_id": 19984,
-      "latitude": 19.397375,
-      "longitude": -99.104645,
-      "bearing": 275,
-      "speed": 34,
-      "timestamp": 1781458246
-    },
-    {
-      "vehicle_id": "69721",
-      "route_id": 19567,
-      "latitude": 19.389042,
-      "longitude": -99.059341,
-      "bearing": 50,
+      "route_id": 19564,
+      "latitude": 19.388655,
+      "longitude": -99.05941,
+      "bearing": 90,
       "speed": 0,
-      "timestamp": 1781458246
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69491",
-      "route_id": 19500,
-      "latitude": 19.300095,
-      "longitude": -99.1856,
-      "bearing": 352,
-      "speed": 31,
-      "timestamp": 1781458246
+      "route_id": 19492,
+      "latitude": 19.440243,
+      "longitude": -99.15554,
+      "bearing": 203,
+      "speed": 18,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69720",
+      "route_id": 19566,
+      "latitude": 19.38838,
+      "longitude": -99.059486,
+      "bearing": 169,
+      "speed": 0,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69490",
+      "route_id": 19498,
+      "latitude": 19.406717,
+      "longitude": -99.168282,
+      "bearing": 161,
+      "speed": 0,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69563",
+      "route_id": 20211,
+      "latitude": 19.487362,
+      "longitude": -99.093323,
+      "bearing": 0,
+      "speed": 0,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69489",
+      "route_id": 19491,
+      "latitude": 19.443756,
+      "longitude": -99.154228,
+      "bearing": 211,
+      "speed": 10,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69488",
       "route_id": 19499,
-      "latitude": 19.296453,
-      "longitude": -99.18528,
-      "bearing": 168,
-      "speed": 43,
-      "timestamp": 1781458246
+      "latitude": 19.422548,
+      "longitude": -99.163361,
+      "bearing": 195,
+      "speed": 0,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69564",
-      "route_id": 19559,
-      "latitude": 19.486977,
-      "longitude": -99.092369,
-      "bearing": 0,
-      "speed": 0,
-      "timestamp": 1781458246
+      "route_id": 19558,
+      "latitude": 19.419497,
+      "longitude": -99.112076,
+      "bearing": 190,
+      "speed": 36,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69565",
-      "route_id": 19559,
-      "latitude": 19.311462,
-      "longitude": -99.110779,
-      "bearing": 191,
-      "speed": 7,
-      "timestamp": 1781458246
+      "route_id": 19558,
+      "latitude": 19.440859,
+      "longitude": -99.113564,
+      "bearing": 129,
+      "speed": 30,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69487",
+      "route_id": 19497,
+      "latitude": 19.422815,
+      "longitude": -99.163422,
+      "bearing": 195,
+      "speed": 0,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69604",
+      "route_id": 19563,
+      "latitude": 19.397995,
+      "longitude": -99.10994,
+      "bearing": 280,
+      "speed": 0,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69566",
-      "route_id": 19559,
-      "latitude": 19.322344,
-      "longitude": -99.114235,
-      "bearing": 185,
-      "speed": 49,
-      "timestamp": 1781458246
-    },
-    {
-      "vehicle_id": "69486",
-      "route_id": 19498,
-      "latitude": 19.42024,
-      "longitude": -99.16394,
-      "bearing": 159,
+      "route_id": 19558,
+      "latitude": 19.452089,
+      "longitude": -99.108864,
+      "bearing": 193,
       "speed": 0,
-      "timestamp": 1781458246
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69567",
-      "route_id": 19559,
-      "latitude": 19.35153,
-      "longitude": -99.111183,
-      "bearing": 185,
-      "speed": 0,
-      "timestamp": 1781458246
+      "route_id": 19558,
+      "latitude": 19.456211,
+      "longitude": -99.107353,
+      "bearing": 212,
+      "speed": 22,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69568",
-      "route_id": 19559,
-      "latitude": 19.377007,
-      "longitude": -99.108757,
-      "bearing": 160,
-      "speed": 44,
-      "timestamp": 1781458246
+      "route_id": 20211,
+      "latitude": 19.453209,
+      "longitude": -99.108765,
+      "bearing": 201,
+      "speed": 0,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69569",
-      "route_id": 19559,
-      "latitude": 19.430279,
-      "longitude": -99.115417,
-      "bearing": 188,
-      "speed": 0,
-      "timestamp": 1781458246
+      "route_id": 20211,
+      "latitude": 19.413244,
+      "longitude": -99.112823,
+      "bearing": 184,
+      "speed": 39,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69570",
+      "route_id": 20211,
+      "latitude": 19.335417,
+      "longitude": -99.113045,
+      "bearing": 184,
+      "speed": 51,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69572",
-      "route_id": 19558,
-      "latitude": 19.489353,
-      "longitude": -99.093147,
-      "bearing": 213,
-      "speed": 49,
-      "timestamp": 1781458246
+      "route_id": 20211,
+      "latitude": 19.486795,
+      "longitude": -99.093773,
+      "bearing": 0,
+      "speed": 0,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "70142",
-      "route_id": 19493,
-      "latitude": 19.43199,
-      "longitude": -99.159065,
-      "bearing": 226,
-      "speed": 49,
-      "timestamp": 1781458246
+      "route_id": 19497,
+      "latitude": 19.399233,
+      "longitude": -99.170677,
+      "bearing": 195,
+      "speed": 45,
+      "timestamp": 1781548368
     },
     {
-      "vehicle_id": "70140",
-      "route_id": 19499,
-      "latitude": 19.404072,
-      "longitude": -99.169151,
-      "bearing": 196,
+      "vehicle_id": "70139",
+      "route_id": 19500,
+      "latitude": 19.447187,
+      "longitude": -99.15303,
+      "bearing": 102,
+      "speed": 26,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "70138",
+      "route_id": 19500,
+      "latitude": 19.35121,
+      "longitude": -99.186234,
+      "bearing": 168,
       "speed": 0,
-      "timestamp": 1781458246
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "70137",
+      "route_id": 19500,
+      "latitude": 19.346296,
+      "longitude": -99.187904,
+      "bearing": 203,
+      "speed": 0,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "70136",
+      "route_id": 19500,
+      "latitude": 19.38566,
+      "longitude": -99.175034,
+      "bearing": 177,
+      "speed": 6,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69612",
+      "route_id": 19983,
+      "latitude": 19.394573,
+      "longitude": -99.141602,
+      "bearing": 257,
+      "speed": 33,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69573",
+      "route_id": 20211,
+      "latitude": 19.487221,
+      "longitude": -99.092987,
+      "bearing": 250,
+      "speed": 0,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "70135",
+      "route_id": 19491,
+      "latitude": 19.379219,
+      "longitude": -99.177185,
+      "bearing": 153,
+      "speed": 36,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "70134",
+      "route_id": 19491,
+      "latitude": 19.335249,
+      "longitude": -99.190376,
+      "bearing": 249,
+      "speed": 23,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69576",
-      "route_id": 19558,
-      "latitude": 19.449036,
-      "longitude": -99.110489,
-      "bearing": 188,
-      "speed": 42,
-      "timestamp": 1781458246
+      "route_id": 20212,
+      "latitude": 19.339037,
+      "longitude": -99.112984,
+      "bearing": 10,
+      "speed": 21,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "70133",
+      "route_id": 19499,
+      "latitude": 19.493549,
+      "longitude": -99.120476,
+      "bearing": 189,
+      "speed": 44,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69610",
+      "route_id": 19562,
+      "latitude": 19.388262,
+      "longitude": -99.081955,
+      "bearing": 125,
+      "speed": 35,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69609",
-      "route_id": 19984,
-      "latitude": 19.362185,
-      "longitude": -99.182617,
-      "bearing": 194,
-      "speed": 40,
-      "timestamp": 1781458246
+      "route_id": 19564,
+      "latitude": 19.388363,
+      "longitude": -99.059464,
+      "bearing": 355,
+      "speed": 0,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "70132",
-      "route_id": 19499,
-      "latitude": 19.462471,
-      "longitude": -99.144226,
-      "bearing": 213,
-      "speed": 16,
-      "timestamp": 1781458246
+      "route_id": 19494,
+      "latitude": 19.498936,
+      "longitude": -99.119904,
+      "bearing": 110,
+      "speed": 0,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "70153",
-      "route_id": 19494,
-      "latitude": 19.486584,
-      "longitude": -99.124451,
-      "bearing": 218,
-      "speed": 36,
-      "timestamp": 1781458246
+      "route_id": 19492,
+      "latitude": 19.358683,
+      "longitude": -99.183624,
+      "bearing": 197,
+      "speed": 2,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "70151",
-      "route_id": 19493,
-      "latitude": 19.492674,
-      "longitude": -99.120056,
-      "bearing": 184,
-      "speed": 33,
-      "timestamp": 1781458246
+      "route_id": 19494,
+      "latitude": 19.499857,
+      "longitude": -99.119766,
+      "bearing": 195,
+      "speed": 0,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "70149",
-      "route_id": 19499,
-      "latitude": 19.419628,
-      "longitude": -99.164223,
+      "route_id": 19497,
+      "latitude": 19.373985,
+      "longitude": -99.17894,
       "bearing": 196,
-      "speed": 0,
-      "timestamp": 1781458246
+      "speed": 6,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "70146",
-      "route_id": 19499,
-      "latitude": 19.499451,
-      "longitude": -99.119499,
-      "bearing": 278,
+      "route_id": 19497,
+      "latitude": 19.298409,
+      "longitude": -99.185501,
+      "bearing": 173,
       "speed": 0,
-      "timestamp": 1781458246
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "70145",
+      "route_id": 19491,
+      "latitude": 19.349047,
+      "longitude": -99.186935,
+      "bearing": 124,
+      "speed": 0,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "70144",
+      "route_id": 19492,
+      "latitude": 19.427334,
+      "longitude": -99.161301,
+      "bearing": 199,
+      "speed": 22,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "70143",
-      "route_id": 19499,
-      "latitude": 19.43573,
-      "longitude": -99.157501,
-      "bearing": 201,
-      "speed": 16,
-      "timestamp": 1781458246
+      "route_id": 19500,
+      "latitude": 19.479137,
+      "longitude": -99.130249,
+      "bearing": 336,
+      "speed": 38,
+      "timestamp": 1781548368
     },
     {
-      "vehicle_id": "69944",
+      "vehicle_id": "69945",
+      "route_id": 19499,
+      "latitude": 19.280142,
+      "longitude": -99.169724,
+      "bearing": 114,
+      "speed": 0,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "70154",
+      "route_id": 19497,
+      "latitude": 19.393335,
+      "longitude": -99.17263,
+      "bearing": 196,
+      "speed": 27,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69946",
       "route_id": 19500,
-      "latitude": 19.463188,
-      "longitude": -99.143318,
-      "bearing": 88,
-      "speed": 37,
-      "timestamp": 1781458246
+      "latitude": 19.382513,
+      "longitude": -99.176086,
+      "bearing": 173,
+      "speed": 0,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69954",
+      "route_id": 19498,
+      "latitude": 19.309448,
+      "longitude": -99.175621,
+      "bearing": 4,
+      "speed": 19,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69953",
       "route_id": 19500,
-      "latitude": 19.30591,
-      "longitude": -99.186325,
-      "bearing": 352,
-      "speed": 37,
-      "timestamp": 1781458246
+      "latitude": 19.346582,
+      "longitude": -99.18779,
+      "bearing": 189,
+      "speed": 0,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69952",
-      "route_id": 19499,
-      "latitude": 19.303854,
-      "longitude": -99.186165,
-      "bearing": 172,
+      "route_id": 19500,
+      "latitude": 19.283712,
+      "longitude": -99.175514,
+      "bearing": 337,
       "speed": 0,
-      "timestamp": 1781458246
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69951",
+      "route_id": 19500,
+      "latitude": 19.476028,
+      "longitude": -99.13282,
+      "bearing": 33,
+      "speed": 45,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69948",
+      "route_id": 19499,
+      "latitude": 19.28529,
+      "longitude": -99.17572,
+      "bearing": 190,
+      "speed": 0,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69947",
       "route_id": 19500,
-      "latitude": 19.318485,
-      "longitude": -99.18792,
-      "bearing": 353,
-      "speed": 50,
-      "timestamp": 1781458246
+      "latitude": 19.439533,
+      "longitude": -99.155754,
+      "bearing": 223,
+      "speed": 45,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "72629",
+      "route_id": 19519,
+      "latitude": 19.417107,
+      "longitude": -99.073059,
+      "bearing": 278,
+      "speed": 1,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69815",
-      "route_id": 19460,
-      "latitude": 19.459219,
-      "longitude": -99.144226,
-      "bearing": 128,
-      "speed": 37,
-      "timestamp": 1781458246
-    },
-    {
-      "vehicle_id": "69979",
-      "route_id": 19559,
-      "latitude": 19.432272,
-      "longitude": -99.115166,
-      "bearing": 179,
-      "speed": 6,
-      "timestamp": 1781458246
+      "route_id": 20296,
+      "latitude": 19.427687,
+      "longitude": -99.146469,
+      "bearing": 124,
+      "speed": 0,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69980",
-      "route_id": 19564,
-      "latitude": 19.385647,
-      "longitude": -99.045937,
-      "bearing": 122,
+      "route_id": 19566,
+      "latitude": 19.393471,
+      "longitude": -99.089653,
+      "bearing": 305,
       "speed": 0,
-      "timestamp": 1781458246
+      "timestamp": 1781548368
     },
     {
-      "vehicle_id": "69981",
-      "route_id": 19566,
-      "latitude": 19.385611,
-      "longitude": -99.045959,
-      "bearing": 122,
-      "speed": 0,
-      "timestamp": 1781458246
+      "vehicle_id": "69817",
+      "route_id": 19456,
+      "latitude": 19.468987,
+      "longitude": -99.14418,
+      "bearing": 340,
+      "speed": 26,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69818",
+      "route_id": 19455,
+      "latitude": 19.501011,
+      "longitude": -99.156273,
+      "bearing": 162,
+      "speed": 34,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69982",
+      "route_id": 19564,
+      "latitude": 19.388477,
+      "longitude": -99.057266,
+      "bearing": 305,
+      "speed": 16,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69819",
+      "route_id": 19455,
+      "latitude": 19.495743,
+      "longitude": -99.154366,
+      "bearing": 159,
+      "speed": 21,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69983",
+      "route_id": 19558,
+      "latitude": 19.274567,
+      "longitude": -99.11937,
+      "bearing": 148,
+      "speed": 44,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69820",
-      "route_id": 19455,
-      "latitude": 19.515112,
-      "longitude": -99.161858,
-      "bearing": 159,
-      "speed": 25,
-      "timestamp": 1781458246
+      "route_id": 19456,
+      "latitude": 19.50349,
+      "longitude": -99.157158,
+      "bearing": 337,
+      "speed": 43,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69984",
+      "route_id": 19566,
+      "latitude": 19.38595,
+      "longitude": -99.078445,
+      "bearing": 305,
+      "speed": 38,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69821",
-      "route_id": 19455,
-      "latitude": 19.483711,
-      "longitude": -99.149887,
-      "bearing": 160,
+      "route_id": 19456,
+      "latitude": 19.525881,
+      "longitude": -99.167969,
+      "bearing": 324,
+      "speed": 43,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69985",
+      "route_id": 19566,
+      "latitude": 19.401716,
+      "longitude": -99.16993,
+      "bearing": 197,
+      "speed": 17,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69986",
+      "route_id": 19559,
+      "latitude": 19.281101,
+      "longitude": -99.116837,
+      "bearing": 195,
       "speed": 0,
-      "timestamp": 1781458246
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69822",
       "route_id": 19460,
-      "latitude": 19.425222,
-      "longitude": -99.153664,
-      "bearing": 180,
-      "speed": 12,
-      "timestamp": 1781458246
+      "latitude": 19.380951,
+      "longitude": -99.158569,
+      "bearing": 173,
+      "speed": 0,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69987",
+      "route_id": 19566,
+      "latitude": 19.386078,
+      "longitude": -99.071236,
+      "bearing": 298,
+      "speed": 0,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69988",
+      "route_id": 19567,
+      "latitude": 19.39459,
+      "longitude": -99.142166,
+      "bearing": 271,
+      "speed": 27,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "71152",
+      "route_id": 19519,
+      "latitude": 19.416876,
+      "longitude": -99.073547,
+      "bearing": 276,
+      "speed": 0,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69824",
-      "route_id": 19460,
-      "latitude": 19.420431,
-      "longitude": -99.154022,
-      "bearing": 30,
-      "speed": 0,
-      "timestamp": 1781458246
-    },
-    {
-      "vehicle_id": "69989",
-      "route_id": 19559,
-      "latitude": 19.465071,
-      "longitude": -99.103981,
-      "bearing": 201,
-      "speed": 58,
-      "timestamp": 1781458246
+      "route_id": 19459,
+      "latitude": 19.425985,
+      "longitude": -99.153084,
+      "bearing": 253,
+      "speed": 34,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69825",
-      "route_id": 19456,
-      "latitude": 19.522417,
-      "longitude": -99.165215,
-      "bearing": 323,
-      "speed": 34,
-      "timestamp": 1781458246
+      "route_id": 19459,
+      "latitude": 19.508154,
+      "longitude": -99.159103,
+      "bearing": 159,
+      "speed": 24,
+      "timestamp": 1781548368
     },
     {
-      "vehicle_id": "69990",
+      "vehicle_id": "69991",
       "route_id": 19566,
-      "latitude": 19.385578,
-      "longitude": -99.045708,
-      "bearing": 0,
-      "speed": 0,
-      "timestamp": 1781458246
+      "latitude": 19.387508,
+      "longitude": -99.055779,
+      "bearing": 305,
+      "speed": 33,
+      "timestamp": 1781548368
     },
     {
-      "vehicle_id": "69828",
-      "route_id": 19429,
-      "latitude": 19.479324,
-      "longitude": -99.148186,
-      "bearing": 160,
-      "speed": 12,
-      "timestamp": 1781458246
+      "vehicle_id": "69992",
+      "route_id": 19559,
+      "latitude": 19.490059,
+      "longitude": -99.091713,
+      "bearing": 268,
+      "speed": 0,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "71192",
+      "route_id": 19519,
+      "latitude": 19.430664,
+      "longitude": -99.115486,
+      "bearing": 190,
+      "speed": 0,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69829",
-      "route_id": 19459,
-      "latitude": 19.510468,
-      "longitude": -99.158226,
-      "bearing": 0,
-      "speed": 0,
-      "timestamp": 1781458246
+      "route_id": 19458,
+      "latitude": 19.466808,
+      "longitude": -99.143417,
+      "bearing": 340,
+      "speed": 18,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69826",
-      "route_id": 19460,
-      "latitude": 19.373449,
-      "longitude": -99.160507,
-      "bearing": 133,
+      "route_id": 19458,
+      "latitude": 19.484018,
+      "longitude": -99.149879,
+      "bearing": 340,
+      "speed": 22,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69827",
+      "route_id": 19458,
+      "latitude": 19.471531,
+      "longitude": -99.145172,
+      "bearing": 338,
       "speed": 20,
-      "timestamp": 1781458246
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69835",
-      "route_id": 19459,
-      "latitude": 19.436068,
-      "longitude": -99.147125,
-      "bearing": 187,
-      "speed": 11,
-      "timestamp": 1781458246
+      "route_id": 19458,
+      "latitude": 19.505203,
+      "longitude": -99.15789,
+      "bearing": 338,
+      "speed": 38,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "71200",
+      "route_id": 19519,
+      "latitude": 19.422815,
+      "longitude": -99.091949,
+      "bearing": 253,
+      "speed": 0,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69836",
-      "route_id": 19455,
-      "latitude": 19.503231,
-      "longitude": -99.157143,
-      "bearing": 158,
+      "route_id": 19460,
+      "latitude": 19.425198,
+      "longitude": -99.153679,
+      "bearing": 130,
       "speed": 0,
-      "timestamp": 1781458246
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69839",
       "route_id": 19455,
-      "latitude": 19.510279,
-      "longitude": -99.158676,
-      "bearing": 0,
+      "latitude": 19.470627,
+      "longitude": -99.144905,
+      "bearing": 160,
       "speed": 0,
-      "timestamp": 1781458246
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "74652",
       "route_id": 27311,
-      "latitude": 19.436859,
-      "longitude": -99.114319,
-      "bearing": 130,
-      "speed": 30,
-      "timestamp": 1781458246
-    },
-    {
-      "vehicle_id": "69840",
-      "route_id": 19459,
-      "latitude": 19.510416,
-      "longitude": -99.158401,
-      "bearing": 283,
-      "speed": 0,
-      "timestamp": 1781458246
+      "latitude": 19.426977,
+      "longitude": -99.113899,
+      "bearing": 257,
+      "speed": 20,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69837",
-      "route_id": 19430,
-      "latitude": 19.497093,
-      "longitude": -99.154808,
-      "bearing": 339,
-      "speed": 35,
-      "timestamp": 1781458246
+      "route_id": 19457,
+      "latitude": 19.438284,
+      "longitude": -99.14901,
+      "bearing": 193,
+      "speed": 5,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69838",
-      "route_id": 19459,
-      "latitude": 19.458677,
-      "longitude": -99.144188,
-      "bearing": 191,
-      "speed": 16,
-      "timestamp": 1781458246
+      "route_id": 19460,
+      "latitude": 19.459501,
+      "longitude": -99.144173,
+      "bearing": 117,
+      "speed": 43,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "74648",
-      "route_id": 27055,
-      "latitude": 19.42695,
-      "longitude": -99.111649,
-      "bearing": 48,
-      "speed": 0,
-      "timestamp": 1781458246
+      "route_id": 27310,
+      "latitude": 19.429413,
+      "longitude": -99.097305,
+      "bearing": 297,
+      "speed": 23,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69832",
-      "route_id": 19429,
-      "latitude": 19.5203,
-      "longitude": -99.164101,
-      "bearing": 157,
-      "speed": 34,
-      "timestamp": 1781458246
+      "route_id": 19458,
+      "latitude": 19.445936,
+      "longitude": -99.147217,
+      "bearing": 126,
+      "speed": 10,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "74084",
-      "route_id": 19455,
-      "latitude": 19.445641,
-      "longitude": -99.148758,
-      "bearing": 280,
-      "speed": 0,
-      "timestamp": 1781458246
+      "route_id": 19460,
+      "latitude": 19.494474,
+      "longitude": -99.153847,
+      "bearing": 339,
+      "speed": 42,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69831",
-      "route_id": 19459,
-      "latitude": 19.41725,
-      "longitude": -99.154343,
-      "bearing": 185,
-      "speed": 45,
-      "timestamp": 1781458246
+      "route_id": 19458,
+      "latitude": 19.43088,
+      "longitude": -99.147736,
+      "bearing": 133,
+      "speed": 0,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69834",
-      "route_id": 19459,
-      "latitude": 19.429138,
-      "longitude": -99.148514,
-      "bearing": 190,
+      "route_id": 19458,
+      "latitude": 19.46295,
+      "longitude": -99.144203,
+      "bearing": 43,
       "speed": 0,
-      "timestamp": 1781458246
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "67988",
-      "route_id": 19456,
-      "latitude": 19.484116,
-      "longitude": -99.149933,
-      "bearing": 340,
+      "route_id": 19457,
+      "latitude": 19.463318,
+      "longitude": -99.14418,
+      "bearing": 220,
       "speed": 0,
-      "timestamp": 1781458246
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "74650",
-      "route_id": 27055,
-      "latitude": 19.423388,
-      "longitude": -99.125389,
-      "bearing": 259,
-      "speed": 20,
-      "timestamp": 1781458246
+      "route_id": 27310,
+      "latitude": 19.424343,
+      "longitude": -99.13092,
+      "bearing": 270,
+      "speed": 0,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "67987",
+      "route_id": 19459,
+      "latitude": 19.381294,
+      "longitude": -99.158539,
+      "bearing": 197,
+      "speed": 0,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "74644",
-      "route_id": 27311,
-      "latitude": 19.430357,
-      "longitude": -99.099342,
-      "bearing": 117,
-      "speed": 34,
-      "timestamp": 1781458246
+      "route_id": 27310,
+      "latitude": 19.420662,
+      "longitude": -99.078201,
+      "bearing": 161,
+      "speed": 8,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69845",
-      "route_id": 19456,
-      "latitude": 19.502274,
-      "longitude": -99.156662,
-      "bearing": 340,
+      "route_id": 19459,
+      "latitude": 19.492477,
+      "longitude": -99.15316,
+      "bearing": 160,
+      "speed": 11,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "74667",
+      "route_id": 27310,
+      "latitude": 19.423538,
+      "longitude": -99.129761,
+      "bearing": 281,
       "speed": 0,
-      "timestamp": 1781458246
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69850",
-      "route_id": 19460,
-      "latitude": 19.400621,
-      "longitude": -99.155548,
-      "bearing": 200,
-      "speed": 0,
-      "timestamp": 1781458246
+      "route_id": 19456,
+      "latitude": 19.446413,
+      "longitude": -99.147064,
+      "bearing": 146,
+      "speed": 22,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "74647",
-      "route_id": 27055,
-      "latitude": 19.426165,
-      "longitude": -99.129639,
-      "bearing": 245,
-      "speed": 14,
-      "timestamp": 1781458246
+      "route_id": 27310,
+      "latitude": 19.422979,
+      "longitude": -99.125748,
+      "bearing": 277,
+      "speed": 0,
+      "timestamp": 1781548368
     },
     {
-      "vehicle_id": "69848",
+      "vehicle_id": "69851",
       "route_id": 19459,
-      "latitude": 19.443577,
-      "longitude": -99.147789,
-      "bearing": 192,
-      "speed": 43,
-      "timestamp": 1781458246
+      "latitude": 19.46785,
+      "longitude": -99.143852,
+      "bearing": 159,
+      "speed": 6,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "74669",
+      "route_id": 27310,
+      "latitude": 19.424927,
+      "longitude": -99.130768,
+      "bearing": 103,
+      "speed": 3,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69849",
+      "route_id": 19458,
+      "latitude": 19.435122,
+      "longitude": -99.147293,
+      "bearing": 0,
+      "speed": 3,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "74646",
+      "route_id": 27311,
+      "latitude": 19.433241,
+      "longitude": -99.105141,
+      "bearing": 116,
+      "speed": 38,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "74660",
+      "route_id": 27310,
+      "latitude": 19.435808,
+      "longitude": -99.114761,
+      "bearing": 195,
+      "speed": 0,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69843",
-      "route_id": 19456,
-      "latitude": 19.477213,
-      "longitude": -99.147308,
-      "bearing": 339,
-      "speed": 40,
-      "timestamp": 1781458246
+      "route_id": 19457,
+      "latitude": 19.489408,
+      "longitude": -99.151955,
+      "bearing": 159,
+      "speed": 0,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69844",
-      "route_id": 19459,
-      "latitude": 19.519238,
-      "longitude": -99.163666,
-      "bearing": 157,
-      "speed": 17,
-      "timestamp": 1781458246
+      "route_id": 19430,
+      "latitude": 19.471928,
+      "longitude": -99.145317,
+      "bearing": 338,
+      "speed": 31,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69841",
-      "route_id": 19430,
-      "latitude": 19.468224,
-      "longitude": -99.143929,
-      "bearing": 341,
-      "speed": 0,
-      "timestamp": 1781458246
+      "route_id": 19460,
+      "latitude": 19.414787,
+      "longitude": -99.154579,
+      "bearing": 70,
+      "speed": 8,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69842",
-      "route_id": 19459,
-      "latitude": 19.47402,
-      "longitude": -99.146149,
-      "bearing": 159,
-      "speed": 9,
-      "timestamp": 1781458246
-    },
-    {
-      "vehicle_id": "69857",
       "route_id": 19460,
-      "latitude": 19.521151,
-      "longitude": -99.164413,
-      "bearing": 334,
-      "speed": 39,
-      "timestamp": 1781458246
+      "latitude": 19.437521,
+      "longitude": -99.147064,
+      "bearing": 307,
+      "speed": 16,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69858",
-      "route_id": 19456,
-      "latitude": 19.526625,
-      "longitude": -99.168587,
-      "bearing": 321,
+      "route_id": 19457,
+      "latitude": 19.500078,
+      "longitude": -99.155991,
+      "bearing": 161,
       "speed": 0,
-      "timestamp": 1781458246
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69855",
-      "route_id": 19459,
-      "latitude": 19.510302,
-      "longitude": -99.158783,
-      "bearing": 277,
+      "route_id": 19457,
+      "latitude": 19.473972,
+      "longitude": -99.146156,
+      "bearing": 159,
       "speed": 0,
-      "timestamp": 1781458246
-    },
-    {
-      "vehicle_id": "69856",
-      "route_id": 19460,
-      "latitude": 19.420637,
-      "longitude": -99.154015,
-      "bearing": 130,
-      "speed": 0,
-      "timestamp": 1781458246
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69861",
-      "route_id": 19460,
-      "latitude": 19.478971,
-      "longitude": -99.147972,
-      "bearing": 341,
-      "speed": 8,
-      "timestamp": 1781458246
+      "route_id": 19455,
+      "latitude": 19.462969,
+      "longitude": -99.144508,
+      "bearing": 216,
+      "speed": 33,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69862",
-      "route_id": 19459,
-      "latitude": 19.46834,
-      "longitude": -99.144051,
-      "bearing": 160,
-      "speed": 0,
-      "timestamp": 1781458246
+      "route_id": 19460,
+      "latitude": 19.470356,
+      "longitude": -99.144707,
+      "bearing": 339,
+      "speed": 15,
+      "timestamp": 1781548368
     },
     {
-      "vehicle_id": "69860",
+      "vehicle_id": "69859",
       "route_id": 19460,
-      "latitude": 19.492958,
-      "longitude": -99.153244,
-      "bearing": 341,
+      "latitude": 19.401098,
+      "longitude": -99.155579,
+      "bearing": 170,
       "speed": 0,
-      "timestamp": 1781458246
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "73390",
-      "route_id": 27310,
-      "latitude": 19.422272,
-      "longitude": -99.084122,
-      "bearing": 118,
-      "speed": 9,
-      "timestamp": 1781458246
+      "route_id": 27055,
+      "latitude": 19.42692,
+      "longitude": -99.113541,
+      "bearing": 249,
+      "speed": 0,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "74668",
-      "route_id": 27310,
-      "latitude": 19.423113,
-      "longitude": -99.126801,
-      "bearing": 279,
-      "speed": 5,
-      "timestamp": 1781458246
+      "route_id": 27311,
+      "latitude": 19.425629,
+      "longitude": -99.126831,
+      "bearing": 102,
+      "speed": 0,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "74658",
-      "route_id": 27055,
-      "latitude": 19.418974,
-      "longitude": -99.078979,
-      "bearing": 164,
-      "speed": 20,
-      "timestamp": 1781458246
-    },
-    {
-      "vehicle_id": "70493",
-      "route_id": 19460,
-      "latitude": 19.391645,
-      "longitude": -99.156334,
-      "bearing": 350,
-      "speed": 19,
-      "timestamp": 1781458246
+      "route_id": 27310,
+      "latitude": 19.422518,
+      "longitude": -99.12175,
+      "bearing": 277,
+      "speed": 2,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69852",
-      "route_id": 19459,
-      "latitude": 19.515373,
-      "longitude": -99.161934,
-      "bearing": 159,
-      "speed": 4,
-      "timestamp": 1781458246
+      "route_id": 19460,
+      "latitude": 19.496302,
+      "longitude": -99.15451,
+      "bearing": 340,
+      "speed": 0,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69853",
+      "route_id": 19460,
+      "latitude": 19.420664,
+      "longitude": -99.154022,
+      "bearing": 80,
+      "speed": 0,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69868",
-      "route_id": 19455,
-      "latitude": 19.473919,
-      "longitude": -99.146126,
-      "bearing": 160,
-      "speed": 15,
-      "timestamp": 1781458246
+      "route_id": 19459,
+      "latitude": 19.388296,
+      "longitude": -99.156776,
+      "bearing": 187,
+      "speed": 35,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69869",
-      "route_id": 19460,
-      "latitude": 19.473822,
-      "longitude": -99.146004,
-      "bearing": 341,
-      "speed": 12,
-      "timestamp": 1781458246
-    },
-    {
-      "vehicle_id": "69866",
-      "route_id": 19460,
-      "latitude": 19.425674,
-      "longitude": -99.151237,
-      "bearing": 221,
-      "speed": 17,
-      "timestamp": 1781458246
+      "route_id": 19459,
+      "latitude": 19.445841,
+      "longitude": -99.147423,
+      "bearing": 192,
+      "speed": 40,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69867",
-      "route_id": 19455,
-      "latitude": 19.46726,
-      "longitude": -99.143631,
-      "bearing": 160,
-      "speed": 8,
-      "timestamp": 1781458246
+      "route_id": 19457,
+      "latitude": 19.492767,
+      "longitude": -99.153259,
+      "bearing": 159,
+      "speed": 6,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69873",
-      "route_id": 19456,
-      "latitude": 19.446299,
-      "longitude": -99.147118,
-      "bearing": 119,
-      "speed": 0,
-      "timestamp": 1781458246
-    },
-    {
-      "vehicle_id": "69870",
-      "route_id": 19460,
-      "latitude": 19.459867,
-      "longitude": -99.144051,
-      "bearing": 116,
-      "speed": 27,
-      "timestamp": 1781458246
+      "route_id": 19430,
+      "latitude": 19.497694,
+      "longitude": -99.155052,
+      "bearing": 340,
+      "speed": 46,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69871",
-      "route_id": 19459,
-      "latitude": 19.526669,
-      "longitude": -99.16877,
-      "bearing": 143,
+      "route_id": 19460,
+      "latitude": 19.514816,
+      "longitude": -99.161652,
+      "bearing": 340,
       "speed": 0,
-      "timestamp": 1781458246
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69865",
-      "route_id": 19460,
-      "latitude": 19.425598,
-      "longitude": -99.150078,
-      "bearing": 228,
-      "speed": 36,
-      "timestamp": 1781458246
-    },
-    {
-      "vehicle_id": "69863",
-      "route_id": 19456,
-      "latitude": 19.467243,
-      "longitude": -99.143578,
-      "bearing": 343,
-      "speed": 14,
-      "timestamp": 1781458246
-    },
-    {
-      "vehicle_id": "69864",
-      "route_id": 19460,
-      "latitude": 19.525146,
-      "longitude": -99.167503,
-      "bearing": 323,
-      "speed": 11,
-      "timestamp": 1781458246
+      "route_id": 19459,
+      "latitude": 19.45912,
+      "longitude": -99.144279,
+      "bearing": 190,
+      "speed": 32,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69879",
-      "route_id": 19460,
-      "latitude": 19.388441,
-      "longitude": -99.156708,
-      "bearing": 300,
-      "speed": 40,
-      "timestamp": 1781458246
+      "route_id": 19459,
+      "latitude": 19.522943,
+      "longitude": -99.165779,
+      "bearing": 140,
+      "speed": 37,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69880",
-      "route_id": 19459,
-      "latitude": 19.38129,
-      "longitude": -99.158562,
-      "bearing": 198,
-      "speed": 0,
-      "timestamp": 1781458246
+      "route_id": 19458,
+      "latitude": 19.500675,
+      "longitude": -99.156097,
+      "bearing": 340,
+      "speed": 28,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69878",
+      "route_id": 19459,
+      "latitude": 19.499857,
+      "longitude": -99.155991,
+      "bearing": 169,
+      "speed": 26,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69883",
       "route_id": 19456,
-      "latitude": 19.452253,
-      "longitude": -99.145775,
-      "bearing": 125,
+      "latitude": 19.46323,
+      "longitude": -99.143982,
+      "bearing": 349,
       "speed": 0,
-      "timestamp": 1781458246
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69884",
       "route_id": 19460,
-      "latitude": 19.477968,
-      "longitude": -99.147591,
-      "bearing": 340,
-      "speed": 34,
-      "timestamp": 1781458246
+      "latitude": 19.396795,
+      "longitude": -99.155884,
+      "bearing": 60,
+      "speed": 16,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69881",
       "route_id": 19459,
-      "latitude": 19.435959,
-      "longitude": -99.147034,
-      "bearing": 187,
-      "speed": 0,
-      "timestamp": 1781458246
+      "latitude": 19.412865,
+      "longitude": -99.154709,
+      "bearing": 185,
+      "speed": 26,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69882",
       "route_id": 19459,
-      "latitude": 19.42214,
-      "longitude": -99.153946,
-      "bearing": 183,
-      "speed": 41,
-      "timestamp": 1781458246
+      "latitude": 19.427614,
+      "longitude": -99.148849,
+      "bearing": 192,
+      "speed": 0,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69875",
-      "route_id": 19459,
-      "latitude": 19.374392,
-      "longitude": -99.160301,
-      "bearing": 192,
-      "speed": 0,
-      "timestamp": 1781458246
+      "route_id": 19458,
+      "latitude": 19.508369,
+      "longitude": -99.159019,
+      "bearing": 340,
+      "speed": 29,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69876",
-      "route_id": 19459,
-      "latitude": 19.503521,
-      "longitude": -99.157249,
-      "bearing": 158,
-      "speed": 0,
-      "timestamp": 1781458246
+      "route_id": 19429,
+      "latitude": 19.477634,
+      "longitude": -99.147514,
+      "bearing": 160,
+      "speed": 46,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69874",
-      "route_id": 19460,
-      "latitude": 19.39576,
-      "longitude": -99.156021,
-      "bearing": 100,
+      "route_id": 19458,
+      "latitude": 19.455727,
+      "longitude": -99.144981,
+      "bearing": 122,
       "speed": 0,
-      "timestamp": 1781458246
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69885",
-      "route_id": 19459,
-      "latitude": 19.398735,
-      "longitude": -99.15583,
-      "bearing": 185,
-      "speed": 45,
-      "timestamp": 1781458246
+      "route_id": 19457,
+      "latitude": 19.518991,
+      "longitude": -99.163544,
+      "bearing": 157,
+      "speed": 22,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69615",
+      "route_id": 20212,
+      "latitude": 19.421906,
+      "longitude": -99.111816,
+      "bearing": 230,
+      "speed": 47,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69614",
-      "route_id": 20295,
-      "latitude": 19.440149,
-      "longitude": -99.148727,
-      "bearing": 197,
-      "speed": 0,
-      "timestamp": 1781458246
+      "route_id": 19558,
+      "latitude": 19.41864,
+      "longitude": -99.112175,
+      "bearing": 190,
+      "speed": 23,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69613",
-      "route_id": 19559,
-      "latitude": 19.397192,
-      "longitude": -99.113533,
-      "bearing": 176,
-      "speed": 50,
-      "timestamp": 1781458246
+      "route_id": 26908,
+      "latitude": 19.300882,
+      "longitude": -99.113602,
+      "bearing": 196,
+      "speed": 0,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69620",
-      "route_id": 19559,
-      "latitude": 19.431557,
-      "longitude": -99.115196,
-      "bearing": 188,
-      "speed": 32,
-      "timestamp": 1781458246
+      "route_id": 19556,
+      "latitude": 19.327084,
+      "longitude": -99.1138,
+      "bearing": 184,
+      "speed": 40,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69619",
+      "route_id": 19558,
+      "latitude": 19.361685,
+      "longitude": -99.110191,
+      "bearing": 127,
+      "speed": 17,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69618",
-      "route_id": 20295,
-      "latitude": 19.384085,
-      "longitude": -99.157738,
-      "bearing": 193,
-      "speed": 44,
-      "timestamp": 1781458246
+      "route_id": 19558,
+      "latitude": 19.329437,
+      "longitude": -99.113503,
+      "bearing": 90,
+      "speed": 0,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69617",
+      "route_id": 19557,
+      "latitude": 19.399225,
+      "longitude": -99.113426,
+      "bearing": 357,
+      "speed": 0,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69626",
-      "route_id": 19559,
-      "latitude": 19.359768,
-      "longitude": -99.110672,
-      "bearing": 192,
-      "speed": 41,
-      "timestamp": 1781458246
+      "route_id": 20295,
+      "latitude": 19.501976,
+      "longitude": -99.118332,
+      "bearing": 195,
+      "speed": 0,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69623",
+      "route_id": 19557,
+      "latitude": 19.311094,
+      "longitude": -99.110794,
+      "bearing": 134,
+      "speed": 34,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69631",
-      "route_id": 19559,
-      "latitude": 19.285797,
-      "longitude": -99.115334,
-      "bearing": 197,
-      "speed": 11,
-      "timestamp": 1781458246
-    },
-    {
-      "vehicle_id": "69630",
       "route_id": 20212,
-      "latitude": 19.352909,
-      "longitude": -99.110573,
-      "bearing": 290,
-      "speed": 0,
-      "timestamp": 1781458246
+      "latitude": 19.371576,
+      "longitude": -99.107765,
+      "bearing": 168,
+      "speed": 16,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69629",
       "route_id": 19558,
-      "latitude": 19.343523,
-      "longitude": -99.112305,
-      "bearing": 122,
-      "speed": 0,
-      "timestamp": 1781458246
+      "latitude": 19.423433,
+      "longitude": -99.111679,
+      "bearing": 210,
+      "speed": 47,
+      "timestamp": 1781548368
     },
     {
-      "vehicle_id": "69627",
-      "route_id": 19558,
-      "latitude": 19.358044,
-      "longitude": -99.111061,
-      "bearing": 127,
-      "speed": 46,
-      "timestamp": 1781458246
+      "vehicle_id": "69628",
+      "route_id": 19559,
+      "latitude": 19.411388,
+      "longitude": -99.112976,
+      "bearing": 184,
+      "speed": 37,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69637",
-      "route_id": 19558,
-      "latitude": 19.300428,
-      "longitude": -99.113693,
-      "bearing": 147,
-      "speed": 0,
-      "timestamp": 1781458246
+      "route_id": 19559,
+      "latitude": 19.403273,
+      "longitude": -99.113838,
+      "bearing": 181,
+      "speed": 43,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69636",
-      "route_id": 19559,
-      "latitude": 19.455322,
-      "longitude": -99.107918,
-      "bearing": 200,
-      "speed": 38,
-      "timestamp": 1781458246
-    },
-    {
-      "vehicle_id": "69634",
       "route_id": 19558,
-      "latitude": 19.280647,
-      "longitude": -99.116837,
-      "bearing": 111,
-      "speed": 0,
-      "timestamp": 1781458246
+      "latitude": 19.500708,
+      "longitude": -99.088387,
+      "bearing": 227,
+      "speed": 20,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69633",
-      "route_id": 19558,
-      "latitude": 19.399414,
-      "longitude": -99.113419,
-      "bearing": 355,
-      "speed": 16,
-      "timestamp": 1781458246
+      "route_id": 20295,
+      "latitude": 19.50038,
+      "longitude": -99.119247,
+      "bearing": 191,
+      "speed": 0,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69632",
+      "route_id": 19556,
+      "latitude": 19.27771,
+      "longitude": -99.117958,
+      "bearing": 217,
+      "speed": 0,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69641",
       "route_id": 19559,
-      "latitude": 19.315828,
-      "longitude": -99.11142,
-      "bearing": 155,
-      "speed": 27,
-      "timestamp": 1781458246
+      "latitude": 19.341417,
+      "longitude": -99.112762,
+      "bearing": 186,
+      "speed": 46,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69639",
-      "route_id": 20212,
-      "latitude": 19.314039,
-      "longitude": -99.110542,
-      "bearing": 345,
-      "speed": 47,
-      "timestamp": 1781458246
+      "route_id": 19558,
+      "latitude": 19.452295,
+      "longitude": -99.108795,
+      "bearing": 197,
+      "speed": 0,
+      "timestamp": 1781548368
     },
     {
-      "vehicle_id": "69648",
-      "route_id": 20211,
-      "latitude": 19.466232,
-      "longitude": -99.103508,
-      "bearing": 202,
-      "speed": 43,
-      "timestamp": 1781458246
+      "vehicle_id": "69638",
+      "route_id": 20212,
+      "latitude": 19.4174,
+      "longitude": -99.112328,
+      "bearing": 40,
+      "speed": 37,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69364",
+      "route_id": 19491,
+      "latitude": 19.350868,
+      "longitude": -99.186371,
+      "bearing": 167,
+      "speed": 0,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69647",
-      "route_id": 19558,
-      "latitude": 19.369452,
-      "longitude": -99.108299,
-      "bearing": 128,
-      "speed": 42,
-      "timestamp": 1781458246
-    },
-    {
-      "vehicle_id": "69363",
-      "route_id": 19498,
-      "latitude": 19.355801,
-      "longitude": -99.184761,
-      "bearing": 164,
-      "speed": 40,
-      "timestamp": 1781458246
+      "route_id": 19559,
+      "latitude": 19.347864,
+      "longitude": -99.11142,
+      "bearing": 192,
+      "speed": 0,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "74921",
-      "route_id": 19498,
-      "latitude": 19.446308,
-      "longitude": -99.153214,
-      "bearing": 187,
-      "speed": 15,
-      "timestamp": 1781458246
+      "route_id": 19491,
+      "latitude": 19.372375,
+      "longitude": -99.17952,
+      "bearing": 161,
+      "speed": 8,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69646",
+      "route_id": 20212,
+      "latitude": 19.31567,
+      "longitude": -99.111191,
+      "bearing": 332,
+      "speed": 0,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69361",
+      "route_id": 19492,
+      "latitude": 19.425951,
+      "longitude": -99.16201,
+      "bearing": 203,
+      "speed": 5,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69645",
-      "route_id": 19558,
-      "latitude": 19.483496,
-      "longitude": -99.095695,
-      "bearing": 235,
-      "speed": 19,
-      "timestamp": 1781458246
+      "route_id": 19559,
+      "latitude": 19.430481,
+      "longitude": -99.115372,
+      "bearing": 187,
+      "speed": 0,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69360",
+      "route_id": 19491,
+      "latitude": 19.339561,
+      "longitude": -99.190369,
+      "bearing": 140,
+      "speed": 0,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69643",
+      "route_id": 20212,
+      "latitude": 19.496971,
+      "longitude": -99.089943,
+      "bearing": 215,
+      "speed": 14,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69642",
-      "route_id": 20211,
-      "latitude": 19.49781,
-      "longitude": -99.090225,
-      "bearing": 202,
-      "speed": 36,
-      "timestamp": 1781458246
+      "route_id": 20212,
+      "latitude": 19.440264,
+      "longitude": -99.113739,
+      "bearing": 116,
+      "speed": 11,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69368",
+      "route_id": 19492,
+      "latitude": 19.486635,
+      "longitude": -99.124382,
+      "bearing": 219,
+      "speed": 27,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69651",
+      "route_id": 19558,
+      "latitude": 19.443947,
+      "longitude": -99.112419,
+      "bearing": 209,
+      "speed": 45,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69367",
-      "route_id": 19498,
-      "latitude": 19.32151,
-      "longitude": -99.188278,
-      "bearing": 353,
-      "speed": 57,
-      "timestamp": 1781458246
+      "route_id": 19491,
+      "latitude": 19.431314,
+      "longitude": -99.159416,
+      "bearing": 261,
+      "speed": 53,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69366",
-      "route_id": 19498,
-      "latitude": 19.281433,
-      "longitude": -99.172356,
-      "bearing": 295,
-      "speed": 36,
-      "timestamp": 1781458246
+      "route_id": 19492,
+      "latitude": 19.435848,
+      "longitude": -99.157471,
+      "bearing": 202,
+      "speed": 8,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69365",
-      "route_id": 19497,
-      "latitude": 19.287367,
-      "longitude": -99.174973,
-      "bearing": 199,
-      "speed": 24,
-      "timestamp": 1781458246
+      "route_id": 19491,
+      "latitude": 19.363396,
+      "longitude": -99.182304,
+      "bearing": 176,
+      "speed": 35,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69649",
+      "route_id": 19556,
+      "latitude": 19.379047,
+      "longitude": -99.109596,
+      "bearing": 160,
+      "speed": 44,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69662",
-      "route_id": 20211,
-      "latitude": 19.427118,
-      "longitude": -99.111473,
-      "bearing": 169,
-      "speed": 23,
-      "timestamp": 1781458246
+      "route_id": 19558,
+      "latitude": 19.311852,
+      "longitude": -99.110634,
+      "bearing": 118,
+      "speed": 6,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69659",
-      "route_id": 19558,
-      "latitude": 19.401316,
-      "longitude": -99.113594,
-      "bearing": 355,
-      "speed": 37,
-      "timestamp": 1781458246
+      "route_id": 19557,
+      "latitude": 19.298986,
+      "longitude": -99.113922,
+      "bearing": 120,
+      "speed": 33,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69658",
+      "route_id": 19556,
+      "latitude": 19.42775,
+      "longitude": -99.111977,
+      "bearing": 117,
+      "speed": 27,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69373",
+      "route_id": 19491,
+      "latitude": 19.463726,
+      "longitude": -99.14283,
+      "bearing": 19,
+      "speed": 40,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69657",
+      "route_id": 26908,
+      "latitude": 19.31123,
+      "longitude": -99.112991,
+      "bearing": 105,
+      "speed": 22,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69656",
+      "route_id": 20211,
+      "latitude": 19.48785,
+      "longitude": -99.09433,
+      "bearing": 203,
+      "speed": 8,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69372",
+      "route_id": 19493,
+      "latitude": 19.448019,
+      "longitude": -99.152901,
+      "bearing": 103,
+      "speed": 53,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69371",
+      "route_id": 19499,
+      "latitude": 19.293541,
+      "longitude": -99.179939,
+      "bearing": 113,
+      "speed": 38,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69370",
       "route_id": 19499,
-      "latitude": 19.476675,
-      "longitude": -99.132645,
-      "bearing": 217,
-      "speed": 0,
-      "timestamp": 1781458246
+      "latitude": 19.38925,
+      "longitude": -99.173988,
+      "bearing": 197,
+      "speed": 19,
+      "timestamp": 1781548368
     },
     {
-      "vehicle_id": "74262",
+      "vehicle_id": "69653",
       "route_id": 19559,
-      "latitude": 19.487291,
-      "longitude": -99.094566,
+      "latitude": 19.493185,
+      "longitude": -99.092125,
       "bearing": 201,
-      "speed": 0,
-      "timestamp": 1781458246
+      "speed": 11,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "74922",
+      "route_id": 19491,
+      "latitude": 19.389288,
+      "longitude": -99.173851,
+      "bearing": 158,
+      "speed": 28,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69661",
-      "route_id": 20211,
-      "latitude": 19.349976,
-      "longitude": -99.110931,
-      "bearing": 175,
+      "route_id": 19558,
+      "latitude": 19.301731,
+      "longitude": -99.113266,
+      "bearing": 163,
       "speed": 0,
-      "timestamp": 1781458246
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69660",
+      "route_id": 20295,
+      "latitude": 19.407124,
+      "longitude": -99.155182,
+      "bearing": 183,
+      "speed": 0,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69673",
+      "route_id": 19559,
+      "latitude": 19.470829,
+      "longitude": -99.101509,
+      "bearing": 202,
+      "speed": 21,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69672",
-      "route_id": 19558,
-      "latitude": 19.413712,
-      "longitude": -99.112679,
-      "bearing": 110,
-      "speed": 42,
-      "timestamp": 1781458246
+      "route_id": 20212,
+      "latitude": 19.35465,
+      "longitude": -99.11084,
+      "bearing": 338,
+      "speed": 41,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69670",
-      "route_id": 20212,
-      "latitude": 19.375666,
-      "longitude": -99.1082,
-      "bearing": 342,
+      "route_id": 20295,
+      "latitude": 19.454527,
+      "longitude": -99.145294,
+      "bearing": 193,
       "speed": 38,
-      "timestamp": 1781458246
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69669",
+      "route_id": 20296,
+      "latitude": 19.472775,
+      "longitude": -99.135612,
+      "bearing": 12,
+      "speed": 48,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69667",
+      "route_id": 20212,
+      "latitude": 19.316183,
+      "longitude": -99.111504,
+      "bearing": 334,
+      "speed": 32,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69666",
-      "route_id": 19558,
-      "latitude": 19.285503,
-      "longitude": -99.115364,
-      "bearing": 181,
-      "speed": 8,
-      "timestamp": 1781458246
-    },
-    {
-      "vehicle_id": "69665",
-      "route_id": 20211,
-      "latitude": 19.486948,
-      "longitude": -99.094704,
-      "bearing": 202,
-      "speed": 10,
-      "timestamp": 1781458246
+      "route_id": 19559,
+      "latitude": 19.316643,
+      "longitude": -99.111832,
+      "bearing": 156,
+      "speed": 37,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69664",
-      "route_id": 20212,
-      "latitude": 19.495625,
-      "longitude": -99.090485,
-      "bearing": 217,
-      "speed": 38,
-      "timestamp": 1781458246
+      "route_id": 19558,
+      "latitude": 19.500156,
+      "longitude": -99.088608,
+      "bearing": 20,
+      "speed": 0,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69663",
       "route_id": 19559,
-      "latitude": 19.335855,
-      "longitude": -99.112984,
-      "bearing": 185,
-      "speed": 44,
-      "timestamp": 1781458246
+      "latitude": 19.294878,
+      "longitude": -99.114594,
+      "bearing": 188,
+      "speed": 0,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "70035",
-      "route_id": 19959,
-      "latitude": 19.45289,
-      "longitude": -99.130882,
-      "bearing": 28,
-      "speed": 0,
-      "timestamp": 1781458246
+      "route_id": 19583,
+      "latitude": 19.435043,
+      "longitude": -99.150543,
+      "bearing": 272,
+      "speed": 18,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "70036",
-      "route_id": 19959,
-      "latitude": 19.452639,
-      "longitude": -99.131126,
-      "bearing": 33,
+      "route_id": 19576,
+      "latitude": 19.453302,
+      "longitude": -99.130875,
+      "bearing": 213,
       "speed": 0,
-      "timestamp": 1781458246
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "70037",
-      "route_id": 19959,
-      "latitude": 19.488539,
-      "longitude": -99.116211,
-      "bearing": 288,
-      "speed": 41,
-      "timestamp": 1781458246
+      "route_id": 19576,
+      "latitude": 19.468819,
+      "longitude": -99.124771,
+      "bearing": 200,
+      "speed": 3,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "70039",
+      "route_id": 19582,
+      "latitude": 19.431246,
+      "longitude": -99.15921,
+      "bearing": 237,
+      "speed": 15,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "70040",
+      "route_id": 19577,
+      "latitude": 19.488869,
+      "longitude": -99.117012,
+      "bearing": 311,
+      "speed": 25,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69671",
-      "route_id": 19558,
-      "latitude": 19.367777,
-      "longitude": -99.108749,
-      "bearing": 171,
-      "speed": 43,
-      "timestamp": 1781458246
+      "route_id": 19559,
+      "latitude": 19.460764,
+      "longitude": -99.105751,
+      "bearing": 201,
+      "speed": 11,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "70041",
+      "route_id": 19577,
+      "latitude": 19.432653,
+      "longitude": -99.155411,
+      "bearing": 288,
+      "speed": 0,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "70042",
+      "route_id": 19576,
+      "latitude": 19.428459,
+      "longitude": -99.164803,
+      "bearing": 243,
+      "speed": 4,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "70043",
-      "route_id": 19959,
-      "latitude": 19.432617,
-      "longitude": -99.155411,
-      "bearing": 287,
-      "speed": 0,
-      "timestamp": 1781458246
+      "route_id": 19582,
+      "latitude": 19.482506,
+      "longitude": -99.119637,
+      "bearing": 199,
+      "speed": 33,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69680",
+      "route_id": 19559,
+      "latitude": 19.339188,
+      "longitude": -99.113091,
+      "bearing": 185,
+      "speed": 28,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69679",
+      "route_id": 19559,
+      "latitude": 19.386198,
+      "longitude": -99.111755,
+      "bearing": 168,
+      "speed": 9,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69678",
       "route_id": 19558,
-      "latitude": 19.440844,
-      "longitude": -99.113579,
-      "bearing": 194,
-      "speed": 19,
-      "timestamp": 1781458246
+      "latitude": 19.472174,
+      "longitude": -99.100594,
+      "bearing": 219,
+      "speed": 44,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69677",
-      "route_id": 19558,
-      "latitude": 19.45219,
-      "longitude": -99.108826,
-      "bearing": 187,
+      "route_id": 20295,
+      "latitude": 19.374302,
+      "longitude": -99.160378,
+      "bearing": 191,
       "speed": 0,
-      "timestamp": 1781458246
+      "timestamp": 1781548368
     },
     {
-      "vehicle_id": "69675",
-      "route_id": 19558,
-      "latitude": 19.277967,
-      "longitude": -99.117615,
-      "bearing": 145,
-      "speed": 0,
-      "timestamp": 1781458246
+      "vehicle_id": "69676",
+      "route_id": 20212,
+      "latitude": 19.50042,
+      "longitude": -99.088501,
+      "bearing": 211,
+      "speed": 10,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69674",
-      "route_id": 20295,
-      "latitude": 19.491877,
-      "longitude": -99.120552,
-      "bearing": 198,
-      "speed": 48,
-      "timestamp": 1781458246
+      "route_id": 20212,
+      "latitude": 19.465092,
+      "longitude": -99.103592,
+      "bearing": 216,
+      "speed": 50,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "70048",
+      "route_id": 19577,
+      "latitude": 19.483791,
+      "longitude": -99.113815,
+      "bearing": 131,
+      "speed": 15,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "70049",
+      "route_id": 19582,
+      "latitude": 19.437866,
+      "longitude": -99.146347,
+      "bearing": 224,
+      "speed": 10,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "70050",
+      "route_id": 19577,
+      "latitude": 19.42469,
+      "longitude": -99.185692,
+      "bearing": 263,
+      "speed": 2,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "70052",
+      "route_id": 19579,
+      "latitude": 19.435946,
+      "longitude": -99.148651,
+      "bearing": 197,
+      "speed": 37,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69501",
       "route_id": 19494,
-      "latitude": 19.492544,
-      "longitude": -99.120346,
-      "bearing": 196,
-      "speed": 46,
-      "timestamp": 1781458246
+      "latitude": 19.436155,
+      "longitude": -99.157349,
+      "bearing": 202,
+      "speed": 0,
+      "timestamp": 1781548368
     },
     {
-      "vehicle_id": "69498",
-      "route_id": 19500,
-      "latitude": 19.389278,
-      "longitude": -99.173897,
-      "bearing": 169,
-      "speed": 12,
-      "timestamp": 1781458246
+      "vehicle_id": "69497",
+      "route_id": 19494,
+      "latitude": 19.471876,
+      "longitude": -99.136482,
+      "bearing": 221,
+      "speed": 58,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69496",
-      "route_id": 19494,
-      "latitude": 19.439875,
-      "longitude": -99.155724,
-      "bearing": 202,
+      "route_id": 19497,
+      "latitude": 19.380449,
+      "longitude": -99.176903,
+      "bearing": 197,
+      "speed": 0,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69495",
+      "route_id": 19499,
+      "latitude": 19.397112,
+      "longitude": -99.171478,
+      "bearing": 198,
       "speed": 31,
-      "timestamp": 1781458246
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69494",
+      "route_id": 19499,
+      "latitude": 19.350563,
+      "longitude": -99.186516,
+      "bearing": 196,
+      "speed": 0,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69493",
-      "route_id": 19499,
-      "latitude": 19.351782,
-      "longitude": -99.186157,
-      "bearing": 197,
-      "speed": 0,
-      "timestamp": 1781458246
+      "route_id": 19492,
+      "latitude": 19.394608,
+      "longitude": -99.172295,
+      "bearing": 196,
+      "speed": 29,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69492",
-      "route_id": 19498,
-      "latitude": 19.410166,
-      "longitude": -99.167107,
-      "bearing": 17,
-      "speed": 12,
-      "timestamp": 1781458246
+      "route_id": 19492,
+      "latitude": 19.499731,
+      "longitude": -99.119614,
+      "bearing": 182,
+      "speed": 0,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "70054",
-      "route_id": 19956,
-      "latitude": 19.436775,
-      "longitude": -99.147423,
-      "bearing": 191,
-      "speed": 0,
-      "timestamp": 1781458246
-    },
-    {
-      "vehicle_id": "70055",
-      "route_id": 19959,
-      "latitude": 19.425688,
-      "longitude": -99.171562,
-      "bearing": 263,
-      "speed": 0,
-      "timestamp": 1781458246
+      "route_id": 19576,
+      "latitude": 19.445948,
+      "longitude": -99.137405,
+      "bearing": 226,
+      "speed": 28,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "70057",
-      "route_id": 19957,
-      "latitude": 19.428686,
-      "longitude": -99.165161,
-      "bearing": 244,
+      "route_id": 19576,
+      "latitude": 19.465029,
+      "longitude": -99.126205,
+      "bearing": 198,
       "speed": 0,
-      "timestamp": 1781458246
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "70058",
-      "route_id": 19958,
-      "latitude": 19.447298,
-      "longitude": -99.135918,
-      "bearing": 225,
-      "speed": 14,
-      "timestamp": 1781458246
+      "route_id": 19577,
+      "latitude": 19.448368,
+      "longitude": -99.1343,
+      "bearing": 295,
+      "speed": 45,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "70060",
-      "route_id": 19956,
-      "latitude": 19.447891,
-      "longitude": -99.134743,
-      "bearing": 215,
-      "speed": 24,
-      "timestamp": 1781458246
+      "route_id": 19583,
+      "latitude": 19.488644,
+      "longitude": -99.116623,
+      "bearing": 287,
+      "speed": 34,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69500",
+      "route_id": 19494,
+      "latitude": 19.480307,
+      "longitude": -99.129601,
+      "bearing": 217,
+      "speed": 35,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "70061",
+      "route_id": 19582,
+      "latitude": 19.468733,
+      "longitude": -99.124779,
+      "bearing": 200,
+      "speed": 0,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69499",
       "route_id": 19499,
-      "latitude": 19.419092,
-      "longitude": -99.164375,
-      "bearing": 195,
-      "speed": 0,
-      "timestamp": 1781458246
+      "latitude": 19.400557,
+      "longitude": -99.170341,
+      "bearing": 197,
+      "speed": 39,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "70062",
-      "route_id": 19958,
-      "latitude": 19.485193,
-      "longitude": -99.118546,
-      "bearing": 203,
-      "speed": 0,
-      "timestamp": 1781458246
+      "route_id": 19576,
+      "latitude": 19.443672,
+      "longitude": -99.139999,
+      "bearing": 200,
+      "speed": 27,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "70063",
+      "route_id": 19576,
+      "latitude": 19.434114,
+      "longitude": -99.152977,
+      "bearing": 242,
+      "speed": 37,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69512",
+      "route_id": 19497,
+      "latitude": 19.313162,
+      "longitude": -99.187347,
+      "bearing": 173,
+      "speed": 44,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69511",
+      "route_id": 19492,
+      "latitude": 19.39052,
+      "longitude": -99.173607,
+      "bearing": 197,
+      "speed": 13,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69509",
-      "route_id": 19499,
-      "latitude": 19.398085,
-      "longitude": -99.171158,
-      "bearing": 0,
-      "speed": 29,
-      "timestamp": 1781458246
+      "route_id": 19494,
+      "latitude": 19.500021,
+      "longitude": -99.119431,
+      "bearing": 352,
+      "speed": 0,
+      "timestamp": 1781548368
     },
     {
-      "vehicle_id": "69507",
-      "route_id": 19497,
-      "latitude": 19.368284,
-      "longitude": -99.180893,
-      "bearing": 199,
-      "speed": 29,
-      "timestamp": 1781458246
+      "vehicle_id": "69508",
+      "route_id": 19494,
+      "latitude": 19.463295,
+      "longitude": -99.143684,
+      "bearing": 212,
+      "speed": 36,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69506",
-      "route_id": 19498,
-      "latitude": 19.373623,
-      "longitude": -99.178879,
-      "bearing": 187,
-      "speed": 0,
-      "timestamp": 1781458246
+      "route_id": 19499,
+      "latitude": 19.431168,
+      "longitude": -99.159615,
+      "bearing": 205,
+      "speed": 44,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69505",
       "route_id": 19499,
-      "latitude": 19.355473,
-      "longitude": -99.184975,
-      "bearing": 197,
-      "speed": 37,
-      "timestamp": 1781458246
+      "latitude": 19.322569,
+      "longitude": -99.188499,
+      "bearing": 174,
+      "speed": 14,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69504",
+      "route_id": 19499,
+      "latitude": 19.484568,
+      "longitude": -99.126114,
+      "bearing": 216,
+      "speed": 46,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "70064",
-      "route_id": 19959,
-      "latitude": 19.437441,
-      "longitude": -99.146294,
-      "bearing": 134,
-      "speed": 29,
-      "timestamp": 1781458246
+      "route_id": 19577,
+      "latitude": 19.477846,
+      "longitude": -99.121338,
+      "bearing": 194,
+      "speed": 38,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "70065",
+      "route_id": 19577,
+      "latitude": 19.42465,
+      "longitude": -99.185486,
+      "bearing": 100,
+      "speed": 3,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69502",
-      "route_id": 19499,
-      "latitude": 19.374662,
-      "longitude": -99.178741,
-      "bearing": 197,
-      "speed": 33,
-      "timestamp": 1781458246
+      "route_id": 19497,
+      "latitude": 19.297733,
+      "longitude": -99.185425,
+      "bearing": 174,
+      "speed": 13,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "70066",
-      "route_id": 19958,
-      "latitude": 19.437344,
-      "longitude": -99.14711,
-      "bearing": 232,
-      "speed": 15,
-      "timestamp": 1781458246
+      "route_id": 19577,
+      "latitude": 19.457726,
+      "longitude": -99.128906,
+      "bearing": 20,
+      "speed": 0,
+      "timestamp": 1781548368
     },
     {
-      "vehicle_id": "70068",
-      "route_id": 19959,
-      "latitude": 19.433947,
-      "longitude": -99.152596,
-      "bearing": 278,
-      "speed": 0,
-      "timestamp": 1781458246
+      "vehicle_id": "70067",
+      "route_id": 19577,
+      "latitude": 19.425623,
+      "longitude": -99.169998,
+      "bearing": 302,
+      "speed": 44,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "70069",
-      "route_id": 19957,
-      "latitude": 19.440472,
-      "longitude": -99.143623,
-      "bearing": 217,
+      "route_id": 19576,
+      "latitude": 19.425543,
+      "longitude": -99.189659,
+      "bearing": 278,
       "speed": 33,
-      "timestamp": 1781458246
+      "timestamp": 1781548368
     },
     {
-      "vehicle_id": "70071",
-      "route_id": 19958,
-      "latitude": 19.453453,
-      "longitude": -99.130775,
-      "bearing": 205,
-      "speed": 0,
-      "timestamp": 1781458246
+      "vehicle_id": "70070",
+      "route_id": 19578,
+      "latitude": 19.429934,
+      "longitude": -99.161713,
+      "bearing": 243,
+      "speed": 21,
+      "timestamp": 1781548368
     },
     {
-      "vehicle_id": "69510",
-      "route_id": 19494,
-      "latitude": 19.430922,
-      "longitude": -99.159721,
-      "bearing": 205,
-      "speed": 44,
-      "timestamp": 1781458246
+      "vehicle_id": "70073",
+      "route_id": 19577,
+      "latitude": 19.470346,
+      "longitude": -99.124931,
+      "bearing": 0,
+      "speed": 20,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69411",
       "route_id": 20211,
-      "latitude": 19.460316,
-      "longitude": -99.105927,
-      "bearing": 196,
-      "speed": 32,
-      "timestamp": 1781458246
+      "latitude": 19.399357,
+      "longitude": -99.113647,
+      "bearing": 171,
+      "speed": 4,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69523",
-      "route_id": 19493,
-      "latitude": 19.436069,
-      "longitude": -99.157188,
-      "bearing": 222,
+      "route_id": 19500,
+      "latitude": 19.435602,
+      "longitude": -99.157471,
+      "bearing": 224,
+      "speed": 25,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69522",
+      "route_id": 19499,
+      "latitude": 19.385357,
+      "longitude": -99.175293,
+      "bearing": 198,
       "speed": 0,
-      "timestamp": 1781458246
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69521",
-      "route_id": 19497,
-      "latitude": 19.350586,
-      "longitude": -99.186531,
-      "bearing": 196,
-      "speed": 0,
-      "timestamp": 1781458246
+      "route_id": 19500,
+      "latitude": 19.461092,
+      "longitude": -99.14521,
+      "bearing": 24,
+      "speed": 38,
+      "timestamp": 1781548368
     },
     {
-      "vehicle_id": "69520",
-      "route_id": 19499,
-      "latitude": 19.499254,
-      "longitude": -99.119629,
-      "bearing": 148,
-      "speed": 0,
-      "timestamp": 1781458246
+      "vehicle_id": "69408",
+      "route_id": 19563,
+      "latitude": 19.388832,
+      "longitude": -99.082748,
+      "bearing": 304,
+      "speed": 30,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69407",
+      "route_id": 19563,
+      "latitude": 19.394321,
+      "longitude": -99.13961,
+      "bearing": 285,
+      "speed": 14,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69519",
+      "route_id": 19498,
+      "latitude": 19.346903,
+      "longitude": -99.18766,
+      "bearing": 199,
+      "speed": 0,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69406",
       "route_id": 19562,
-      "latitude": 19.405949,
-      "longitude": -99.178673,
-      "bearing": 109,
-      "speed": 19,
-      "timestamp": 1781458246
+      "latitude": 19.398193,
+      "longitude": -99.119217,
+      "bearing": 166,
+      "speed": 50,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69518",
+      "route_id": 19500,
+      "latitude": 19.294371,
+      "longitude": -99.181664,
+      "bearing": 293,
+      "speed": 45,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69405",
       "route_id": 19563,
-      "latitude": 19.393522,
-      "longitude": -99.134438,
-      "bearing": 278,
+      "latitude": 19.386534,
+      "longitude": -99.060326,
+      "bearing": 189,
       "speed": 0,
-      "timestamp": 1781458246
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69517",
-      "route_id": 19500,
-      "latitude": 19.279581,
-      "longitude": -99.168839,
-      "bearing": 319,
-      "speed": 0,
-      "timestamp": 1781458246
+      "route_id": 19491,
+      "latitude": 19.488413,
+      "longitude": -99.122704,
+      "bearing": 19,
+      "speed": 43,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69404",
       "route_id": 19563,
-      "latitude": 19.393631,
-      "longitude": -99.135475,
-      "bearing": 276,
+      "latitude": 19.385395,
+      "longitude": -99.051765,
+      "bearing": 209,
       "speed": 0,
-      "timestamp": 1781458246
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69516",
+      "route_id": 19499,
+      "latitude": 19.298126,
+      "longitude": -99.185463,
+      "bearing": 173,
+      "speed": 0,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69515",
+      "route_id": 19497,
+      "latitude": 19.345751,
+      "longitude": -99.188217,
+      "bearing": 200,
+      "speed": 31,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69403",
+      "route_id": 19563,
+      "latitude": 19.408031,
+      "longitude": -99.184906,
+      "bearing": 265,
+      "speed": 22,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "70074",
-      "route_id": 19958,
-      "latitude": 19.460981,
-      "longitude": -99.127708,
-      "bearing": 200,
-      "speed": 31,
-      "timestamp": 1781458246
+      "route_id": 19576,
+      "latitude": 19.468559,
+      "longitude": -99.124908,
+      "bearing": 195,
+      "speed": 0,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "70075",
-      "route_id": 19958,
-      "latitude": 19.433498,
-      "longitude": -99.154274,
-      "bearing": 246,
+      "route_id": 19577,
+      "latitude": 19.431044,
+      "longitude": -99.158653,
+      "bearing": 206,
       "speed": 0,
-      "timestamp": 1781458246
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69514",
+      "route_id": 19499,
+      "latitude": 19.430784,
+      "longitude": -99.159821,
+      "bearing": 205,
+      "speed": 43,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69402",
-      "route_id": 19566,
-      "latitude": 19.38879,
-      "longitude": -99.059944,
-      "bearing": 187,
+      "route_id": 19562,
+      "latitude": 19.384247,
+      "longitude": -99.071098,
+      "bearing": 265,
+      "speed": 10,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69513",
+      "route_id": 19499,
+      "latitude": 19.499746,
+      "longitude": -99.1194,
+      "bearing": 0,
       "speed": 0,
-      "timestamp": 1781458246
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69324",
+      "route_id": 19470,
+      "latitude": 19.480635,
+      "longitude": -99.101631,
+      "bearing": 291,
+      "speed": 22,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69325",
+      "route_id": 19471,
+      "latitude": 19.467056,
+      "longitude": -99.075821,
+      "bearing": 87,
+      "speed": 20,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69326",
       "route_id": 19471,
-      "latitude": 19.503803,
-      "longitude": -99.183029,
-      "bearing": 103,
-      "speed": 45,
-      "timestamp": 1781458246
+      "latitude": 19.48525,
+      "longitude": -99.119141,
+      "bearing": 108,
+      "speed": 0,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69328",
       "route_id": 19470,
-      "latitude": 19.486252,
-      "longitude": -99.12146,
-      "bearing": 296,
-      "speed": 42,
-      "timestamp": 1781458246
+      "latitude": 19.488831,
+      "longitude": -99.128204,
+      "bearing": 291,
+      "speed": 0,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69410",
-      "route_id": 19562,
-      "latitude": 19.395561,
-      "longitude": -99.151482,
-      "bearing": 226,
-      "speed": 16,
-      "timestamp": 1781458246
+      "route_id": 19563,
+      "latitude": 19.383554,
+      "longitude": -99.065895,
+      "bearing": 280,
+      "speed": 0,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69330",
+      "route_id": 19470,
+      "latitude": 19.494995,
+      "longitude": -99.153282,
+      "bearing": 282,
+      "speed": 2,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69331",
+      "route_id": 19471,
+      "latitude": 19.486551,
+      "longitude": -99.122284,
+      "bearing": 113,
+      "speed": 9,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69332",
+      "route_id": 19472,
+      "latitude": 19.482746,
+      "longitude": -99.115005,
+      "bearing": 111,
+      "speed": 0,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69534",
-      "route_id": 19492,
-      "latitude": 19.500439,
-      "longitude": -99.119148,
-      "bearing": 0,
-      "speed": 0,
-      "timestamp": 1781458246
+      "route_id": 19498,
+      "latitude": 19.361523,
+      "longitude": -99.182831,
+      "bearing": 175,
+      "speed": 9,
+      "timestamp": 1781548368
     },
     {
-      "vehicle_id": "69421",
-      "route_id": 19567,
-      "latitude": 19.383755,
-      "longitude": -99.06813,
-      "bearing": 279,
-      "speed": 47,
-      "timestamp": 1781458246
+      "vehicle_id": "69533",
+      "route_id": 19491,
+      "latitude": 19.440031,
+      "longitude": -99.15551,
+      "bearing": 235,
+      "speed": 35,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69532",
-      "route_id": 19494,
-      "latitude": 19.43214,
-      "longitude": -99.159081,
-      "bearing": 203,
-      "speed": 24,
-      "timestamp": 1781458246
+      "route_id": 19497,
+      "latitude": 19.281939,
+      "longitude": -99.173767,
+      "bearing": 114,
+      "speed": 12,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69531",
+      "route_id": 19497,
+      "latitude": 19.39978,
+      "longitude": -99.170479,
+      "bearing": 168,
+      "speed": 28,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69419",
+      "route_id": 19562,
+      "latitude": 19.403469,
+      "longitude": -99.170258,
+      "bearing": 172,
+      "speed": 10,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69418",
-      "route_id": 20212,
-      "latitude": 19.500555,
-      "longitude": -99.088448,
-      "bearing": 198,
+      "route_id": 19559,
+      "latitude": 19.301344,
+      "longitude": -99.113472,
+      "bearing": 195,
       "speed": 0,
-      "timestamp": 1781458246
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69417",
+      "route_id": 19473,
+      "latitude": 19.477201,
+      "longitude": -99.093468,
+      "bearing": 292,
+      "speed": 50,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69529",
+      "route_id": 19499,
+      "latitude": 19.458948,
+      "longitude": -99.147003,
+      "bearing": 211,
+      "speed": 33,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69416",
-      "route_id": 20212,
-      "latitude": 19.309917,
-      "longitude": -99.111618,
-      "bearing": 283,
-      "speed": 20,
-      "timestamp": 1781458246
+      "route_id": 20211,
+      "latitude": 19.345818,
+      "longitude": -99.111923,
+      "bearing": 190,
+      "speed": 48,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69528",
+      "route_id": 19498,
+      "latitude": 19.346046,
+      "longitude": -99.188004,
+      "bearing": 186,
+      "speed": 0,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69527",
+      "route_id": 19500,
+      "latitude": 19.40144,
+      "longitude": -99.169945,
+      "bearing": 164,
+      "speed": 39,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69415",
+      "route_id": 19559,
+      "latitude": 19.479998,
+      "longitude": -99.097748,
+      "bearing": 201,
+      "speed": 0,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69526",
-      "route_id": 19494,
-      "latitude": 19.463825,
-      "longitude": -99.14328,
-      "bearing": 217,
-      "speed": 37,
-      "timestamp": 1781458246
+      "route_id": 19493,
+      "latitude": 19.457008,
+      "longitude": -99.148941,
+      "bearing": 183,
+      "speed": 27,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69414",
+      "route_id": 20211,
+      "latitude": 19.480675,
+      "longitude": -99.097443,
+      "bearing": 201,
+      "speed": 38,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69525",
+      "route_id": 19491,
+      "latitude": 19.338818,
+      "longitude": -99.190369,
+      "bearing": 350,
+      "speed": 16,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69413",
+      "route_id": 19471,
+      "latitude": 19.51156,
+      "longitude": -99.197166,
+      "bearing": 141,
+      "speed": 0,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69333",
-      "route_id": 19471,
-      "latitude": 19.494877,
-      "longitude": -99.153145,
-      "bearing": 102,
+      "route_id": 19473,
+      "latitude": 19.467415,
+      "longitude": -99.062172,
+      "bearing": 313,
       "speed": 0,
-      "timestamp": 1781458246
+      "timestamp": 1781548368
     },
     {
-      "vehicle_id": "69334",
-      "route_id": 19470,
-      "latitude": 19.477127,
-      "longitude": -99.092972,
-      "bearing": 293,
-      "speed": 50,
-      "timestamp": 1781458246
+      "vehicle_id": "69524",
+      "route_id": 19494,
+      "latitude": 19.433958,
+      "longitude": -99.158272,
+      "bearing": 203,
+      "speed": 22,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69335",
+      "route_id": 19472,
+      "latitude": 19.491377,
+      "longitude": -99.135574,
+      "bearing": 283,
+      "speed": 0,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69336",
       "route_id": 19473,
-      "latitude": 19.467403,
-      "longitude": -99.081009,
-      "bearing": 284,
-      "speed": 0,
-      "timestamp": 1781458246
+      "latitude": 19.486595,
+      "longitude": -99.113098,
+      "bearing": 184,
+      "speed": 20,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69337",
       "route_id": 19471,
-      "latitude": 19.472542,
-      "longitude": -99.087349,
-      "bearing": 150,
-      "speed": 39,
-      "timestamp": 1781458246
+      "latitude": 19.476759,
+      "longitude": -99.092117,
+      "bearing": 111,
+      "speed": 16,
+      "timestamp": 1781548368
     },
     {
-      "vehicle_id": "69341",
-      "route_id": 19470,
-      "latitude": 19.479687,
-      "longitude": -99.077591,
+      "vehicle_id": "69338",
+      "route_id": 19471,
+      "latitude": 19.482656,
+      "longitude": -99.106773,
+      "bearing": 113,
+      "speed": 0,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69339",
+      "route_id": 19473,
+      "latitude": 19.478563,
+      "longitude": -99.078011,
       "bearing": 199,
-      "speed": 43,
-      "timestamp": 1781458246
+      "speed": 0,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69340",
+      "route_id": 19470,
+      "latitude": 19.467543,
+      "longitude": -99.080383,
+      "bearing": 192,
+      "speed": 0,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69342",
       "route_id": 19470,
-      "latitude": 19.49115,
-      "longitude": -99.135086,
-      "bearing": 283,
-      "speed": 32,
-      "timestamp": 1781458246
+      "latitude": 19.51177,
+      "longitude": -99.196449,
+      "bearing": 273,
+      "speed": 0,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69538",
+      "route_id": 19499,
+      "latitude": 19.283983,
+      "longitude": -99.175659,
+      "bearing": 166,
+      "speed": 8,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69343",
-      "route_id": 19470,
-      "latitude": 19.496481,
-      "longitude": -99.160011,
-      "bearing": 282,
+      "route_id": 19471,
+      "latitude": 19.471466,
+      "longitude": -99.070816,
+      "bearing": 133,
       "speed": 0,
-      "timestamp": 1781458246
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69537",
+      "route_id": 19500,
+      "latitude": 19.415447,
+      "longitude": -99.165413,
+      "bearing": 165,
+      "speed": 0,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69536",
-      "route_id": 19499,
-      "latitude": 19.401796,
-      "longitude": -99.169945,
+      "route_id": 19497,
+      "latitude": 19.35862,
+      "longitude": -99.183922,
       "bearing": 197,
-      "speed": 10,
-      "timestamp": 1781458246
+      "speed": 6,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69344",
+      "route_id": 19472,
+      "latitude": 19.468163,
+      "longitude": -99.071671,
+      "bearing": 134,
+      "speed": 15,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69345",
-      "route_id": 19471,
-      "latitude": 19.496256,
-      "longitude": -99.159386,
-      "bearing": 103,
-      "speed": 27,
-      "timestamp": 1781458246
+      "route_id": 19470,
+      "latitude": 19.488853,
+      "longitude": -99.11734,
+      "bearing": 263,
+      "speed": 22,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69535",
       "route_id": 19499,
-      "latitude": 19.499432,
-      "longitude": -99.119041,
-      "bearing": 184,
-      "speed": 0,
-      "timestamp": 1781458246
+      "latitude": 19.354357,
+      "longitude": -99.18531,
+      "bearing": 197,
+      "speed": 3,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69346",
-      "route_id": 19471,
-      "latitude": 19.502634,
-      "longitude": -99.179359,
-      "bearing": 109,
-      "speed": 31,
-      "timestamp": 1781458246
+      "route_id": 19473,
+      "latitude": 19.488918,
+      "longitude": -99.128441,
+      "bearing": 291,
+      "speed": 0,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69347",
+      "route_id": 19474,
+      "latitude": 19.5107,
+      "longitude": -99.191597,
+      "bearing": 349,
+      "speed": 0,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69348",
-      "route_id": 19471,
-      "latitude": 19.472254,
-      "longitude": -99.067757,
-      "bearing": 136,
-      "speed": 18,
-      "timestamp": 1781458246
+      "route_id": 19473,
+      "latitude": 19.467703,
+      "longitude": -99.08033,
+      "bearing": 189,
+      "speed": 0,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69349",
       "route_id": 19471,
-      "latitude": 19.493708,
-      "longitude": -99.147896,
-      "bearing": 103,
-      "speed": 15,
-      "timestamp": 1781458246
+      "latitude": 19.486652,
+      "longitude": -99.122566,
+      "bearing": 110,
+      "speed": 2,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69350",
       "route_id": 19470,
-      "latitude": 19.469622,
-      "longitude": -99.064659,
-      "bearing": 313,
-      "speed": 50,
-      "timestamp": 1781458246
+      "latitude": 19.485935,
+      "longitude": -99.120857,
+      "bearing": 295,
+      "speed": 36,
+      "timestamp": 1781548368
     },
     {
-      "vehicle_id": "69352",
-      "route_id": 19471,
-      "latitude": 19.482859,
-      "longitude": -99.107567,
-      "bearing": 102,
-      "speed": 50,
-      "timestamp": 1781458246
+      "vehicle_id": "69351",
+      "route_id": 19473,
+      "latitude": 19.487396,
+      "longitude": -99.124283,
+      "bearing": 289,
+      "speed": 0,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "70117",
-      "route_id": 19567,
-      "latitude": 19.395342,
-      "longitude": -99.148499,
-      "bearing": 223,
-      "speed": 44,
-      "timestamp": 1781458246
+      "route_id": 19564,
+      "latitude": 19.395882,
+      "longitude": -99.093239,
+      "bearing": 302,
+      "speed": 32,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "70116",
       "route_id": 19563,
-      "latitude": 19.38662,
-      "longitude": -99.054466,
-      "bearing": 305,
-      "speed": 22,
-      "timestamp": 1781458246
+      "latitude": 19.396917,
+      "longitude": -99.099007,
+      "bearing": 271,
+      "speed": 0,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "70115",
-      "route_id": 19567,
-      "latitude": 19.403439,
-      "longitude": -99.169258,
-      "bearing": 177,
-      "speed": 0,
-      "timestamp": 1781458246
+      "route_id": 19563,
+      "latitude": 19.386133,
+      "longitude": -99.051346,
+      "bearing": 202,
+      "speed": 7,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "70114",
-      "route_id": 19567,
-      "latitude": 19.398108,
-      "longitude": -99.110741,
-      "bearing": 102,
-      "speed": 42,
-      "timestamp": 1781458246
+      "route_id": 19562,
+      "latitude": 19.384039,
+      "longitude": -99.075684,
+      "bearing": 118,
+      "speed": 30,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "70113",
-      "route_id": 19563,
-      "latitude": 19.389643,
-      "longitude": -99.059029,
-      "bearing": 305,
-      "speed": 8,
-      "timestamp": 1781458246
+      "route_id": 19562,
+      "latitude": 19.389444,
+      "longitude": -99.059731,
+      "bearing": 270,
+      "speed": 0,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "70112",
-      "route_id": 19563,
-      "latitude": 19.398272,
-      "longitude": -99.118576,
-      "bearing": 268,
-      "speed": 41,
-      "timestamp": 1781458246
+      "route_id": 19562,
+      "latitude": 19.3971,
+      "longitude": -99.103035,
+      "bearing": 239,
+      "speed": 34,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69353",
+      "route_id": 19472,
+      "latitude": 19.467314,
+      "longitude": -99.080971,
+      "bearing": 103,
+      "speed": 0,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69354",
+      "route_id": 19470,
+      "latitude": 19.490887,
+      "longitude": -99.133987,
+      "bearing": 284,
+      "speed": 0,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69355",
-      "route_id": 19470,
-      "latitude": 19.511742,
-      "longitude": -99.197586,
-      "bearing": 265,
-      "speed": 9,
-      "timestamp": 1781458246
+      "route_id": 19472,
+      "latitude": 19.478659,
+      "longitude": -99.097115,
+      "bearing": 113,
+      "speed": 0,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69356",
       "route_id": 19470,
-      "latitude": 19.495461,
-      "longitude": -99.155479,
-      "bearing": 283,
-      "speed": 48,
-      "timestamp": 1781458246
+      "latitude": 19.469824,
+      "longitude": -99.079918,
+      "bearing": 190,
+      "speed": 42,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69357",
+      "route_id": 19470,
+      "latitude": 19.476711,
+      "longitude": -99.091728,
+      "bearing": 293,
+      "speed": 34,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69358",
-      "route_id": 19470,
-      "latitude": 19.489807,
-      "longitude": -99.130867,
-      "bearing": 291,
-      "speed": 0,
-      "timestamp": 1781458246
+      "route_id": 19473,
+      "latitude": 19.487108,
+      "longitude": -99.118004,
+      "bearing": 198,
+      "speed": 12,
+      "timestamp": 1781548368
     },
     {
-      "vehicle_id": "69724",
-      "route_id": 19564,
-      "latitude": 19.388767,
-      "longitude": -99.059418,
-      "bearing": 323,
+      "vehicle_id": "69359",
+      "route_id": 19471,
+      "latitude": 19.49309,
+      "longitude": -99.144943,
+      "bearing": 102,
       "speed": 0,
-      "timestamp": 1781458246
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "70120",
-      "route_id": 19566,
-      "latitude": 19.397612,
-      "longitude": -99.130066,
-      "bearing": 250,
-      "speed": 15,
-      "timestamp": 1781458246
+      "route_id": 19562,
+      "latitude": 19.389103,
+      "longitude": -99.059807,
+      "bearing": 7,
+      "speed": 0,
+      "timestamp": 1781548368
     },
     {
-      "vehicle_id": "70119",
-      "route_id": 19562,
-      "latitude": 19.39683,
-      "longitude": -99.099571,
-      "bearing": 212,
-      "speed": 0,
-      "timestamp": 1781458246
+      "vehicle_id": "70118",
+      "route_id": 19563,
+      "latitude": 19.39381,
+      "longitude": -99.136528,
+      "bearing": 278,
+      "speed": 48,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69726",
-      "route_id": 19475,
-      "latitude": 19.507114,
-      "longitude": -99.196388,
-      "bearing": 195,
-      "speed": 0,
-      "timestamp": 1781458246
+      "route_id": 19472,
+      "latitude": 19.473991,
+      "longitude": -99.088181,
+      "bearing": 151,
+      "speed": 15,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69727",
-      "route_id": 19471,
-      "latitude": 19.502905,
-      "longitude": -99.18013,
-      "bearing": 108,
-      "speed": 48,
-      "timestamp": 1781458246
+      "route_id": 19474,
+      "latitude": 19.486359,
+      "longitude": -99.12188,
+      "bearing": 115,
+      "speed": 19,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69728",
-      "route_id": 19471,
-      "latitude": 19.51128,
-      "longitude": -99.198318,
-      "bearing": 18,
+      "route_id": 19475,
+      "latitude": 19.487473,
+      "longitude": -99.124702,
+      "bearing": 111,
       "speed": 0,
-      "timestamp": 1781458246
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69729",
-      "route_id": 19470,
-      "latitude": 19.476749,
-      "longitude": -99.091988,
-      "bearing": 293,
-      "speed": 33,
-      "timestamp": 1781458246
+      "route_id": 19475,
+      "latitude": 19.49523,
+      "longitude": -99.154648,
+      "bearing": 103,
+      "speed": 0,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69730",
-      "route_id": 19470,
-      "latitude": 19.496935,
-      "longitude": -99.162231,
-      "bearing": 282,
-      "speed": 46,
-      "timestamp": 1781458246
+      "route_id": 19475,
+      "latitude": 19.497791,
+      "longitude": -99.166397,
+      "bearing": 103,
+      "speed": 0,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69731",
+      "route_id": 19472,
+      "latitude": 19.486145,
+      "longitude": -99.12149,
+      "bearing": 116,
+      "speed": 38,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69732",
-      "route_id": 20296,
-      "latitude": 19.420179,
-      "longitude": -99.15406,
-      "bearing": 340,
-      "speed": 2,
-      "timestamp": 1781458246
+      "route_id": 20295,
+      "latitude": 19.384548,
+      "longitude": -99.157623,
+      "bearing": 193,
+      "speed": 41,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69734",
-      "route_id": 20295,
-      "latitude": 19.420759,
-      "longitude": -99.154091,
-      "bearing": 183,
-      "speed": 34,
-      "timestamp": 1781458246
+      "route_id": 20296,
+      "latitude": 19.450361,
+      "longitude": -99.146225,
+      "bearing": 121,
+      "speed": 37,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69735",
-      "route_id": 19470,
-      "latitude": 19.494719,
-      "longitude": -99.152222,
-      "bearing": 283,
-      "speed": 46,
-      "timestamp": 1781458246
-    },
-    {
-      "vehicle_id": "69736",
-      "route_id": 19470,
-      "latitude": 19.495731,
-      "longitude": -99.156761,
-      "bearing": 283,
-      "speed": 28,
-      "timestamp": 1781458246
+      "route_id": 19472,
+      "latitude": 19.490942,
+      "longitude": -99.134232,
+      "bearing": 284,
+      "speed": 0,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69737",
-      "route_id": 19470,
-      "latitude": 19.489885,
-      "longitude": -99.131172,
-      "bearing": 291,
+      "route_id": 19474,
+      "latitude": 19.496344,
+      "longitude": -99.159531,
+      "bearing": 286,
+      "speed": 3,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69738",
+      "route_id": 19473,
+      "latitude": 19.481922,
+      "longitude": -99.104912,
+      "bearing": 293,
+      "speed": 42,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69223",
+      "route_id": 20439,
+      "latitude": 19.42441,
+      "longitude": -99.174484,
+      "bearing": 278,
       "speed": 0,
-      "timestamp": 1781458246
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69739",
+      "route_id": 20296,
+      "latitude": 19.446054,
+      "longitude": -99.147202,
+      "bearing": 114,
+      "speed": 2,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69224",
+      "route_id": 19909,
+      "latitude": 19.437254,
+      "longitude": -99.14711,
+      "bearing": 235,
+      "speed": 29,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69740",
       "route_id": 19470,
-      "latitude": 19.48749,
-      "longitude": -99.124634,
+      "latitude": 19.489758,
+      "longitude": -99.130814,
       "bearing": 291,
       "speed": 0,
-      "timestamp": 1781458246
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69225",
+      "route_id": 20440,
+      "latitude": 19.412741,
+      "longitude": -99.182152,
+      "bearing": 201,
+      "speed": 26,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69741",
-      "route_id": 19470,
-      "latitude": 19.486593,
-      "longitude": -99.113113,
-      "bearing": 173,
+      "route_id": 19473,
+      "latitude": 19.479431,
+      "longitude": -99.077675,
+      "bearing": 199,
+      "speed": 40,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69227",
+      "route_id": 20440,
+      "latitude": 19.423994,
+      "longitude": -99.174309,
+      "bearing": 242,
+      "speed": 13,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69228",
+      "route_id": 20440,
+      "latitude": 19.444304,
+      "longitude": -99.139565,
+      "bearing": 229,
       "speed": 0,
-      "timestamp": 1781458246
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69744",
       "route_id": 19471,
-      "latitude": 19.485229,
-      "longitude": -99.119095,
-      "bearing": 109,
-      "speed": 0,
-      "timestamp": 1781458246
+      "latitude": 19.511589,
+      "longitude": -99.196861,
+      "bearing": 153,
+      "speed": 30,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69745",
-      "route_id": 19471,
-      "latitude": 19.507214,
-      "longitude": -99.196724,
-      "bearing": 159,
-      "speed": 0,
-      "timestamp": 1781458246
+      "route_id": 19470,
+      "latitude": 19.493799,
+      "longitude": -99.147858,
+      "bearing": 282,
+      "speed": 30,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69746",
       "route_id": 20296,
-      "latitude": 19.479071,
-      "longitude": -99.130363,
-      "bearing": 16,
-      "speed": 46,
-      "timestamp": 1781458246
+      "latitude": 19.382812,
+      "longitude": -99.158012,
+      "bearing": 155,
+      "speed": 12,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69747",
+      "route_id": 19470,
+      "latitude": 19.492147,
+      "longitude": -99.139633,
+      "bearing": 280,
+      "speed": 0,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69748",
+      "route_id": 19471,
+      "latitude": 19.481916,
+      "longitude": -99.105125,
+      "bearing": 112,
+      "speed": 15,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69749",
+      "route_id": 19470,
+      "latitude": 19.486887,
+      "longitude": -99.11805,
+      "bearing": 199,
+      "speed": 13,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69751",
+      "route_id": 19473,
+      "latitude": 19.471432,
+      "longitude": -99.066788,
+      "bearing": 318,
+      "speed": 47,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69752",
+      "route_id": 19470,
+      "latitude": 19.503866,
+      "longitude": -99.182991,
+      "bearing": 289,
+      "speed": 0,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69753",
+      "route_id": 19471,
+      "latitude": 19.485334,
+      "longitude": -99.119339,
+      "bearing": 109,
+      "speed": 0,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69238",
+      "route_id": 19909,
+      "latitude": 19.424084,
+      "longitude": -99.174118,
+      "bearing": 244,
+      "speed": 0,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69179",
-      "route_id": 19473,
-      "latitude": 19.487398,
-      "longitude": -99.112808,
-      "bearing": 186,
+      "route_id": 19471,
+      "latitude": 19.468422,
+      "longitude": -99.071625,
+      "bearing": 128,
       "speed": 0,
-      "timestamp": 1781458246
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69180",
+      "route_id": 20296,
+      "latitude": 19.397015,
+      "longitude": -99.155899,
+      "bearing": 20,
+      "speed": 0,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69243",
+      "route_id": 20440,
+      "latitude": 19.441156,
+      "longitude": -99.142761,
+      "bearing": 235,
+      "speed": 25,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69182",
+      "route_id": 19471,
+      "latitude": 19.488237,
+      "longitude": -99.126785,
+      "bearing": 110,
+      "speed": 38,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69183",
       "route_id": 19470,
-      "latitude": 19.47941,
-      "longitude": -99.07486,
-      "bearing": 317,
-      "speed": 37,
-      "timestamp": 1781458246
+      "latitude": 19.483101,
+      "longitude": -99.108437,
+      "bearing": 282,
+      "speed": 34,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69230",
+      "route_id": 20439,
+      "latitude": 19.433495,
+      "longitude": -99.154251,
+      "bearing": 245,
+      "speed": 0,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69184",
-      "route_id": 19470,
-      "latitude": 19.479326,
-      "longitude": -99.098511,
-      "bearing": 291,
-      "speed": 35,
-      "timestamp": 1781458246
+      "route_id": 19471,
+      "latitude": 19.473049,
+      "longitude": -99.06881,
+      "bearing": 166,
+      "speed": 0,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69246",
+      "route_id": 19908,
+      "latitude": 19.435085,
+      "longitude": -99.150337,
+      "bearing": 281,
+      "speed": 0,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69185",
-      "route_id": 19473,
-      "latitude": 19.478886,
-      "longitude": -99.077888,
-      "bearing": 200,
-      "speed": 23,
-      "timestamp": 1781458246
+      "route_id": 19471,
+      "latitude": 19.510818,
+      "longitude": -99.192368,
+      "bearing": 102,
+      "speed": 0,
+      "timestamp": 1781548368
     },
     {
-      "vehicle_id": "69186",
-      "route_id": 19475,
-      "latitude": 19.50699,
-      "longitude": -99.196922,
-      "bearing": 282,
-      "speed": 0,
-      "timestamp": 1781458246
+      "vehicle_id": "69248",
+      "route_id": 19908,
+      "latitude": 19.424753,
+      "longitude": -99.186089,
+      "bearing": 271,
+      "speed": 36,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69304",
       "route_id": 19983,
-      "latitude": 19.395969,
-      "longitude": -99.157005,
-      "bearing": 221,
+      "latitude": 19.384447,
+      "longitude": -99.076332,
+      "bearing": 124,
       "speed": 0,
-      "timestamp": 1781458246
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69249",
+      "route_id": 20440,
+      "latitude": 19.425594,
+      "longitude": -99.170792,
+      "bearing": 243,
+      "speed": 12,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69250",
+      "route_id": 20439,
+      "latitude": 19.429523,
+      "longitude": -99.162376,
+      "bearing": 304,
+      "speed": 31,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69305",
       "route_id": 19983,
-      "latitude": 19.365028,
-      "longitude": -99.181786,
-      "bearing": 151,
+      "latitude": 19.384172,
+      "longitude": -99.070549,
+      "bearing": 270,
+      "speed": 27,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69306",
+      "route_id": 19984,
+      "latitude": 19.394241,
+      "longitude": -99.139214,
+      "bearing": 279,
       "speed": 0,
-      "timestamp": 1781458246
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69307",
-      "route_id": 19983,
-      "latitude": 19.379885,
-      "longitude": -99.176926,
-      "bearing": 175,
+      "route_id": 19984,
+      "latitude": 19.385916,
+      "longitude": -99.070923,
+      "bearing": 298,
       "speed": 0,
-      "timestamp": 1781458246
-    },
-    {
-      "vehicle_id": "74819",
-      "route_id": 19472,
-      "latitude": 19.482567,
-      "longitude": -99.114517,
-      "bearing": 111,
-      "speed": 13,
-      "timestamp": 1781458246
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69190",
       "route_id": 19471,
-      "latitude": 19.507387,
-      "longitude": -99.197296,
-      "bearing": 197,
+      "latitude": 19.495312,
+      "longitude": -99.154984,
+      "bearing": 103,
       "speed": 0,
-      "timestamp": 1781458246
+      "timestamp": 1781548368
     },
     {
-      "vehicle_id": "69194",
-      "route_id": 19471,
-      "latitude": 19.507397,
-      "longitude": -99.197365,
-      "bearing": 192,
+      "vehicle_id": "69253",
+      "route_id": 20439,
+      "latitude": 19.405201,
+      "longitude": -99.18573,
+      "bearing": 273,
       "speed": 0,
-      "timestamp": 1781458246
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69192",
+      "route_id": 19473,
+      "latitude": 19.488323,
+      "longitude": -99.117645,
+      "bearing": 198,
+      "speed": 23,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69193",
+      "route_id": 19471,
+      "latitude": 19.48604,
+      "longitude": -99.120872,
+      "bearing": 295,
+      "speed": 0,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69195",
+      "route_id": 19472,
+      "latitude": 19.482622,
+      "longitude": -99.114624,
+      "bearing": 111,
+      "speed": 0,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69312",
+      "route_id": 19984,
+      "latitude": 19.397903,
+      "longitude": -99.109398,
+      "bearing": 282,
+      "speed": 0,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69196",
+      "route_id": 20296,
+      "latitude": 19.486685,
+      "longitude": -99.124115,
+      "bearing": 3,
+      "speed": 38,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69197",
+      "route_id": 19472,
+      "latitude": 19.467056,
+      "longitude": -99.075706,
+      "bearing": 169,
+      "speed": 3,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69261",
+      "route_id": 20440,
+      "latitude": 19.405506,
+      "longitude": -99.184555,
+      "bearing": 186,
+      "speed": 23,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69316",
       "route_id": 19983,
-      "latitude": 19.394751,
-      "longitude": -99.14325,
-      "bearing": 272,
-      "speed": 15,
-      "timestamp": 1781458246
+      "latitude": 19.376251,
+      "longitude": -99.178101,
+      "bearing": 162,
+      "speed": 22,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69266",
+      "route_id": 19519,
+      "latitude": 19.432806,
+      "longitude": -99.115295,
+      "bearing": 183,
+      "speed": 31,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69268",
+      "route_id": 20439,
+      "latitude": 19.448689,
+      "longitude": -99.135193,
+      "bearing": 0,
+      "speed": 0,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69270",
+      "route_id": 20439,
+      "latitude": 19.436949,
+      "longitude": -99.147285,
+      "bearing": 193,
+      "speed": 0,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "74821",
-      "route_id": 19471,
-      "latitude": 19.510899,
-      "longitude": -99.192635,
-      "bearing": 101,
-      "speed": 0,
-      "timestamp": 1781458246
+      "route_id": 19470,
+      "latitude": 19.497557,
+      "longitude": -99.164948,
+      "bearing": 283,
+      "speed": 22,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "74820",
+      "route_id": 19472,
+      "latitude": 19.466833,
+      "longitude": -99.075272,
+      "bearing": 101,
+      "speed": 22,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "74830",
       "route_id": 19471,
-      "latitude": 19.502428,
-      "longitude": -99.178795,
-      "bearing": 112,
-      "speed": 0,
-      "timestamp": 1781458246
+      "latitude": 19.473057,
+      "longitude": -99.068497,
+      "bearing": 135,
+      "speed": 23,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69274",
-      "route_id": 19522,
-      "latitude": 19.421124,
-      "longitude": -99.058601,
-      "bearing": 270,
+      "route_id": 19519,
+      "latitude": 19.425121,
+      "longitude": -99.116058,
+      "bearing": 278,
+      "speed": 28,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69275",
+      "route_id": 27312,
+      "latitude": 19.42697,
+      "longitude": -99.111885,
+      "bearing": 60,
       "speed": 0,
-      "timestamp": 1781458246
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69277",
+      "route_id": 19519,
+      "latitude": 19.430939,
+      "longitude": -99.115448,
+      "bearing": 189,
+      "speed": 0,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69280",
+      "route_id": 27312,
+      "latitude": 19.42732,
+      "longitude": -99.117104,
+      "bearing": 256,
+      "speed": 13,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "70089",
+      "route_id": 19566,
+      "latitude": 19.397581,
+      "longitude": -99.130135,
+      "bearing": 246,
+      "speed": 20,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "70090",
+      "route_id": 19984,
+      "latitude": 19.395626,
+      "longitude": -99.151367,
+      "bearing": 273,
+      "speed": 22,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69282",
+      "route_id": 27313,
+      "latitude": 19.417662,
+      "longitude": -99.078171,
+      "bearing": 212,
+      "speed": 0,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "70091",
+      "route_id": 19562,
+      "latitude": 19.40206,
+      "longitude": -99.187332,
+      "bearing": 288,
+      "speed": 0,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "70095",
-      "route_id": 19984,
-      "latitude": 19.402006,
-      "longitude": -99.168266,
-      "bearing": 341,
+      "route_id": 19983,
+      "latitude": 19.336529,
+      "longitude": -99.190666,
+      "bearing": 281,
       "speed": 0,
-      "timestamp": 1781458246
+      "timestamp": 1781548368
     },
     {
-      "vehicle_id": "69288",
-      "route_id": 19522,
-      "latitude": 19.430447,
-      "longitude": -99.115547,
-      "bearing": 190,
+      "vehicle_id": "70096",
+      "route_id": 19984,
+      "latitude": 19.398197,
+      "longitude": -99.124565,
+      "bearing": 268,
       "speed": 0,
-      "timestamp": 1781458246
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69289",
+      "route_id": 27313,
+      "latitude": 19.422867,
+      "longitude": -99.125031,
+      "bearing": 277,
+      "speed": 5,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69290",
+      "route_id": 27312,
+      "latitude": 19.437544,
+      "longitude": -99.111572,
+      "bearing": 199,
+      "speed": 22,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69291",
+      "route_id": 27313,
+      "latitude": 19.435566,
+      "longitude": -99.114838,
+      "bearing": 201,
+      "speed": 0,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "70100",
       "route_id": 19984,
-      "latitude": 19.395485,
-      "longitude": -99.149483,
-      "bearing": 273,
-      "speed": 36,
-      "timestamp": 1781458246
+      "latitude": 19.394758,
+      "longitude": -99.142616,
+      "bearing": 277,
+      "speed": 27,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69294",
+      "route_id": 19522,
+      "latitude": 19.428549,
+      "longitude": -99.053314,
+      "bearing": 204,
+      "speed": 41,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "70101",
+      "route_id": 19562,
+      "latitude": 19.396118,
+      "longitude": -99.159012,
+      "bearing": 227,
+      "speed": 10,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69299",
-      "route_id": 19522,
-      "latitude": 19.431574,
-      "longitude": -99.115318,
-      "bearing": 183,
-      "speed": 20,
-      "timestamp": 1781458246
+      "route_id": 27313,
+      "latitude": 19.425577,
+      "longitude": -99.11969,
+      "bearing": 275,
+      "speed": 0,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69439",
+      "route_id": 20295,
+      "latitude": 19.476896,
+      "longitude": -99.132477,
+      "bearing": 214,
+      "speed": 0,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "69687",
-      "route_id": 19983,
-      "latitude": 19.384064,
-      "longitude": -99.070129,
-      "bearing": 100,
-      "speed": 46,
-      "timestamp": 1781458246
+      "route_id": 19563,
+      "latitude": 19.395084,
+      "longitude": -99.14492,
+      "bearing": 277,
+      "speed": 36,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69442",
+      "route_id": 19499,
+      "latitude": 19.383625,
+      "longitude": -99.175835,
+      "bearing": 196,
+      "speed": 0,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69688",
+      "route_id": 19566,
+      "latitude": 19.388046,
+      "longitude": -99.056648,
+      "bearing": 304,
+      "speed": 23,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "70324",
+      "route_id": 19567,
+      "latitude": 19.397493,
+      "longitude": -99.171227,
+      "bearing": 168,
+      "speed": 23,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69691",
+      "route_id": 19566,
+      "latitude": 19.389812,
+      "longitude": -99.059509,
+      "bearing": 266,
+      "speed": 0,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "72536",
-      "route_id": 27055,
-      "latitude": 19.421009,
-      "longitude": -99.078461,
-      "bearing": 306,
-      "speed": 0,
-      "timestamp": 1781458246
+      "route_id": 27310,
+      "latitude": 19.420105,
+      "longitude": -99.07766,
+      "bearing": 284,
+      "speed": 26,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "75062",
@@ -2943,52 +4698,160 @@
       "longitude": -99.115395,
       "bearing": 187,
       "speed": 2,
-      "timestamp": 1781458246
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "74680",
       "route_id": 27055,
-      "latitude": 19.43063,
-      "longitude": -99.115486,
-      "bearing": 189,
+      "latitude": 19.425564,
+      "longitude": -99.130684,
+      "bearing": 30,
       "speed": 0,
-      "timestamp": 1781458246
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "74681",
       "route_id": 27310,
-      "latitude": 19.426451,
-      "longitude": -99.091194,
-      "bearing": 123,
-      "speed": 39,
-      "timestamp": 1781458246
+      "latitude": 19.429575,
+      "longitude": -99.097748,
+      "bearing": 297,
+      "speed": 28,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "74915",
+      "route_id": 19566,
+      "latitude": 19.387512,
+      "longitude": -99.074036,
+      "bearing": 301,
+      "speed": 21,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "74546",
+      "route_id": 19567,
+      "latitude": 19.397738,
+      "longitude": -99.109055,
+      "bearing": 104,
+      "speed": 0,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "74518",
+      "route_id": 19566,
+      "latitude": 19.393961,
+      "longitude": -99.137749,
+      "bearing": 280,
+      "speed": 40,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "74141",
-      "route_id": 19471,
-      "latitude": 19.466827,
-      "longitude": -99.075241,
-      "bearing": 103,
-      "speed": 26,
-      "timestamp": 1781458246
+      "route_id": 19475,
+      "latitude": 19.503914,
+      "longitude": -99.183449,
+      "bearing": 101,
+      "speed": 0,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69599",
+      "route_id": 19564,
+      "latitude": 19.398148,
+      "longitude": -99.123428,
+      "bearing": 268,
+      "speed": 0,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69601",
+      "route_id": 19983,
+      "latitude": 19.361486,
+      "longitude": -99.18293,
+      "bearing": 169,
+      "speed": 0,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "74547",
+      "route_id": 19567,
+      "latitude": 19.394278,
+      "longitude": -99.139763,
+      "bearing": 273,
+      "speed": 0,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "74465",
-      "route_id": 19566,
-      "latitude": 19.383907,
-      "longitude": -99.060745,
-      "bearing": 186,
-      "speed": 30,
-      "timestamp": 1781458246
+      "route_id": 19563,
+      "latitude": 19.395525,
+      "longitude": -99.15023,
+      "bearing": 272,
+      "speed": 40,
+      "timestamp": 1781548368
     },
     {
       "vehicle_id": "74191",
-      "route_id": 19566,
-      "latitude": 19.398394,
-      "longitude": -99.11293,
-      "bearing": 268,
-      "speed": 14,
-      "timestamp": 1781458246
+      "route_id": 19564,
+      "latitude": 19.395666,
+      "longitude": -99.152008,
+      "bearing": 273,
+      "speed": 0,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69578",
+      "route_id": 27313,
+      "latitude": 19.431335,
+      "longitude": -99.115379,
+      "bearing": 181,
+      "speed": 0,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69577",
+      "route_id": 27313,
+      "latitude": 19.424532,
+      "longitude": -99.130875,
+      "bearing": 10,
+      "speed": 0,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69585",
+      "route_id": 27312,
+      "latitude": 19.425583,
+      "longitude": -99.125755,
+      "bearing": 197,
+      "speed": 0,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69584",
+      "route_id": 27312,
+      "latitude": 19.423241,
+      "longitude": -99.121475,
+      "bearing": 256,
+      "speed": 0,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69591",
+      "route_id": 27312,
+      "latitude": 19.436989,
+      "longitude": -99.114296,
+      "bearing": 190,
+      "speed": 43,
+      "timestamp": 1781548368
+    },
+    {
+      "vehicle_id": "69587",
+      "route_id": 27313,
+      "latitude": 19.419111,
+      "longitude": -99.080498,
+      "bearing": 324,
+      "speed": 52,
+      "timestamp": 1781548368
     }
   ]
 }
